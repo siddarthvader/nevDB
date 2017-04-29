@@ -1,0 +1,22 @@
+{
+    "email": null,
+    "password": null,
+    "role": null,
+    "is_admin": null,
+    "exists": null,
+    "created_on": null,
+    "destroyed_on": null,
+    "history": [
+        {
+            "timestamp": null,
+            "device": null,
+            "browser": null
+        }
+    ],
+    "notes": [
+        {
+            "text": null,
+            "timestamp": null
+        }
+    ]
+}
