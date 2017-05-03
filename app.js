@@ -16,8 +16,20 @@ MongoClient.connect(url, (err, db) => {
       db.close();
     });
 
+    findDocuments(db,()=>{
+      db.close();
+    });
+
+
   })
 });
+
+var findDocumennts=(db,callBack)=>{
+  
+  db.collection('loginCollection').find({ email: 'nev@gmail.com' }).toArray((err,results)=>{
+        done(results);
+    });
+}
 
 var insertDocuments = (db, callback) => {
   // Get the documents collection
@@ -26,12 +38,12 @@ var insertDocuments = (db, callback) => {
     // Insert some documents
     collection.insert(
       {
-        "email": null,
-        "password": null,
-        "role": null,
-        "is_admin": null,
-        "exists": null,
-        "created_on": null,
+        "email": 'nev@gmail.com',
+        "password": 'admin',
+        "role": 'admin',
+        "is_admin": true,
+        "exists": true,
+        "created_on": 1493806677,
         "destroyed_on": null,
         "history": [
           {
@@ -48,7 +60,7 @@ var insertDocuments = (db, callback) => {
         ]
       }, function (err, result) {
         assert.equal(err, null);
-        console.log("Inserted 3 documents into the collection");
+        console.log("Inserte  d 3 documents into the collection");
         callback(result);
       });
   });
