@@ -22,26 +22,14 @@ var email = (req, res) => {
     // console.log(req.body);
     // userModel.getUserByMailId()
 
-    var body = '';
+    let body = '';
     req.on('data', function (data) {
         body += data;
     });
 
     req.on('end', function () {
         userModel.getUserByEmailId(JSON.parse(body), function (emailRes) {
-            var responseObj = {
-                message: 'success',
-                status: 200,
-                data: {
-                    state: 'goToPwd',
-                    found:emailRes
-                }
-            };
-            res.writeHead(200, {
-                'Content-Type': 'text/html'
-            });
-            res.write(JSON.stringify(responseObj));
-            res.end();
+            userView.sendLoginDataToClient(req, res, emailRes);
         })
         console.log(typeof body);
 
@@ -50,19 +38,19 @@ var email = (req, res) => {
 };
 
 var password = (req, res) => {
-    console.log('here for password');
-    var responseObj = {
-        message: 'success',
-        status: 200,
-        data: {
-            state: 'goToGetin'
-        }
-    };
-
-    res.writeHead(200, {
-        'Content-Type': 'text/html'
+    console.log('here for pwd');
+   
+    let body = '';
+    req.on('data', function (data) {
+        body += data;
     });
-    res.write(JSON.stringify(responseObj));
-    res.end();
+
+    req.on('end', function () {
+        userModel.validatePasswordUsingEmail(JSON.parse(body), function (emailRes) {
+            userView.sendPwdVerificationToClient(req, res, emailRes);
+        })
+        console.log(typeof body);
+
+    })
 
 };
