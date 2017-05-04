@@ -1,23 +1,22 @@
 {
-  "name": "nev-server",
+  "name": "server",
   "version": "1.0.0",
-  "description": "server for nevapp",
-  "main": "node.js",
+  "description": "server for trading app",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git.com"
+    "url": "git"
   },
   "keywords": [
-    "server"
+    "market"
   ],
   "author": "siddharth jain",
   "license": "ISC",
   "dependencies": {
-    "bson-ext": "^1.0.5",
     "mongo": "^0.1.0",
     "mongodb": "^2.2.26"
   },
