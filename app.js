@@ -19,8 +19,6 @@ MongoClient.connect(url, (err, db) => {
     findDocuments(db,()=>{
       db.close();
     });
-
-
   })
 });
 
