@@ -23,13 +23,21 @@ var email = (req, res) => {
     // userModel.getUserByMailId()
 
     let body = '';
-    req.on('data', function (data) {
+    req.on('data', (data) => {
         body += data;
     });
 
     req.on('end', function () {
-        userModel.getUserByEmailId(JSON.parse(body), function (emailRes) {
-            userView.sendLoginDataToClient(req, res, emailRes);
+        userModel.getUserByEmailId(JSON.parse(body), (emailRes) => {
+            console.log(emailRes,'emailRes');
+            if (emailRes) {
+                userView.sendLoginDataToClient(req, res,emailRes);
+            }
+            else {
+                userView.sendLoginDataToClient(req, res, {});
+            }
+
+
         })
         console.log(typeof body);
 
@@ -39,17 +47,26 @@ var email = (req, res) => {
 
 var password = (req, res) => {
     console.log('here for pwd');
-   
+
     let body = '';
     req.on('data', function (data) {
         body += data;
     });
 
     req.on('end', function () {
-        userModel.validatePasswordUsingEmail(JSON.parse(body), function (emailRes) {
-            userView.sendPwdVerificationToClient(req, res, emailRes);
+        userModel.validatePasswordUsingEmail(JSON.parse(body), function (pwdRes) {
+            // console.log(pwdRes,"pwdRes");
+            if (pwdRes) {
+                userModel.generateJWT(pwdRes, (encryptedData) => {
+                    userView.sendPwdVerificationToClient(req, res, encryptedData);
+                })
+            }
+            else{
+                userView.sendPwdVerificationToClient(req, res, {});
+            }
+            
         })
-        console.log(typeof body);
+        // console.log(typeof body);
 
     })
 
