@@ -4,6 +4,7 @@ var MongoClient = require('mongodb').MongoClient
 // Connection URL
 var url = 'mongodb://localhost:27017/nevDb?authMechanism=DEFAULT&authSource=db';
 
+global.__base = __dirname + '/';
 // Use connect method to connect to the server
 MongoClient.connect(url, (err, db) => {
   assert.equal(null, err);

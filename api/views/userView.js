@@ -1,12 +1,13 @@
 exports.sendLoginDataToClient = (req, res, obj) => {
     let reponseObj = {};
-    if (obj.length) {
+    console.log(obj,"obj");
+    if (obj) {
         responseObj = {
             message: 'success',
             status: 200,
             data: {
                 state: 'goToPwd',
-                userData: obj[0]
+                userData: obj
             }
         };
     }
@@ -26,13 +27,14 @@ exports.sendLoginDataToClient = (req, res, obj) => {
 
 exports.sendPwdVerificationToClient = (req, res, obj) => {
     let responseObj = {};
+    // console.log(obj,"obj")
     if (obj) {
         responseObj = {
             message: 'success',
             status: 200,
             data: {
                 state: 'goToLanding',
-                token: null
+                data:obj
             }
         };
     }
@@ -41,8 +43,7 @@ exports.sendPwdVerificationToClient = (req, res, obj) => {
             message: 'success',
             status: 200,
             data: {
-                state: 'notFound',
-                token: null
+                state: 'notFound'
             }
         };
     }
@@ -54,7 +55,12 @@ let writeHead = (res,responseObj) => {
     res.writeHead(200, {
         'Content-Type': 'text/html'
     });
-    res.write(JSON.stringify(responseObj));
+    if(typeof responseObj === 'string'){
+        res.write(responseObj);
+    }
+    else{
+        res.write(JSON.stringify(responseObj));
+    }
     res.end();
 }
 
