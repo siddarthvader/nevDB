@@ -13,6 +13,9 @@ exports.get = (req, res, path) => {
         case '/validateToken':
             validateToken(req, res);
             break;
+        case '/logout':
+            logout(req, res);
+            break;
         default:
             break;
     }
@@ -61,7 +64,10 @@ var password = (req, res) => {
             // console.log(pwdRes,"pwdRes");
             if (pwdRes) {
                 userModel.generateJWT(pwdRes, (encryptedData) => {
-                    userView.sendPwdVerificationToClient(req, res, encryptedData);
+                    userModel.insertTokenToDb(encryptedData, req.headers['user-agent'], (err, results) => {
+                        userView.sendPwdVerificationToClient(req, res, encryptedData);
+                    })
+
                 })
             }
             else {
@@ -86,11 +92,28 @@ var validateToken = (req, res) => {
         console.log(body, 'body');
         userModel.verifyJWT(JSON.parse(body), req.headers, (valid) => {
             if (valid) {
-                userView.sendValidationResToClient(req, res,valid);
+                userView.sendValidationResToClient(req, res, valid);
             }
-            else{
-                userView.sendValidationResToClient(req,res,valid)
+            else {
+                userView.sendValidationResToClient(req, res, valid)
             }
+        });
+    })
+};
+
+var logout = (req, res) => {
+    console.log('logginout');
+    let body = '';
+    req.on('data', (data) => {
+        body += data;
+    });
+
+    req.on('end', () => {
+        console.log(body, 'body');
+        userModel.destroySession(req, res, function (results) {
+
+            userView.logOutFromDevice(req, res);
+
         });
     })
 }

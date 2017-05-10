@@ -18,8 +18,10 @@
   "license": "ISC",
   "dependencies": {
     "jsonwebtoken": "^7.4.0",
+    "moment": "^2.18.1",
     "mongo": "^0.1.0",
-    "mongodb": "^2.2.26"
+    "mongodb": "^2.2.26",
+    "ua-parser": "^0.3.5"
   },
   "djevDependencies": {
     "nodemon": "^1.11.0"

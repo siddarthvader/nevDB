@@ -8,9 +8,13 @@
     "destroyed_on": null,
     "history": [
         {
-            "timestamp": null,
+            "created_on": null,
+            "destroyed_on":null,
+            "is_alive":null,
             "device": null,
-            "browser": null
+            "browser": null,
+            "jwt":null
+
         }
     ],
     "notes": [
