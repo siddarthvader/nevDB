@@ -1,15 +1,18 @@
 var userModel = require('./../models/userCollecton.js');
 var userView = require('./../views/userView.js');
 
-
 exports.get = (req, res, path) => {
+    console.log(path, "path");
     switch (path) {
         case '/email':
             email(req, res);
             break;
         case '/pwd':
             password(req, res);
-            break
+            break;
+        case '/validateToken':
+            validateToken(req, res);
+            break;
         default:
             break;
     }
@@ -29,12 +32,12 @@ var email = (req, res) => {
 
     req.on('end', function () {
         userModel.getUserByEmailId(JSON.parse(body), (emailRes) => {
-            console.log(emailRes,'emailRes');
+            console.log(emailRes, 'emailRes');
             if (emailRes) {
-                userView.sendLoginDataToClient(req, res,emailRes);
+                userView.sendLoginDataToClient(req, res, emailRes);
             }
             else {
-                userView.sendLoginDataToClient(req, res, {});
+                userView.sendLoginDataToClient(req, res, null);
             }
 
 
@@ -49,11 +52,11 @@ var password = (req, res) => {
     console.log('here for pwd');
 
     let body = '';
-    req.on('data', function (data) {
+    req.on('data', (data) => {
         body += data;
     });
 
-    req.on('end', function () {
+    req.on('end', () => {
         userModel.validatePasswordUsingEmail(JSON.parse(body), function (pwdRes) {
             // console.log(pwdRes,"pwdRes");
             if (pwdRes) {
@@ -61,13 +64,33 @@ var password = (req, res) => {
                     userView.sendPwdVerificationToClient(req, res, encryptedData);
                 })
             }
-            else{
-                userView.sendPwdVerificationToClient(req, res, {});
+            else {
+                userView.sendPwdVerificationToClient(req, res, null);
             }
-            
+
         })
         // console.log(typeof body);
 
     })
 
 };
+
+var validateToken = (req, res) => {
+    console.log(typeof req.headers.token, 'validateToken in controller');
+    let body = '';
+    req.on('data', (data) => {
+        body += data;
+    });
+
+    req.on('end', () => {
+        console.log(body, 'body');
+        userModel.verifyJWT(JSON.parse(body), req.headers, (valid) => {
+            if (valid) {
+                userView.sendValidationResToClient(req, res,valid);
+            }
+            else{
+                userView.sendValidationResToClient(req,res,valid)
+            }
+        });
+    })
+}

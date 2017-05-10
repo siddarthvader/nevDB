@@ -1,6 +1,7 @@
+var fs = require('fs');
 exports.sendLoginDataToClient = (req, res, obj) => {
     let reponseObj = {};
-    console.log(obj,"obj");
+    console.log(obj, "obj");
     if (obj) {
         responseObj = {
             message: 'success',
@@ -16,25 +17,25 @@ exports.sendLoginDataToClient = (req, res, obj) => {
             message: 'success',
             status: 200,
             data: {
-                state: 'newEmail'
+                state: 'notFound'
             }
         };
     }
 
-    writeHead(res,responseObj);
+    writeHead(res, responseObj, 200, 'text/html');
 
 };
 
 exports.sendPwdVerificationToClient = (req, res, obj) => {
     let responseObj = {};
-    // console.log(obj,"obj")
+    console.log(obj, "obj")
     if (obj) {
         responseObj = {
             message: 'success',
             status: 200,
             data: {
                 state: 'goToLanding',
-                data:obj
+                data: obj
             }
         };
     }
@@ -48,17 +49,50 @@ exports.sendPwdVerificationToClient = (req, res, obj) => {
         };
     }
 
-    writeHead(res,responseObj);
+    writeHead(res, responseObj, 200, 'text/html');
 }
 
-let writeHead = (res,responseObj) => {
-    res.writeHead(200, {
-        'Content-Type': 'text/html'
+exports.sendValidationResToClient = (req, res, valid) => {
+    let responseObj;
+    if (valid) {
+        responseObj = {
+            message: 'success',
+            status: 200,
+            data: {
+                state: 'goToLanding'
+            }
+        };
+    }
+    else {
+        responseObj = {
+            message: 'success',
+            status: 200,
+            data: {
+                state: 'invalidToken'
+            }
+        };
+    }
+
+    writeHead(res, responseObj, 200, 'text/html');
+}
+
+exports.send404Response = (req, res) => {
+    console.log('noptfoundtriggered');
+    let responseObj = {
+        message: 'notfound',
+        status: '404',
+    }
+    res.sendFile('404.html');
+}
+
+let writeHead = (res, responseObj, status, contentType) => {
+    res.writeHead(status, {
+        'Content-Type': contentType
     });
-    if(typeof responseObj === 'string'){
+    if (typeof responseObj === 'string') {
         res.write(responseObj);
     }
-    else{
+    else {
         res.write(JSON.stringify(responseObj));
     }
     res.end();
