@@ -74,7 +74,7 @@ exports.sendValidationResToClient = (req, res, valid) => {
     }
 
     writeHead(res, responseObj, 200, 'text/html');
-}
+};
 
 exports.send404Response = (req, res) => {
     console.log('noptfoundtriggered');
@@ -82,8 +82,16 @@ exports.send404Response = (req, res) => {
         message: 'notfound',
         status: '404',
     }
-    res.sendFile('404.html');
-}
+    writeHead(res, responseObj, 200, 'text/plain');
+};
+
+exports.logOutFromDevice = (req, res) => {
+    console.log('noptfoundtriggered');
+    let responseObj = {
+        state:'logout'
+    }
+        writeHead(res, responseObj, 200, 'text/plain');
+};
 
 let writeHead = (res, responseObj, status, contentType) => {
     res.writeHead(status, {

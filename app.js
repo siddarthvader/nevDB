@@ -5,6 +5,7 @@ var MongoClient = require('mongodb').MongoClient
 var url = 'mongodb://localhost:27017/nevDb?authMechanism=DEFAULT&authSource=db';
 
 global.__base = __dirname + '/';
+
 // Use connect method to connect to the server
 MongoClient.connect(url, (err, db) => {
   assert.equal(null, err);
@@ -17,17 +18,17 @@ MongoClient.connect(url, (err, db) => {
       db.close();
     });
 
-    findDocuments(db,()=>{
+    findDocuments(db, () => {
       db.close();
     });
   })
 });
 
-var findDocumennts=(db,callBack)=>{
-  
-  db.collection('loginCollection').find({ email: 'nev@gmail.com' }).toArray((err,results)=>{
-        done(results);
-    });
+var findDocumennts = (db, callBack) => {
+
+  db.collection('loginCollection').find({ email: 'nev@gmail.com' }).toArray((err, results) => {
+    done(results);
+  });
 }
 
 var insertDocuments = (db, callback) => {
@@ -46,9 +47,11 @@ var insertDocuments = (db, callback) => {
         "destroyed_on": null,
         "history": [
           {
-            "timestamp": null,
+            "created_on": null,
+            "destroyed_on": null,
+            "is_alive": null,
             "device": null,
-            "browser": null
+            "jwt": null
           }
         ],
         "notes": [

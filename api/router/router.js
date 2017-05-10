@@ -2,7 +2,7 @@ var url = require('url');
 exports.get = (req, res) => {
     var headers = {};
 
-     if (req.method === 'OPTIONS') {
+    if (req.method === 'OPTIONS') {
         console.log('!OPTIONS');
         // IE8 does not allow domains to be specified, just the *
         // headers["Access-Control-Allow-Origin"] = req.headers.origin;
@@ -16,6 +16,7 @@ exports.get = (req, res) => {
             case ('/email_POST'):
             case '/pwd_POST':
             case '/validateToken_POST':
+            case '/logout_POST':
                 require('../controllers/loginController.js').get(req, res, path);
                 break;
             default:
