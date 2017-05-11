@@ -21,7 +21,6 @@ exports.get = (req, res, path) => {
     }
 }
 
-var mongo = require('mongodb');
 
 var email = (req, res) => {
     console.log('here for email');

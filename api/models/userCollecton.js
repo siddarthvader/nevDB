@@ -1,3 +1,4 @@
+
 var db = require('./../db');
 var jwt = require('jsonwebtoken');
 var moment = require('moment');
@@ -104,8 +105,50 @@ exports.destroySession = (req, res, done) => {
             if (!err) {
                 done(true);
             }
-            else{
+            else {
                 done(false);
             }
         });
+}
+
+exports.addNewUserToDb = (body, done) => {
+    db.get().collection('loginCollection').findOne({ email: body.email }, function (err, results) {
+        console.log(body,'adduser',results);
+        if (!results) {
+            let userObj = {
+                "email": body.email,
+                "password": body.email,
+                "role": 'user',
+                "is_admin": false,
+                "exists": true,
+                "created_on":moment().unix(),
+                "destroyed_on": null,
+                "history": [
+                    {
+                        "created_on": null,
+                        "destroyed_on": null,
+                        "is_alive": null,
+                        "device": null,
+                        "browser": null,
+                        "jwt": null
+
+                    }
+                ],
+                "notes": [
+                    {
+                        "text": null,
+                        "timestamp": null
+                    }
+                ]
+            }
+            db.get().collection('loginCollection').insert(userObj, function (err, results) {
+                console.log(results,'sendUserAddDataToClient');
+                done(true);
+            });
+        }
+        else {
+            done('exists');
+        }
+    })
+
 }
