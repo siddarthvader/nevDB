@@ -19,6 +19,9 @@ exports.get = (req, res) => {
             case '/logout_POST':
                 require('../controllers/loginController.js').get(req, res, path);
                 break;
+            case '/inviteUser_POST':
+                require('../controllers/userController.js').get(req,res,path);
+                break;
             default:
                 require('../controllers/notFoundController.js').get(req, res);
                 break;

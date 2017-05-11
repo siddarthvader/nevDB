@@ -88,21 +88,43 @@ exports.send404Response = (req, res) => {
 exports.logOutFromDevice = (req, res) => {
     console.log('noptfoundtriggered');
     let responseObj = {
-        state:'logout'
+        state: 'logout'
     }
-        writeHead(res, responseObj, 200, 'text/plain');
+    writeHead(res, responseObj, 200, 'text/plain');
 };
 
+exports.sendUserAddDataToClient = (req, res, status)=>{
+    let responseObj = {
+        data:{}
+    };
+    if (status === true) {
+        responseObj.data.state = 'added'
+
+    }
+    else if (status === 'exists') {
+        responseObj.data.state = 'exists'
+
+    }
+    else {
+        responseObj.data.state = 'error'
+
+    }
+    writeHead(res, responseObj, 200, 'text/plain');
+}
+
 let writeHead = (res, responseObj, status, contentType) => {
+    console.log('writing head');
     res.writeHead(status, {
         'Content-Type': contentType
     });
     if (typeof responseObj === 'string') {
         res.write(responseObj);
+       
     }
     else {
         res.write(JSON.stringify(responseObj));
     }
-    res.end();
+     res.end();
+    
 }
 
