@@ -20,6 +20,9 @@ exports.get = (req, res) => {
                 require('../controllers/loginController.js').get(req, res, path);
                 break;
             case '/inviteUser_POST':
+            case '/getUsers_GET':
+            case '/removeUser_POST':
+            case '/history_POST':
                 require('../controllers/userController.js').get(req,res,path);
                 break;
             default:
