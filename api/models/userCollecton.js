@@ -151,4 +151,24 @@ exports.addNewUserToDb = (body, done) => {
         }
     })
 
-}
+};
+
+exports.getUsers=(done)=>{
+    db.get().collection('loginCollection').find({},{email:1,is_admin:1,role:1}).toArray((err, results)=>{
+        console.log(results,"err")
+        done(results);
+    });
+};
+
+exports.removeUserByEmail=(body,done)=>{
+    db.get().collection('loginCollection').remove({email:body.email},function(err,results){
+        console.log(results,"results");
+        done(true);
+    });
+};
+
+exports.getLoginHistoryByEmail=(body,done)=>{
+    db.get().collection('loginCollection').findOne({email:body.email},{history:1},function(err,results){
+        done(results);
+    });
+};

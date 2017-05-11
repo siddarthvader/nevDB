@@ -93,9 +93,9 @@ exports.logOutFromDevice = (req, res) => {
     writeHead(res, responseObj, 200, 'text/plain');
 };
 
-exports.sendUserAddDataToClient = (req, res, status)=>{
+exports.sendUserAddDataToClient = (req, res, status) => {
     let responseObj = {
-        data:{}
+        data: {}
     };
     if (status === true) {
         responseObj.data.state = 'added'
@@ -110,7 +110,33 @@ exports.sendUserAddDataToClient = (req, res, status)=>{
 
     }
     writeHead(res, responseObj, 200, 'text/plain');
-}
+};
+
+exports.sendUserListToClient = (req, res, list) => {
+    // console.log(list,"list");
+    let responseObj = {
+        data: list
+    };
+    writeHead(res, responseObj, 200, 'text/plain');
+};
+
+exports.userRemovedResToClient = (req, res) => {
+    let responseObj = {
+        data: {
+            stats: 'removed'
+        }
+    }
+    writeHead(res, responseObj, 200, 'text/plain');
+
+};
+
+exports.sendLoginHistoryToClient = (req, res, list) => {
+    // console.log(list,"list");
+    let responseObj = {
+        data: list
+    };
+    writeHead(res, responseObj, 200, 'text/plain');
+};
 
 let writeHead = (res, responseObj, status, contentType) => {
     console.log('writing head');
@@ -119,12 +145,12 @@ let writeHead = (res, responseObj, status, contentType) => {
     });
     if (typeof responseObj === 'string') {
         res.write(responseObj);
-       
+
     }
     else {
         res.write(JSON.stringify(responseObj));
     }
-     res.end();
-    
+    res.end();
+
 }
 
