@@ -1,5 +1,6 @@
-var http_IP='192.168.1.79';
-// var http_IP = '127.0.0.1';
+// var http_IP='192.168.1.79';
+var http_IP = '127.0.0.1';
+http_IP=process.env.IP||http;
 port = process.env.PORT || 3000;
 var http = require("http");
 var login = require('./api/controllers/loginController.js');
