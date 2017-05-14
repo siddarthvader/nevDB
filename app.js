@@ -9,11 +9,11 @@ global.__base = __dirname + '/';
 // Use connect method to connect to the server
 MongoClient.connect(url, (err, db) => {
   assert.equal(null, err);
-  console.log("Connected successfully to server");
+  //console.log("Connected successfully to server");
 
   db.authenticate("nevRoot", "nevRoot", function (err, result) {
     assert.equal(true, result);
-    console.log('connected');
+    //console.log('connected');
     insertDocuments(db, function () {
       db.close();
     });
@@ -62,7 +62,7 @@ var insertDocuments = (db, callback) => {
         ]
       }, function (err, result) {
         assert.equal(err, null);
-        console.log("Inserte  d 3 documents into the collection");
+        //console.log("Inserte  d 3 documents into the collection");
         callback(result);
       });
   });

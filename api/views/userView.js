@@ -1,7 +1,7 @@
 var fs = require('fs');
 exports.sendLoginDataToClient = (req, res, obj) => {
     let reponseObj = {};
-    console.log(obj, "obj");
+    //console.log(obj, "obj");
     if (obj) {
         responseObj = {
             message: 'success',
@@ -28,7 +28,7 @@ exports.sendLoginDataToClient = (req, res, obj) => {
 
 exports.sendPwdVerificationToClient = (req, res, obj) => {
     let responseObj = {};
-    console.log(obj, "obj")
+    //console.log(obj, "obj")
     if (obj) {
         responseObj = {
             message: 'success',
@@ -77,16 +77,19 @@ exports.sendValidationResToClient = (req, res, valid) => {
 };
 
 exports.send404Response = (req, res) => {
-    console.log('noptfoundtriggered');
+    //console.log('noptfoundtriggered');
     let responseObj = {
         message: 'notfound',
         status: '404',
+        data:{
+            state:'getin'
+        }
     }
     writeHead(res, responseObj, 200, 'text/plain');
 };
 
 exports.logOutFromDevice = (req, res) => {
-    console.log('noptfoundtriggered');
+    //console.log('noptfoundtriggered');
     let responseObj = {
         state: 'logout'
     }
@@ -113,7 +116,7 @@ exports.sendUserAddDataToClient = (req, res, status) => {
 };
 
 exports.sendUserListToClient = (req, res, list) => {
-    // console.log(list,"list");
+    // //console.log(list,"list");
     let responseObj = {
         data: list
     };
@@ -131,7 +134,7 @@ exports.userRemovedResToClient = (req, res) => {
 };
 
 exports.sendLoginHistoryToClient = (req, res, list) => {
-    // console.log(list,"list");
+    // //console.log(list,"list");
     let responseObj = {
         data: list
     };
@@ -139,7 +142,7 @@ exports.sendLoginHistoryToClient = (req, res, list) => {
 };
 
 let writeHead = (res, responseObj, status, contentType) => {
-    console.log('writing head');
+    //console.log('writing head');
     res.writeHead(status, {
         'Content-Type': contentType
     });

@@ -2,7 +2,7 @@ var userModel = require('./../models/userCollecton.js');
 var userView = require('./../views/userView.js');
 
 exports.get = (req, res, path) => {
-    console.log(path, "path");
+    //console.log(path, "path");
     switch (path) {
         case '/inviteUser':
             inviteUser(req, res);
@@ -30,10 +30,10 @@ var inviteUser = (req, res) => {
 
     req.on('end', function () {
         userModel.addNewUserToDb(JSON.parse(body), (results) => {
-            console.log(results, 'sendUserAddDataToClient');
+            //console.log(results, 'sendUserAddDataToClient');
             userView.sendUserAddDataToClient(req, res, results)
         })
-        console.log(typeof body);
+        //console.log(typeof body);
 
     })
 }
@@ -52,7 +52,7 @@ var removeUser = (req, res) => {
 
     req.on('end', function () {
         userModel.removeUserByEmail(JSON.parse(body), (results) => {
-            console.log(results, 'sendUserAddDataToClient');
+            //console.log(results, 'sendUserAddDataToClient');
             userView.userRemovedResToClient(req, res)
         })
     })

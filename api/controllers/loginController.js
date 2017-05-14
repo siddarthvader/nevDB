@@ -2,7 +2,7 @@ var userModel = require('./../models/userCollecton.js');
 var userView = require('./../views/userView.js');
 
 exports.get = (req, res, path) => {
-    console.log(path, "path");
+    //console.log(path, "path");
     switch (path) {
         case '/email':
             email(req, res);
@@ -23,8 +23,8 @@ exports.get = (req, res, path) => {
 
 
 var email = (req, res) => {
-    console.log('here for email');
-    // console.log(req.body);
+    //console.log('here for email');
+    // //console.log(req.body);
     // userModel.getUserByMailId()
 
     let body = '';
@@ -34,7 +34,7 @@ var email = (req, res) => {
 
     req.on('end', function () {
         userModel.getUserByEmailId(JSON.parse(body), (emailRes) => {
-            console.log(emailRes, 'emailRes');
+            //console.log(emailRes, 'emailRes');
             if (emailRes) {
                 userView.sendLoginDataToClient(req, res, emailRes);
             }
@@ -44,14 +44,14 @@ var email = (req, res) => {
 
 
         })
-        console.log(typeof body);
+        //console.log(typeof body);
 
     })
 
 };
 
 var password = (req, res) => {
-    console.log('here for pwd');
+    //console.log('here for pwd');
 
     let body = '';
     req.on('data', (data) => {
@@ -60,7 +60,7 @@ var password = (req, res) => {
 
     req.on('end', () => {
         userModel.validatePasswordUsingEmail(JSON.parse(body), function (pwdRes) {
-            // console.log(pwdRes,"pwdRes");
+            // //console.log(pwdRes,"pwdRes");
             if (pwdRes) {
                 userModel.generateJWT(pwdRes, (encryptedData) => {
                     userModel.insertTokenToDb(encryptedData, req.headers['user-agent'], (err, results) => {
@@ -74,21 +74,21 @@ var password = (req, res) => {
             }
 
         })
-        // console.log(typeof body);
+        // //console.log(typeof body);
 
     })
 
 };
 
 var validateToken = (req, res) => {
-    console.log(typeof req.headers.token, 'validateToken in controller');
+    //console.log(typeof req.headers.token, 'validateToken in controller');
     let body = '';
     req.on('data', (data) => {
         body += data;
     });
 
     req.on('end', () => {
-        console.log(body, 'body');
+        //console.log(body, 'body');
         userModel.verifyJWT(JSON.parse(body), req.headers, (valid) => {
             if (valid) {
                 userView.sendValidationResToClient(req, res, valid);
@@ -101,14 +101,14 @@ var validateToken = (req, res) => {
 };
 
 var logout = (req, res) => {
-    console.log('logginout');
+    //console.log('logginout');
     let body = '';
     req.on('data', (data) => {
         body += data;
     });
 
     req.on('end', () => {
-        console.log(body, 'body');
+        //console.log(body, 'body');
         userModel.destroySession(req, res, function (results) {
 
             userView.logOutFromDevice(req, res);

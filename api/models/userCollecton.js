@@ -13,13 +13,13 @@ exports.getUserByEmailId = (body, done) => {
             email: 1
         },
         (err, results) => {
-            console.log(results, "results");
+            //console.log(results, "results");
             done(results);
         })
 };
 
 exports.validatePasswordUsingEmail = (body, done) => {
-    console.log(body, 'pwd body');
+    //console.log(body, 'pwd body');
     db.get().collection('loginCollection').findOne(
         {
             email: body.email,
@@ -29,13 +29,13 @@ exports.validatePasswordUsingEmail = (body, done) => {
             password: 0
         },
         (err, results) => {
-            console.log(results, 'pwd results');
+            //console.log(results, 'pwd results');
             done(results);
         });
 };
 
 exports.generateJWT = (pwdRes, done) => {
-    // console.log(pwdRes, 'generate jwt');
+    // //console.log(pwdRes, 'generate jwt');
     let token = jwt.sign(
         {
 
@@ -47,13 +47,13 @@ exports.generateJWT = (pwdRes, done) => {
 
     pwdRes.token = token;
     done(pwdRes);
-}
+};
 
 exports.verifyJWT = (body, headers, done) => {
-    console.log("inside model verifyJWT", headers.token);
+    //console.log("inside model verifyJWT", headers.token);
 
     jwt.verify(headers.token, 'nelson', { email: body.email }, (err, decoded) => {
-        console.log("decodedTOken", err);
+        //console.log("decodedTOken", err);
         if (err) {
             done(false);
         }
@@ -62,10 +62,23 @@ exports.verifyJWT = (body, headers, done) => {
         }
 
     })
-}
+};
+
+exports.verifyJWTAlone=(headers,done)=>{
+    jwt.verify(headers.token, 'nelson', (err, decoded) => {
+        //console.log("decodedTOken", err);
+        if (err) {
+            done(false);
+        }
+        else {
+            done(true);
+        }
+
+    })
+};
 
 exports.insertTokenToDb = (data, user_agent, done) => {
-    console.log(user_agent, "user_agent");
+    //console.log(user_agent, "user_agent");
     let uaparsed = ua.parse(user_agent);
     db.get().collection('loginCollection').update(
         {
@@ -101,7 +114,7 @@ exports.destroySession = (req, res, done) => {
                 "history.$.is_alive": false
             }
         }, function (err, results) {
-            console.log(err, results);
+            //console.log(err, results);
             if (!err) {
                 done(true);
             }
@@ -113,7 +126,7 @@ exports.destroySession = (req, res, done) => {
 
 exports.addNewUserToDb = (body, done) => {
     db.get().collection('loginCollection').findOne({ email: body.email }, function (err, results) {
-        console.log(body,'adduser',results);
+        //console.log(body,'adduser',results);
         if (!results) {
             let userObj = {
                 "email": body.email,
@@ -142,7 +155,7 @@ exports.addNewUserToDb = (body, done) => {
                 ]
             }
             db.get().collection('loginCollection').insert(userObj, function (err, results) {
-                console.log(results,'sendUserAddDataToClient');
+                //console.log(results,'sendUserAddDataToClient');
                 done(true);
             });
         }
@@ -155,14 +168,14 @@ exports.addNewUserToDb = (body, done) => {
 
 exports.getUsers=(done)=>{
     db.get().collection('loginCollection').find({},{email:1,is_admin:1,role:1}).toArray((err, results)=>{
-        console.log(results,"err")
+        //console.log(results,"err")
         done(results);
     });
 };
 
 exports.removeUserByEmail=(body,done)=>{
     db.get().collection('loginCollection').remove({email:body.email},function(err,results){
-        console.log(results,"results");
+        //console.log(results,"results");
         done(true);
     });
 };
