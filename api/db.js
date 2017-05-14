@@ -13,7 +13,7 @@ exports.connect = (url, auth, done)=> {
         state.db = db;
         db.authenticate(auth.user, auth.pwd, (err, result)=> {
             assert.equal(true, result);
-            console.log('connected');
+            //console.log('connected');
             
 
             done();

@@ -1,9 +1,10 @@
 var url = require('url');
+var userModel = require('./../models/userCollecton.js');
 exports.get = (req, res) => {
     var headers = {};
 
     if (req.method === 'OPTIONS') {
-        console.log('!OPTIONS');
+        //console.log('!OPTIONS');
         // IE8 does not allow domains to be specified, just the *
         // headers["Access-Control-Allow-Origin"] = req.headers.origin;
         res.end()
@@ -11,24 +12,48 @@ exports.get = (req, res) => {
     else {
         req.requrl = url.parse(req.url, true);
         var path = req.requrl.pathname;
-        console.log(path, req.method, "dsds");
-        switch (path + '_' + req.method) {
-            case ('/email_POST'):
-            case '/pwd_POST':
-            case '/validateToken_POST':
-            case '/logout_POST':
-                require('../controllers/loginController.js').get(req, res, path);
-                break;
-            case '/inviteUser_POST':
-            case '/getUsers_GET':
-            case '/removeUser_POST':
-            case '/history_POST':
-                require('../controllers/userController.js').get(req,res,path);
-                break;
-            default:
-                require('../controllers/notFoundController.js').get(req, res);
-                break;
+        console.log(req.headers, 'headers');
+        if (validateHeaders(req,path)) {
+            switch (path + '_' + req.method) {
+                case ('/email_POST'):
+                case '/pwd_POST':
+                case '/validateToken_POST':
+                case '/logout_POST':
+                    require('../controllers/loginController.js').get(req, res, path);
+                    break;
+                case '/inviteUser_POST':
+                case '/getUsers_GET':
+                case '/removeUser_POST':
+                case '/history_POST':
+                    require('../controllers/userController.js').get(req, res, path);
+                    break;
+                default:
+                    require('../controllers/notFoundController.js').get(req, res);
+                    break;
+
+            }
 
         }
+        else {
+            require('../controllers/notFoundController.js').get(req, res);
+
+        }
+
+    }
+};
+
+var validateHeaders = (req,path) => {
+    if(['/email','/pwd'].indexOf(path)>-1){
+        return true;
+    }
+    else{
+        userModel.verifyJWTAlone(req.headers.token,function(results){
+            if(results===true){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
     }
 }
