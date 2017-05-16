@@ -81,8 +81,8 @@ exports.send404Response = (req, res) => {
     let responseObj = {
         message: 'notfound',
         status: '404',
-        data:{
-            state:'getin'
+        data: {
+            state: 'getin'
         }
     }
     writeHead(res, responseObj, 200, 'text/plain');
@@ -141,7 +141,7 @@ exports.sendLoginHistoryToClient = (req, res, list) => {
     writeHead(res, responseObj, 200, 'text/plain');
 };
 
-exports.sendAddedNoteResToClient=(req,res,result)=>{
+exports.sendAddedNoteResToClient = (req, res, result) => {
     let responseObj = {
         data: true
     };
@@ -149,12 +149,21 @@ exports.sendAddedNoteResToClient=(req,res,result)=>{
 };
 
 
-exports.sendNotesToClient=(req,res,result)=>{
+exports.sendNotesToClient = (req, res, result) => {
     let responseObj = {
         data: result
     };
     writeHead(res, responseObj, 200, 'text/plain');
 };
+
+exports.deletTokenResToClient = (req, res) => {
+    let responseObj = {
+        data: {
+            state: 'getin'
+        }
+    };
+    writeHead(res, responseObj, 200, 'text/plain');
+}
 
 let writeHead = (res, responseObj, status, contentType) => {
     //console.log('writing head');
