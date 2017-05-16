@@ -18,10 +18,12 @@
   "author": "siddharth jain",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^0.22.0",
     "jsonwebtoken": "^7.4.0",
     "moment": "^2.18.1",
     "mongo": "^0.1.0",
     "mongodb": "^2.2.26",
+    "request": "^2.81.0",
     "ua-parser": "^0.3.5"
   },
   "devDependencies": {

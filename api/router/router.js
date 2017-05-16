@@ -29,6 +29,10 @@ exports.get = (req, res) => {
                     case '/history_POST':
                         require('../controllers/userController.js').get(req, res, path);
                         break;
+
+                    case '/scrapeZacksForEPS_POST':
+                        require('../controllers/appController.js').get(req,res,path);
+                        break;
                     default:
                         require('../controllers/notFoundController.js').get(req, res);
                         break;
