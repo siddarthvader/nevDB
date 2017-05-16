@@ -29,6 +29,7 @@ exports.get = (req, res) => {
                     case '/history_POST':
                     case "/addNote_POST":
                     case "/getNote_POST":
+                    case "/deleteTokens_POST":
                         require('../controllers/userController.js').get(req, res, path);
                         break;
                     case '/scrapeZacksForEPS_POST':

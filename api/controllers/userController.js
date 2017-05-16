@@ -17,11 +17,14 @@ exports.get = (req, res, path) => {
             history(req, res);
             break;
         case '/addNote':
-            addNote(req,res);
+            addNote(req, res);
             break;
         case '/getNote':
-            getNote(req,res);
+            getNote(req, res);
             break
+        case '/deleteTokens':
+            deleteTokens(req, res);
+            break;
         default:
             break;
     }
@@ -77,9 +80,9 @@ var history = (req, res) => {
     })
 };
 
-var addNote=(req,res)=>{
+var addNote = (req, res) => {
 
-     let body = '';
+    let body = '';
     req.on('data', (data) => {
         body += data;
     });
@@ -94,20 +97,36 @@ var addNote=(req,res)=>{
 
 };
 
-var getNote=(req,res)=>{
+var getNote = (req, res) => {
     console.log('getting note');
-     let body = '';
+    let body = '';
     req.on('data', (data) => {
         body += data;
         console.log(data)
     });
 
     req.on('end', function () {
-        console.log(body,"boduy");
+        console.log(body, "boduy");
         userModel.getNotesByEmail(JSON.parse(body), (results) => {
             //console.log(results, 'sendUserAddDataToClient');
-            userView.sendNotesToClient(req, res,results)
+            userView.sendNotesToClient(req, res, results)
         });
     })
 
 };
+
+var deleteTokens = (req, res) => {
+    let body = '';
+    req.on('data', (data) => {
+        body += data;
+        console.log(data)
+    });
+
+    req.on('end', function () {
+        console.log(body, "boduy");
+        userModel.deleteTokens(JSON.parse(body), (results) => {
+            //console.log(results, 'sendUserAddDataToClient');
+            userView.deletTokenResToClient(req, res)
+        });
+    })
+}

@@ -52,13 +52,38 @@ exports.generateJWT = (pwdRes, done) => {
 exports.verifyJWT = (body, headers, done) => {
     //console.log("inside model verifyJWT", headers.token);
 
+
     jwt.verify(headers.token, 'nelson', { email: body.email }, (err, decoded) => {
         //console.log("decodedTOken", err);
+
         if (err) {
             done(false);
         }
         else {
-            done(true);
+            console.log(headers.token,"wow ya");
+            db.get().collection('loginCollection').find(
+                {
+                    email: body.email
+                },
+                {
+                    history:
+                    {
+                        $elemMatch:
+                        {
+                            jwt: headers.token
+                        }
+
+                    }
+                }).toArray(function (err, results) {
+                    console.log(err, "err",results[0].history[0].is_alive);
+                    if (err === null && results.length && results[0].history[0].is_alive) {
+                        done(true);
+                    }
+                    else {
+                        done(false);
+                    }
+                });
+
         }
 
     })
@@ -111,7 +136,9 @@ exports.destroySession = (req, res, done) => {
             "history.jwt": req.headers.token
         }, {
             $set: {
-                "history.$.is_alive": false
+                "history.$.is_alive": false,
+                "history.$.destroyed_on": moment().unix()
+
             }
         }, function (err, results) {
             //console.log(err, results);
@@ -181,7 +208,7 @@ exports.removeUserByEmail = (body, done) => {
 };
 
 exports.getLoginHistoryByEmail = (body, done) => {
-    db.get().collection('loginCollection').findOne({ email: body.email }, { history: 1 }, function (err, results) {
+    db.get().collection('loginCollection').findOne({ email: body.email }, { "history.created_on": 1, "history.destroyed_on": 1, "history.is_alive": 1, "history.device": 1, "_id": 0 }, function (err, results) {
         done(results);
     });
 };
@@ -191,16 +218,16 @@ exports.addNote = (body, done) => {
     db.get().collection('loginCollection').update(
         {
             email: body.email
-        },{
-            $push:{
-                notes:{
-                    text:body.noteText,
-                    timestamp:moment().unix()
+        }, {
+            $push: {
+                notes: {
+                    text: body.noteText,
+                    timestamp: moment().unix()
                 }
-            }    
+            }
         }, (err, results) => {
-        done();
-    }
+            done();
+        }
     )
 };
 
@@ -209,3 +236,12 @@ exports.getNotesByEmail = (body, done) => {
         done(results);
     });
 };
+
+exports.deleteTokens=(body,done)=>{
+    db.get().collection('loginCollection').update({email:body.email},{$set:{history:[]}},function(err,results){
+        done(true)
+    });
+};
+
+
+//  db.loginCollection.findOne({email:'nev@gmail.com'},{history:{$elemMatch:{jwt:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OTA5YWU3ZjBjMzE4YTIxOGM2MDgyMGMiLCJlbWFpbCI6Im5ldkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE0OTQ5NDc0MjIsImV4cCI6MTQ5NTgxMTQyMn0.kb-zBKYd6PxCjVIbRrXEgLkIaTRhgsC1JXirya2klOk"}}})
