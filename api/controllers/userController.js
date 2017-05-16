@@ -25,6 +25,9 @@ exports.get = (req, res, path) => {
         case '/deleteTokens':
             deleteTokens(req, res);
             break;
+        case '/changePwd':
+            changePwd(req, res);
+            break;
         default:
             break;
     }
@@ -129,4 +132,20 @@ var deleteTokens = (req, res) => {
             userView.deletTokenResToClient(req, res)
         });
     })
-}
+};
+
+var changePwd = (req, res) => {
+    let body = '';
+    req.on('data', (data) => {
+        body += data;
+        console.log(data)
+    });
+
+    req.on('end', function () {
+        console.log(body, "boduy");
+        userModel.changePwd(JSON.parse(body), (results) => {
+            //console.log(results, 'sendUserAddDataToClient');
+            userView.changePwdResToClient(req, res,results)
+        });
+    })
+};

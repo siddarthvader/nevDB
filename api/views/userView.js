@@ -163,7 +163,27 @@ exports.deletTokenResToClient = (req, res) => {
         }
     };
     writeHead(res, responseObj, 200, 'text/plain');
-}
+};
+
+exports.changePwdResToClient = (req, res, results) => {
+    let responseObj={};
+    if (results === true) {
+        responseObj = {
+            data: {
+                state: 'success'
+            }
+        };
+    }
+    else{
+        responseObj = {
+            data: {
+                state: results
+            }
+        };
+    }
+
+    writeHead(res, responseObj, 200, 'text/plain');
+};
 
 let writeHead = (res, responseObj, status, contentType) => {
     //console.log('writing head');
