@@ -16,6 +16,12 @@ exports.get = (req, res, path) => {
         case '/history':
             history(req, res);
             break;
+        case '/addNote':
+            addNote(req,res);
+            break;
+        case '/getNote':
+            getNote(req,res);
+            break
         default:
             break;
     }
@@ -36,7 +42,7 @@ var inviteUser = (req, res) => {
         //console.log(typeof body);
 
     })
-}
+};
 
 var getUsers = (req, res) => {
     userModel.getUsers((results) => {
@@ -66,7 +72,42 @@ var history = (req, res) => {
 
     req.on('end', function () {
         userModel.getLoginHistoryByEmail(JSON.parse(body), (results) => {
-            userView.sendLoginHistoryToClient(req, res,results)
+            userView.sendLoginHistoryToClient(req, res, results)
         })
     })
-}
+};
+
+var addNote=(req,res)=>{
+
+     let body = '';
+    req.on('data', (data) => {
+        body += data;
+    });
+
+    req.on('end', function () {
+        console.log('adding note');
+        userModel.addNote(JSON.parse(body), (results) => {
+            //console.log(results, 'sendUserAddDataToClient');
+            userView.sendAddedNoteResToClient(req, res)
+        })
+    })
+
+};
+
+var getNote=(req,res)=>{
+    console.log('getting note');
+     let body = '';
+    req.on('data', (data) => {
+        body += data;
+        console.log(data)
+    });
+
+    req.on('end', function () {
+        console.log(body,"boduy");
+        userModel.getNotesByEmail(JSON.parse(body), (results) => {
+            //console.log(results, 'sendUserAddDataToClient');
+            userView.sendNotesToClient(req, res,results)
+        });
+    })
+
+};

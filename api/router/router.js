@@ -27,11 +27,12 @@ exports.get = (req, res) => {
                     case '/getUsers_GET':
                     case '/removeUser_POST':
                     case '/history_POST':
+                    case "/addNote_POST":
+                    case "/getNote_POST":
                         require('../controllers/userController.js').get(req, res, path);
                         break;
-
                     case '/scrapeZacksForEPS_POST':
-                        require('../controllers/appController.js').get(req,res,path);
+                        require('../controllers/appController.js').get(req, res, path);
                         break;
                     default:
                         require('../controllers/notFoundController.js').get(req, res);
@@ -50,7 +51,7 @@ exports.get = (req, res) => {
     }
 };
 
-var validateHeaders = (req, path,done) => {
+var validateHeaders = (req, path, done) => {
     if (['/email', '/pwd'].indexOf(path) > -1) {
         done(true);
     }

@@ -64,7 +64,7 @@ exports.verifyJWT = (body, headers, done) => {
     })
 };
 
-exports.verifyJWTAlone=(headers,done)=>{
+exports.verifyJWTAlone = (headers, done) => {
     jwt.verify(headers, 'nelson', (err, decoded) => {
         console.log("decodedTOken", decoded);
         if (err) {
@@ -122,7 +122,7 @@ exports.destroySession = (req, res, done) => {
                 done(false);
             }
         });
-}
+};
 
 exports.addNewUserToDb = (body, done) => {
     db.get().collection('loginCollection').findOne({ email: body.email }, function (err, results) {
@@ -134,7 +134,7 @@ exports.addNewUserToDb = (body, done) => {
                 "role": 'user',
                 "is_admin": false,
                 "exists": true,
-                "created_on":moment().unix(),
+                "created_on": moment().unix(),
                 "destroyed_on": null,
                 "history": [
                     {
@@ -166,22 +166,46 @@ exports.addNewUserToDb = (body, done) => {
 
 };
 
-exports.getUsers=(done)=>{
-    db.get().collection('loginCollection').find({},{email:1,is_admin:1,role:1}).toArray((err, results)=>{
+exports.getUsers = (done) => {
+    db.get().collection('loginCollection').find({}, { email: 1, is_admin: 1, role: 1 }).toArray((err, results) => {
         //console.log(results,"err")
         done(results);
     });
 };
 
-exports.removeUserByEmail=(body,done)=>{
-    db.get().collection('loginCollection').remove({email:body.email},function(err,results){
+exports.removeUserByEmail = (body, done) => {
+    db.get().collection('loginCollection').remove({ email: body.email }, function (err, results) {
         //console.log(results,"results");
         done(true);
     });
 };
 
-exports.getLoginHistoryByEmail=(body,done)=>{
-    db.get().collection('loginCollection').findOne({email:body.email},{history:1},function(err,results){
+exports.getLoginHistoryByEmail = (body, done) => {
+    db.get().collection('loginCollection').findOne({ email: body.email }, { history: 1 }, function (err, results) {
+        done(results);
+    });
+};
+
+exports.addNote = (body, done) => {
+    console.log(body, 'adding note');
+    db.get().collection('loginCollection').update(
+        {
+            email: body.email
+        },{
+            $push:{
+                notes:{
+                    text:body.noteText,
+                    timestamp:moment().unix()
+                }
+            }    
+        }, (err, results) => {
+        done();
+    }
+    )
+};
+
+exports.getNotesByEmail = (body, done) => {
+    db.get().collection('loginCollection').findOne({ email: body.email }, { notes: 1 }, function (err, results) {
         done(results);
     });
 };

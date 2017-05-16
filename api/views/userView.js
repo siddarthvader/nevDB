@@ -141,6 +141,21 @@ exports.sendLoginHistoryToClient = (req, res, list) => {
     writeHead(res, responseObj, 200, 'text/plain');
 };
 
+exports.sendAddedNoteResToClient=(req,res,result)=>{
+    let responseObj = {
+        data: true
+    };
+    writeHead(res, responseObj, 200, 'text/plain');
+};
+
+
+exports.sendNotesToClient=(req,res,result)=>{
+    let responseObj = {
+        data: result
+    };
+    writeHead(res, responseObj, 200, 'text/plain');
+};
+
 let writeHead = (res, responseObj, status, contentType) => {
     //console.log('writing head');
     res.writeHead(status, {
@@ -155,5 +170,5 @@ let writeHead = (res, responseObj, status, contentType) => {
     }
     res.end();
 
-}
+};
 
