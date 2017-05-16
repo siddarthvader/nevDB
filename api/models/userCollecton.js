@@ -60,7 +60,7 @@ exports.verifyJWT = (body, headers, done) => {
             done(false);
         }
         else {
-            console.log(headers.token,"wow ya");
+            console.log(headers.token, "wow ya");
             db.get().collection('loginCollection').find(
                 {
                     email: body.email
@@ -75,7 +75,7 @@ exports.verifyJWT = (body, headers, done) => {
 
                     }
                 }).toArray(function (err, results) {
-                    console.log(err, "err",results[0].history[0].is_alive);
+                    console.log(err, "err", results[0].history[0].is_alive);
                     if (err === null && results.length && results[0].history[0].is_alive) {
                         done(true);
                     }
@@ -237,11 +237,45 @@ exports.getNotesByEmail = (body, done) => {
     });
 };
 
-exports.deleteTokens=(body,done)=>{
-    db.get().collection('loginCollection').update({email:body.email},{$set:{history:[]}},function(err,results){
+exports.deleteTokens = (body, done) => {
+    db.get().collection('loginCollection').update({ email: body.email }, { $set: { history: [] } }, function (err, results) {
         done(true)
     });
 };
+
+exports.changePwd = (body, done) => {
+    db.get().collection('loginCollection').findOne(
+        {
+            email: body.email
+        }, {
+            password: 1
+        }, function (err, results) {
+            console.log(results,"err");
+            if (results.password === body.oldPwd) {
+                db.get().collection('loginCollection').update(
+                    {
+                        email: body.email
+                    }, {
+                        $set:
+                        {
+                            password: body.newPwd
+                        }
+                    }, function (err, results) {
+                        if(!err){
+                            done(true);
+                        }
+                        else{
+                            done('error');
+                        }
+                    }
+                )
+            }
+            else {
+                done('wrongPwd')
+            }
+
+        });
+}
 
 
 //  db.loginCollection.findOne({email:'nev@gmail.com'},{history:{$elemMatch:{jwt:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OTA5YWU3ZjBjMzE4YTIxOGM2MDgyMGMiLCJlbWFpbCI6Im5ldkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE0OTQ5NDc0MjIsImV4cCI6MTQ5NTgxMTQyMn0.kb-zBKYd6PxCjVIbRrXEgLkIaTRhgsC1JXirya2klOk"}}})
