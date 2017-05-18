@@ -25,10 +25,10 @@ var server = http.createServer((req, res) => {
 
 db.connect(url, auth, (err) => {
 	if (err) {
-		//console.log('unable to connect to mongo');
+		console.log('unable to connect to mongo');
 	}
 	else {
 		server.listen(port, http_IP);
-		//console.log("listening nice");
+		console.log("listening nice");
 	}
 });
