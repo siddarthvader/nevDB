@@ -1,6 +1,7 @@
-// var http_IP='192.168.1.79';
-var http_IP = '127.0.0.1';
-http_IP=process.env.IP||http;
+var http_IP='192.168.1.79';
+// var http_IP = '127.0.0.1';
+
+http_IP=process.env.IP||http_IP;
 port = process.env.PORT || 3000;
 var http = require("http");
 var login = require('./api/controllers/loginController.js');
@@ -29,6 +30,6 @@ db.connect(url, auth, (err) => {
 	}
 	else {
 		server.listen(port, http_IP);
-		console.log("listening nice");
+		console.log("listening nice",http_IP);
 	}
 });
