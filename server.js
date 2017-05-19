@@ -1,6 +1,7 @@
-// var http_IP='192.168.1.79';
-var http_IP = '127.0.0.1';
-http_IP=process.env.IP||http;
+var http_IP='192.168.1.79';
+// var http_IP = '127.0.0.1';
+
+http_IP=process.env.IP||http_IP;
 port = process.env.PORT || 3000;
 var http = require("http");
 var login = require('./api/controllers/loginController.js');
@@ -8,6 +9,7 @@ var url = process.env.MONGODB_URI||'mongodb://localhost:27017/nevDb?authMechanis
 var auth = {
 	user: 'nevRoot',
 	pwd: 'nevRoot'
+	
 };
 var db = require('./api/db');
 
@@ -25,10 +27,10 @@ var server = http.createServer((req, res) => {
 
 db.connect(url, auth, (err) => {
 	if (err) {
-		//console.log('unable to connect to mongo');
+		console.log('unable to connect to mongo');
 	}
 	else {
 		server.listen(port, http_IP);
-		//console.log("listening nice");
+		console.log("listening nice",http_IP);
 	}
 });

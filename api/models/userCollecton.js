@@ -75,7 +75,7 @@ exports.verifyJWT = (body, headers, done) => {
 
                     }
                 }).toArray(function (err, results) {
-                    console.log(err, "err", results[0].history[0].is_alive);
+                    console.log(err, "err", results[0]);
                     if (err === null && results.length && results[0].history[0].is_alive) {
                         done(true);
                     }

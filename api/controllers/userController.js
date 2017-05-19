@@ -129,7 +129,7 @@ var deleteTokens = (req, res) => {
         console.log(body, "boduy");
         userModel.deleteTokens(JSON.parse(body), (results) => {
             //console.log(results, 'sendUserAddDataToClient');
-            userView.deletTokenResToClient(req, res)
+            userView.deletTokenResToClient(req, res);
         });
     })
 };
