@@ -9,8 +9,7 @@ var url = process.env.MONGODB_URI||'mongodb://localhost:27017/nevDb?authMechanis
 var auth = {
 	user: 'nevRoot',
 	pwd: 'nevRoot'
-	
-};
+};	
 var db = require('./api/db');
 
 var server = http.createServer((req, res) => {
