@@ -60,7 +60,7 @@ exports.verifyJWT = (body, headers, done) => {
             done(false);
         }
         else {
-            console.log(headers.token, "wow ya");
+            // console.log(headers.token, "wow ya");
             db.get().collection('loginCollection').find(
                 {
                     email: body.email
@@ -75,7 +75,7 @@ exports.verifyJWT = (body, headers, done) => {
 
                     }
                 }).toArray(function (err, results) {
-                    console.log(err, "err", results[0]);
+                    // console.log(err, "err", results[0]);
                     if (err === null && results.length && results[0].history[0].is_alive) {
                         done(true);
                     }
