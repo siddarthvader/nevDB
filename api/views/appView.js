@@ -24,6 +24,7 @@ exports.sendCurrencyData = (req, res, body, results) => {
     results.weekly.forEach(function (val, index) {
         var currentYear = moment().year() - 1;
         // for 5 years
+        // going upto 5*6=30 years
         for (i = 1; i <= 6; i++) {
             if (val.year > currentYear - i*5) {
                 if (!data[val.symbol][currentYear - i*5]) {
@@ -51,6 +52,28 @@ exports.sendCurrencyData = (req, res, body, results) => {
                     data[val.symbol][currentYear -i*5][val.week].negativeCount++;
                 }
             }
+        }
+
+        // data.forEach((f,i)=>{
+
+        // });
+    });
+
+
+    body.symbols.forEach((element) => {
+        for(i in data[element]){
+            // console.log(i);
+            console.log(data[element][i],"yay");
+            for(j in data[element][i]){
+                if(data[element][i][j].sum>=0){
+                    data[element][i][j].reliabality=parseInt((data[element][i][j].positiveCount/data[element][i][j].count)*100);
+                    data[element][i][j].type='long';
+                }
+                else{
+                    data[element][i][j].reliabality=parseInt((data[element][i][j].negativeCount/data[element][i][j].count)*100);
+                    data[element][i][j].type='short';
+                }
+            };
         }
     });
 
