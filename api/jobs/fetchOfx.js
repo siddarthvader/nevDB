@@ -34,7 +34,7 @@ var storeRaw = (freq, symbol, date, f, average) => {
             "date": date.unix(),
             "day_of_week": date.day(),
             "day_of_month": parseInt(date.format('DD')),
-            "week": date.week(),
+            "week": date.isoWeek(),
             "month_str": date.format('MMM'),
             "month_int": parseInt(date.format('MM')),
             "year": parseInt(date.format('YYYY')),
@@ -74,8 +74,8 @@ exports.get = () => {
                                 var date = history[i].date = moment(f.PointInTime / 1000, 'X');
                                 history[i].year = parseInt(date.format("YYYY"));
                                 history[i].month = parseInt(date.format("MM"));
-                                history[i].week = date.week();
-                                history[i].symbol=symbol;
+                                history[i].week = date.isoWeek();
+                                history[i].symbol = symbol;
 
                                 var average;
                                 if (i == 0) {
@@ -92,25 +92,38 @@ exports.get = () => {
                                     console.log(freq);
 
                                     if (i > 0) {
-                                        if (history[i - 1].year === f.year && history[i - 1].week === f.week) {
-                                            // weeklyObj = {
-                                            //     symbol: symbol,
-                                            //     change: average,
-                                            //     week: history.week,
-                                            //     year: history.year,
-                                            //     month: history.month
-                                            // };
+                                        // if ((history[i-1].year===f.year && history[i - 1].week === f.week) ||(date.diff(history[i-1].date,'days')===1 && history[i - 1].week === f.week)) {
+                                        // weeklyObj = {
+                                        //     symbol: symbol,
+                                        //     change: average,
+                                        //     week: history.week,
+                                        //     year: history.year,
+                                        //     month: history.month
+                                        // };
+                                        if (history[i - 1].date.isSame(f.date, 'week')) {
+
                                         }
                                         else {
-                                            console.log('here');
-                                            console.log(history[i - 1])
-                                            var symbol_inner = history[i - 1].symbol;
+                                                                                       var symbol_inner = history[i - 1].symbol;
                                             var week = history[i - 1].week;
-                                            var year = history[i - 1].year;
+                                            var year;
                                             var change = history[i - 1].average;
                                             var month_int = history[i - 1].month;
+                                            if(history[i-1].date.startOf('isoWeek').year()!=history[i-1].date.endOf('isoWeek').year()){
+                                                if(history[i-1].week===1){
+                                                    year=history[i-1].date.endOf('isoWeek').year();
+                                                }
+                                                else{
+                                                    year=history[i-1].date.startOf('isoWeek').year()
+                                                }
+                                            }
+                                            else{
+                                                year=history[i-1].year;
+                                            }
+                                            console.log('here');
+                                            console.log(history[i - 1])
                                             db.get().collection('currencyWeeklyCollection').insert({
-                                                symbol: symbol_inner,
+                                                symbol: history[i - 1].symbol,
                                                 change: change,
                                                 week: week,
                                                 year: year,
