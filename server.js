@@ -30,8 +30,9 @@ db.connect(url, auth, (err) => {
 		console.log('unable to connect to mongo');
 	}
 	else {
-		server.listen(port, http_IP);
+		server.listen(port);
 		console.log("listening nice",http_IP);
 	}
 });
+
 
