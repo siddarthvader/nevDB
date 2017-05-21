@@ -14,8 +14,8 @@ exports.getCurrencyDatafromDB = (body, done) => {
     var response={};
     db.get().collection('currencyWeeklyCollection').find({symbol:{$in: body.symbols }}).toArray((err, data) => {
         response.weekly=data;
-        db.get().collection('currencyHistoricMonthlyCollection').find({symbol:{$in: body.symbols }}).toArray((err,data)=>{
-            response.monthly=data;
+        db.get().collection('currencyHistoricMonthlyCollection').find({symbol:{$in: body.symbols }}).toArray((err,res)=>{
+            response.monthly=res;
             done(response);
         });
     });
