@@ -20,7 +20,7 @@ var storeRaw = (freq, symbol, date, f, average) => {
             "year": parseInt(date.format('YYYY')),
             "interest_rate": f.InterbankRate,
             "inverse_interest_rate": f.InverseInterbankRate,
-            "interest_rate_change_percentage": average
+            "change": average
 
         }, (err, res) => {
             // console.log(err, "err")
