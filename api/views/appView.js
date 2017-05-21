@@ -14,42 +14,41 @@ exports.sendEPStoClient = (req, res, html) => {
 
 exports.sendCurrencyData = (req, res, body, results) => {
     var data = {};
+    var response={};
     console.log(body);
     body.symbols.forEach((element) => {
-        data[element] = {}
+        data[element] = {};
     });
-
-    console.log(data);
 
     results.weekly.forEach(function (val, index) {
         var currentYear = moment().year() - 1;
         // for 5 years
         // going upto 5*6=30 years
         for (i = 1; i <= 6; i++) {
-            if (val.year > currentYear - i*5) {
-                if (!data[val.symbol][currentYear - i*5]) {
-                    data[val.symbol][currentYear - i*5] = {};
-                    data[val.symbol][currentYear - i*5][val.week] = {}
-                    data[val.symbol][currentYear - i*5][val.week].sum = 0;
-                    data[val.symbol][currentYear - i*5][val.week].count = 0;
-                    data[val.symbol][currentYear - i*5][val.week].positiveCount = 0;
-                    data[val.symbol][currentYear - i*5][val.week].negativeCount = 0;
+            if (val.year > currentYear - i * 5) {
+                if (!data[val.symbol][currentYear - i * 5]) {
+                    data[val.symbol][currentYear - i * 5] = {};
+                    data[val.symbol][currentYear - i * 5][val.week] = {}
+                    data[val.symbol][currentYear - i * 5][val.week].sum = 0;
+                    data[val.symbol][currentYear - i * 5][val.week].count = 0;
+                    data[val.symbol][currentYear - i * 5][val.week].positiveCount = 0;
+                    data[val.symbol][currentYear - i * 5][val.week].negativeCount = 0;
                 }
-                if (!data[val.symbol][currentYear - i*5][val.week]) {
-                    data[val.symbol][currentYear - i*5][val.week] = {};
-                    data[val.symbol][currentYear - i*5][val.week].sum = 0;
-                    data[val.symbol][currentYear - i*5][val.week].count = 0;
-                    data[val.symbol][currentYear - i*5][val.week].positiveCount = 0;
-                    data[val.symbol][currentYear - i*5][val.week].negativeCount = 0;
+                if (!data[val.symbol][currentYear - i * 5][val.week]) {
+                    data[val.symbol][currentYear - i * 5][val.week] = {};
+                    data[val.symbol][currentYear - i * 5][val.week].sum = 0;
+                    data[val.symbol][currentYear - i * 5][val.week].count = 0;
+                    data[val.symbol][currentYear - i * 5][val.week].positiveCount = 0;
+                    data[val.symbol][currentYear - i * 5][val.week].negativeCount = 0;
                 }
 
-                data[val.symbol][currentYear - i*5][val.week].sum += val.change;
-                data[val.symbol][currentYear - i*5][val.week].count++;
+                data[val.symbol][currentYear - i * 5][val.week].sum += val.change;
+                data[val.symbol][currentYear - i * 5][val.week].count++;
                 if (val.change >= 0) {
-                    data[val.symbol][currentYear - i*5][val.week].positiveCount++;
+                    data[val.symbol][currentYear - i * 5][val.week].positiveCount++;
                 }
                 else {
-                    data[val.symbol][currentYear -i*5][val.week].negativeCount++;
+                    data[val.symbol][currentYear - i * 5][val.week].negativeCount++;
                 }
             }
         }
@@ -61,28 +60,36 @@ exports.sendCurrencyData = (req, res, body, results) => {
 
 
     body.symbols.forEach((element) => {
-        for(i in data[element]){
+        for (i in data[element]) {
             // console.log(i);
-            console.log(data[element][i],"yay");
-            for(j in data[element][i]){
-                if(data[element][i][j].sum>=0){
-                    data[element][i][j].reliabality=parseInt((data[element][i][j].positiveCount/data[element][i][j].count)*100);
-                    data[element][i][j].type='long';
+            console.log(data[element][i], "yay");
+            for (j in data[element][i]) {
+                if (data[element][i][j].sum >= 0) {
+                    data[element][i][j].reliabality = parseInt((data[element][i][j].positiveCount / data[element][i][j].count) * 100);
+                    data[element][i][j].type = 'long';
                 }
-                else{
-                    data[element][i][j].reliabality=parseInt((data[element][i][j].negativeCount/data[element][i][j].count)*100);
-                    data[element][i][j].type='short';
+                else {
+                    data[element][i][j].reliabality = parseInt((data[element][i][j].negativeCount / data[element][i][j].count) * 100);
+                    data[element][i][j].type = 'short';
                 }
             };
         }
     });
 
+    var response={
+        weekly:data
+    };
+    delete data;
+    
+    results.monthly.forEach((val,index)=>{
+        
+    });
 
     let responseObj = {
         message: 'success',
         status: 200,
         data: {
-            data: data
+            data:response
         }
     };
     writeHead(res, responseObj, 200, 'text/html');
