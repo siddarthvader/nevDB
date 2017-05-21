@@ -13,7 +13,6 @@ exports.sendEPStoClient = (req, res, html) => {
 }
 
 exports.sendCurrencyData = (req, res, body, results) => {
-    var data = {};
     var response = {};
     // console.log(body);
 
@@ -26,6 +25,7 @@ exports.sendCurrencyData = (req, res, body, results) => {
     frequeny.forEach((freq) => {
         // console.log(freq, "freq");
         var data = {};
+        var refined = {};
 
         results[freq].forEach(function (val, index) {
             // console.log(freq, "freq");
@@ -38,6 +38,9 @@ exports.sendCurrencyData = (req, res, body, results) => {
                 if (val.year > currentIndex) {
                     if (!data[currentIndex]) {
                         data[currentIndex] = {};
+                    }
+                    if (!refined[currentIndex]) {
+                        refined[currentIndex] = {};
                     }
 
                     if (freq === 'weekly') {
@@ -89,24 +92,36 @@ exports.sendCurrencyData = (req, res, body, results) => {
 
             console.log(val.month_int, "month int");
         });
-
         for (i in data) {
             if (data.hasOwnProperty(i)) {
                 for (j in data[i]) {
                     if (data[i].hasOwnProperty(j)) {
-                        console.log(j, "jj");
                         body.symbols.forEach((element) => {
                             // console.log(data[i][j][element], '------');
                             if (data[i][j][element]) {
+
                                 if (data[i][j][element].sum !== undefined) {
+
                                     if (data[i][j][element].sum >= 0) {
                                         data[i][j][element].reliabality = parseInt((data[i][j][element].positiveCount / data[i][j][element].count) * 100);
                                         data[i][j][element].type = 'long';
+
                                     }
                                     else {
                                         data[i][j][element].reliabality = parseInt((data[i][j][element].negativeCount / data[i][j][element].count) * 100);
                                         data[i][j][element].type = 'short';
                                     }
+
+                                    if (!refined[i][data[i][j][element].type]) {
+                                        refined[i][data[i][j][element].type] = {};
+                                    }
+                                    if (!refined[i][data[i][j][element].type][j]) {
+                                        refined[i][data[i][j][element].type][j] = {};
+                                    }
+                                    if (!refined[i][data[i][j][element].type][j][element]) {
+                                        refined[i][data[i][j][element].type][j][element] = {};
+                                    }
+                                    refined[i][data[i][j][element].type][j][element] = data[i][j][element];
                                 }
                             }
 
@@ -118,7 +133,7 @@ exports.sendCurrencyData = (req, res, body, results) => {
         }
 
         console.log(freq);
-        response[freq] = data;
+        response[freq] = refined;
     });
 
     let responseObj = {
