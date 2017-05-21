@@ -9,10 +9,12 @@ var url = process.env.MONGODB_URI||'mongodb://localhost:27017/nevDb?authMechanis
 var auth = {
 	user: 'nevRoot',
 	pwd: 'nevRoot'
-	
-};
+};	
 var db = require('./api/db');
 
+
+
+console.log(url);
 var server = http.createServer((req, res) => {
 
 	res.setHeader('Access-Control-Allow-Origin', '*');
@@ -30,8 +32,9 @@ db.connect(url, auth, (err) => {
 		console.log('unable to connect to mongo');
 	}
 	else {
-		server.listen(port, http_IP);
+		server.listen(port);
 		console.log("listening nice",http_IP);
 	}
 });
+
 
