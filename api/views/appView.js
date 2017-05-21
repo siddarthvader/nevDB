@@ -18,85 +18,104 @@ exports.sendCurrencyData = (req, res, body, results) => {
     // console.log(body);
 
     var frequeny = ['weekly', 'monthly'];
+    var currentYear = moment().year() - 1;
+    console.log(currentYear);
 
     console.log('here');
 
     frequeny.forEach((freq) => {
-        console.log(freq, "freq");
+        // console.log(freq, "freq");
         var data = {};
-        
+
         results[freq].forEach(function (val, index) {
-            console.log(freq, "freq");
-            var currentYear = moment().year() - 1;
+            // console.log(freq, "freq");
             // for 5 years
             // going upto 5*6=30 years
-            for (i = 1; i <= 6; i++) {
-                var currentIndex=currentYear - i * 5;
-                if (val.year > currentIndex) {
 
+
+            for (i = 1; i <= 6; i++) {
+                var currentIndex = currentYear - i * 5;
+                if (val.year > currentIndex) {
                     if (!data[currentIndex]) {
                         data[currentIndex] = {};
                     }
-                    if (!data[currentIndex][val.symbol]) {
-                        data[currentIndex][val.symbol] = {};
-                    }
-                    if (!data[currentIndex][val.symbol][val.week]) {
-                        if (freq === 'weekly') {
-                            data[currentIndex][val.symbol][val.week] = {}
-                            data[currentIndex][val.symbol][val.week].sum = 0;
-                            data[currentIndex][val.symbol][val.week].count = 0;
-                            data[currentIndex][val.symbol][val.week].positiveCount = 0;
-                            data[currentIndex][val.symbol][val.week].negativeCount = 0;
-                        }
-                        else {
-                            data[currentIndex][val.symbol][val.month_int] = {}
-                            data[currentIndex][val.symbol][val.month_int].sum = 0;
-                            data[currentIndex][val.symbol][val.month_int].count = 0;
-                            data[currentIndex][val.symbol][val.month_int].positiveCount = 0;
-                            data[currentIndex][val.symbol][val.month_int].negativeCount = 0;
-                        }
-                    }
 
                     if (freq === 'weekly') {
-                        data[currentIndex][val.symbol][val.week].sum += val.change;
-                        data[currentIndex][val.symbol][val.week].count++;
+                        if (!data[currentIndex][val.week] && freq === 'weekly') {
+                            data[currentIndex][val.week] = {};
+                        }
+                        if (!data[currentIndex][val.week][val.symbol] && freq === 'weekly') {
+                            data[currentIndex][val.week][val.symbol] = {}
+                            data[currentIndex][val.week][val.symbol].sum = 0;
+                            data[currentIndex][val.week][val.symbol].count = 0;
+                            data[currentIndex][val.week][val.symbol].positiveCount = 0;
+                            data[currentIndex][val.week][val.symbol].negativeCount = 0;
+                        }
+
+                        data[currentIndex][val.week][val.symbol].sum += val.change;
+                        data[currentIndex][val.week][val.symbol].count++;
                         if (val.change >= 0) {
-                            data[currentIndex][val.symbol][val.week].positiveCount++;
+                            data[currentIndex][val.week][val.symbol].positiveCount++;
                         }
                         else {
-                            data[currentIndex][val.symbol][val.week].negativeCount++;
+                            data[currentIndex][val.week][val.symbol].negativeCount++;
                         }
+
                     }
                     else {
-                        data[currentIndex][val.symbol][val.month_int].sum += val.change;
-                        data[currentIndex][val.symbol][val.month_int].count++;
+
+                        if (!data[currentIndex][val.month_int] && freq === 'monthly') {
+                            data[currentIndex][val.month_int] = {};
+                        }
+                        if (!data[currentIndex][val.month_int][val.symbol] && freq === 'monthly') {
+                            data[currentIndex][val.month_int][val.symbol] = {}
+                            data[currentIndex][val.month_int][val.symbol].sum = 0;
+                            data[currentIndex][val.month_int][val.symbol].count = 0;
+                            data[currentIndex][val.month_int][val.symbol].positiveCount = 0;
+                            data[currentIndex][val.month_int][val.symbol].negativeCount = 0;
+                        }
+
+                        data[currentIndex][val.month_int][val.symbol].sum += val.change;
+                        data[currentIndex][val.month_int][val.symbol].count++;
                         if (val.change >= 0) {
-                            data[currentIndex][val.symbol][val.month_int].positiveCount++;
+                            data[currentIndex][val.month_int][val.symbol].positiveCount++;
                         }
                         else {
-                            data[currentIndex][val.symbol][val.month_int].negativeCount++;
+                            data[currentIndex][val.month_int][val.symbol].negativeCount++;
                         }
                     }
                 }
             }
+
+            console.log(val.month_int, "month int");
         });
 
         for (i in data) {
-            console.log(i);
-            body.symbols.forEach((element) => {
-                for (j in data[i][element]) {
-                    if (data[i][element][j].sum >= 0) {
-                        data[i][element][j].reliabality = parseInt((data[i][element][j].positiveCount / data[i][element][j].count) * 100);
-                        data[i][element][j].type = 'long';
-                    }
-                    else {
-                        data[i][element][j].reliabality = parseInt((data[i][element][j].negativeCount / data[i][element][j].count) * 100);
-                        data[i][element][j].type = 'short';
-                    }
-                };
-            });
-        }
+            if (data.hasOwnProperty(i)) {
+                for (j in data[i]) {
+                    if (data[i].hasOwnProperty(j)) {
+                        console.log(j, "jj");
+                        body.symbols.forEach((element) => {
+                            // console.log(data[i][j][element], '------');
+                            if (data[i][j][element]) {
+                                if (data[i][j][element].sum !== undefined) {
+                                    if (data[i][j][element].sum >= 0) {
+                                        data[i][j][element].reliabality = parseInt((data[i][j][element].positiveCount / data[i][j][element].count) * 100);
+                                        data[i][j][element].type = 'long';
+                                    }
+                                    else {
+                                        data[i][j][element].reliabality = parseInt((data[i][j][element].negativeCount / data[i][j][element].count) * 100);
+                                        data[i][j][element].type = 'short';
+                                    }
+                                }
+                            }
 
+                        });
+                    }
+
+                };
+            }
+        }
 
         console.log(freq);
         response[freq] = data;
@@ -105,9 +124,7 @@ exports.sendCurrencyData = (req, res, body, results) => {
     let responseObj = {
         message: 'success',
         status: 200,
-        data: {
-            data: response
-        }
+        data: response
     };
     writeHead(res, responseObj, 200, 'text/html');
 }
