@@ -53,13 +53,20 @@ exports.sendCurrencyData = (req, res, body, results) => {
                             data[currentIndex][val.week][val.symbol].count = 0;
                             data[currentIndex][val.week][val.symbol].positiveCount = 0;
                             data[currentIndex][val.week][val.symbol].negativeCount = 0;
-                            data[currentIndex][val.week][val.symbol].rate = 0;
+                            data[currentIndex][val.week][val.symbol].date = 0;
+                            data[currentIndex][val.week][val.symbol].interest_rate = 0;
+                            data[currentIndex][val.week][val.symbol].interest_rate_change = 0;
+                            data[currentIndex][val.week][val.symbol].interest_change_weekly = 0;
                         }
 
-                        data[currentIndex][val.week][val.symbol].sum += val.change;
+                        data[currentIndex][val.week][val.symbol].sum += val.interest_rate_change_percentage;
                         data[currentIndex][val.week][val.symbol].count++;
-                        data[currentIndex][val.week][val.symbol].rate = val.rate;
-                        if (val.change >= 0) {
+                        data[currentIndex][val.week][val.symbol].date = val.date;
+                        data[currentIndex][val.week][val.symbol].interest_rate = val.interest_rate;
+                        data[currentIndex][val.week][val.symbol].interest_rate_change = val.interest_rate_change;
+                        data[currentIndex][val.week][val.symbol].interest_change_weekly = val.interest_change_weekly;
+
+                        if (val.interest_change_percentage >= 0) {
                             data[currentIndex][val.week][val.symbol].positiveCount++;
                         }
                         else {
@@ -76,15 +83,21 @@ exports.sendCurrencyData = (req, res, body, results) => {
                             data[currentIndex][val.month_int][val.symbol] = {}
                             data[currentIndex][val.month_int][val.symbol].sum = 0;
                             data[currentIndex][val.month_int][val.symbol].count = 0;
+                            data[currentIndex][val.month_int][val.symbol].date = 0;
                             data[currentIndex][val.month_int][val.symbol].positiveCount = 0;
                             data[currentIndex][val.month_int][val.symbol].negativeCount = 0;
-                            data[currentIndex][val.month_int][val.symbol].rate = 0;
+                            data[currentIndex][val.month_int][val.symbol].interest_change = 0;
+                            data[currentIndex][val.month_int][val.symbol].interest_rate_change = 0;
                         }
 
-                        data[currentIndex][val.month_int][val.symbol].sum += val.change;
+
                         data[currentIndex][val.month_int][val.symbol].count++;
-                        data[currentIndex][val.month_int][val.symbol].rate = val.rate;
-                        if (val.change >= 0) {
+                        data[currentIndex][val.month_int][val.symbol].interest_change = val.interest_change_percentage;
+                        data[currentIndex][val.month_int][val.symbol].date = val.date;
+                        data[currentIndex][val.month_int][val.symbol].sum += val.interest_rate_change_percentage;
+                        data[currentIndex][val.month_int][val.symbol].interest_rate_change = val.interest_rate_change;
+
+                        if (val.interest_change_percentage >= 0) {
                             data[currentIndex][val.month_int][val.symbol].positiveCount++;
                         }
                         else {
