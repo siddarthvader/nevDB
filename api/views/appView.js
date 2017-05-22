@@ -18,9 +18,9 @@ exports.sendCurrencyData = (req, res, body, results) => {
 
     var frequeny = ['weekly', 'monthly'];
     var currentYear = moment().year() - 1;
-    console.log(currentYear);
+    // console.log(currentYear);
 
-    console.log('here');
+    console.log('here', body);
 
     frequeny.forEach((freq) => {
         // console.log(freq, "freq");
@@ -53,10 +53,12 @@ exports.sendCurrencyData = (req, res, body, results) => {
                             data[currentIndex][val.week][val.symbol].count = 0;
                             data[currentIndex][val.week][val.symbol].positiveCount = 0;
                             data[currentIndex][val.week][val.symbol].negativeCount = 0;
+                            data[currentIndex][val.week][val.symbol].rate = 0;
                         }
 
                         data[currentIndex][val.week][val.symbol].sum += val.change;
                         data[currentIndex][val.week][val.symbol].count++;
+                        data[currentIndex][val.week][val.symbol].rate = val.rate;
                         if (val.change >= 0) {
                             data[currentIndex][val.week][val.symbol].positiveCount++;
                         }
@@ -76,10 +78,12 @@ exports.sendCurrencyData = (req, res, body, results) => {
                             data[currentIndex][val.month_int][val.symbol].count = 0;
                             data[currentIndex][val.month_int][val.symbol].positiveCount = 0;
                             data[currentIndex][val.month_int][val.symbol].negativeCount = 0;
+                            data[currentIndex][val.month_int][val.symbol].rate = 0;
                         }
 
                         data[currentIndex][val.month_int][val.symbol].sum += val.change;
                         data[currentIndex][val.month_int][val.symbol].count++;
+                        data[currentIndex][val.month_int][val.symbol].rate = val.rate;
                         if (val.change >= 0) {
                             data[currentIndex][val.month_int][val.symbol].positiveCount++;
                         }
@@ -90,7 +94,7 @@ exports.sendCurrencyData = (req, res, body, results) => {
                 }
             }
 
-            console.log(val.month_int, "month int");
+            // console.log(val.month_int, "month int");
         });
         for (i in data) {
             if (data.hasOwnProperty(i)) {
@@ -121,18 +125,56 @@ exports.sendCurrencyData = (req, res, body, results) => {
                                     if (!refined[i][data[i][j][element].type][j][element]) {
                                         refined[i][data[i][j][element].type][j][element] = {};
                                     }
-                                    refined[i][data[i][j][element].type][j][element] = data[i][j][element];
+
+                                    var flag = {
+                                        prob: true,
+                                        per: true,
+                                        val: true
+                                    }
+
+                                    if (body.minProb) {
+                                        if (data[i][j][element].reliabality < body.minProb) {
+                                            flag.prob = false;
+                                        }
+                                    }
+
+                                    if (body.minPer) {
+                                        if (data[i][j][element].sum / data[i][j][element].count < body.minPer) {
+                                            flag.per = false;
+                                        }
+                                    }
+
+                                    if (body.minValChange) {
+                                        if (index> 0) {
+                                            
+                                            if (results[freq][index].rate- data[i][j - 1][element].rate < body.minValChange) {
+                                                flag.val = false;
+                                            }
+                                            if (results[freq][index] === results[freq][index]) {
+
+                                            }
+
+                                        }
+
+                                    }
+
+                                    if (flag.per && flag.prob && flag.val) {
+                                        refined[i][data[i][j][element].type][j][element] = data[i][j][element];
+                                    }
+                                    else {
+                                        delete refined[i][data[i][j][element].type][j][element];
+                                    }
+
                                 }
                             }
 
                         });
                     }
-
                 };
             }
         }
 
-        console.log(freq);
+        // console.log(freq);
         response[freq] = refined;
     });
 

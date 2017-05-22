@@ -8,7 +8,7 @@ var auth = {
     pwd: 'nevRoot'
 };
 
-var storeRaw = (freq, symbol, date, f, average) => {
+var storeRaw = (freq, symbol, date, f, interest_change_percentrage) => {
     if (freq === 'monthly') {
         // monthly data
         db.get().collection('currencyHistoricMonthlyCollection').insert({
@@ -20,7 +20,7 @@ var storeRaw = (freq, symbol, date, f, average) => {
             "year": parseInt(date.format('YYYY')),
             "interest_rate": f.InterbankRate,
             "inverse_interest_rate": f.InverseInterbankRate,
-            "change": average
+            "change": interest_change_percentrage
 
         }, (err, res) => {
             // console.log(err, "err")
@@ -41,7 +41,7 @@ var storeRaw = (freq, symbol, date, f, average) => {
             "is_end_of_month": moment().endOf('month').format('DD') === date.format('DD') ? true : false,
             "interest_rate": f.InterbankRate,
             "inverse_interest_rate": f.InverseInterbankRate,
-            "interest_rate_change_percentage": average
+            "interest_rate_change_percentage": interest_change_percentrage
 
         }, (err, res) => {
             // console.log(err, "err")
@@ -75,65 +75,116 @@ exports.get = () => {
                                 history[i].year = parseInt(date.format("YYYY"));
                                 history[i].month = parseInt(date.format("MM"));
                                 history[i].week = date.isoWeek();
-                                history[i].symbol = symbol;
-
-                                var average;
+                                history[i].symbol = symbol;    
+                                var interest_change_percentrage;
                                 if (i == 0) {
-                                    average = 0;
+                                    interest_change_percentrage = 0;
                                 }
                                 else {
-                                    average = 100 * (f.InterbankRate - history[i - 1].InterbankRate) / history[i - 1].InterbankRate;
+                                    if (f.symbol === history[i - 1].symbol) {
+                                        interest_change_percentrage = 100 * (f.InterbankRate - history[i - 1].InterbankRate) / history[i - 1].InterbankRate;
+                                    }
+                                    else {
+                                        interest_change_percentrage = 0;
+                                    }
                                 }
-                                history[i].average = average;
-                                storeRaw(freq, symbol, date, f, average);
+                                interest_change_percentrage=Math.round(interest_change_percentrage*10000)/10000;
+                                console.log(interest_change_percentrage);
+                                history[i].interest_change_percentrage = interest_change_percentrage;
+                                storeRaw(freq, symbol, date, f, interest_change_percentrage);
 
 
                                 if (freq === 'daily') {
-                                    console.log(freq);
+                                    // console.log(freq);
 
                                     if (i > 0) {
-                                        // if ((history[i-1].year===f.year && history[i - 1].week === f.week) ||(date.diff(history[i-1].date,'days')===1 && history[i - 1].week === f.week)) {
-                                        // weeklyObj = {
-                                        //     symbol: symbol,
-                                        //     change: average,
-                                        //     week: history.week,
-                                        //     year: history.year,
-                                        //     month: history.month
-                                        // };
+
                                         if (history[i - 1].date.isSame(f.date, 'week')) {
 
                                         }
                                         else {
-                                                                                       var symbol_inner = history[i - 1].symbol;
+
+                                            var symbol_inner = history[i - 1].symbol;
                                             var week = history[i - 1].week;
                                             var year;
-                                            var change = history[i - 1].average;
+                                            var change = history[i - 1].interest_change_percentrage;
                                             var month_int = history[i - 1].month;
-                                            if(history[i-1].date.startOf('isoWeek').year()!=history[i-1].date.endOf('isoWeek').year()){
-                                                if(history[i-1].week===1){
-                                                    year=history[i-1].date.endOf('isoWeek').year();
+                                            var rate;
+
+                                            if (history[i - 1].date.startOf('isoWeek').year() != history[i - 1].date.endOf('isoWeek').year()) {
+                                                if (history[i - 1].week === 1) {
+                                                    year = history[i - 1].date.endOf('isoWeek').year();
                                                 }
-                                                else{
-                                                    year=history[i-1].date.startOf('isoWeek').year()
+                                                else {
+                                                    year = history[i - 1].date.startOf('isoWeek').year()
                                                 }
                                             }
-                                            else{
-                                                year=history[i-1].year;
+                                            else {
+                                                year = history[i - 1].year;
                                             }
-                                            console.log('here');
-                                            console.log(history[i - 1])
+
+                                            if (i > 0 && history[i - 1].symbol === history[i].symbol) {
+                                                rate = Math.round((history[i].InterbankRate - history[i - 1].InterbankRate)*10000)/10000;
+                                            }
+                                            else {
+                                                rate = 0;
+                                            }
                                             db.get().collection('currencyWeeklyCollection').insert({
                                                 symbol: history[i - 1].symbol,
                                                 change: change,
                                                 week: week,
                                                 year: year,
-                                                month: month_int
+                                                month: month_int,
+                                                rate: rate
                                             }, function (err, data) {
-                                                console.log(err);
+                                                if (!err) {
+                                                    if (data.ops[0].week === 1) {
+                                                        db.get().collection('currencyWeeklyCollection').findOne({ symbol: data.ops[0].symbol, week: 53, year: data.ops[0].year - 1 }, function (err, res) {
+                                                            if (res) {
+                                                                // console.log(res, res.rate);
+                                                                // console.log(data.ops[0].rate);
+                                                                // console.log(data.ops[0].rate);
+                                                                db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { weeklyChange: Math.round((data.ops[0].rate - res.rate) * 10000) / 10000 } }, function (err) {
+                                                                    // console.log(err,'inserted');
+                                                                });
+                                                            }
+                                                            else {
+
+                                                                db.get().collection('currencyWeeklyCollection').findOne({ symbol: data.ops[0].symbol, week: 52, year: data.ops[0].year - 1 }, function (err, res) {
+                                                                    if (res) {
+                                                                        db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { weeklyChange: Math.round((data.ops[0].rate - res.rate) * 10000) / 10000 } }, function (err) {
+                                                                            // console.log(err,'inserted');
+                                                                        });
+                                                                    }
+                                                                    else {
+                                                                        db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { weeklyChange: 0 } }, function (err) {
+                                                                            // console.log(err,'inserted');
+                                                                        });
+                                                                    }
+                                                                });
+                                                            }
+                                                        });
+                                                    }
+                                                    else {
+                                                        db.get().collection('currencyWeeklyCollection').findOne({ symbol: data.ops[0].symbol, week: data.ops[0].week - 1, year: data.ops[0].year }, function (err, res) {
+                                                            if (res) {
+                                                                // console.log(res, res.rate);
+                                                                // console.log(data.ops[0].rate);
+                                                                // console.log(data.ops[0].rate);
+                                                                db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { weeklyChange: Math.round((data.ops[0].rate - res.rate) * 10000) / 10000 } }, function (err) {
+                                                                    // console.log(err,'inserted');
+                                                                });
+                                                            }
+                                                        });
+                                                    }
+
+                                                }
+                                                // console.log(err);
                                             });
                                         }
                                     }
                                 }
+                                
 
                             });
                         };
