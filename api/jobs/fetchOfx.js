@@ -8,7 +8,7 @@ var auth = {
     pwd: 'nevRoot'
 };
 
-var storeRaw = (freq, symbol, date, f, interest_change_percentrage) => {
+var storeRaw = (freq, symbol, date, f, interest_rate_change_percentage,interest_rate_change) => {
     if (freq === 'monthly') {
         // monthly data
         db.get().collection('currencyHistoricMonthlyCollection').insert({
@@ -20,7 +20,8 @@ var storeRaw = (freq, symbol, date, f, interest_change_percentrage) => {
             "year": parseInt(date.format('YYYY')),
             "interest_rate": f.InterbankRate,
             "inverse_interest_rate": f.InverseInterbankRate,
-            "change": interest_change_percentrage
+            "interest_rate_change":interest_rate_change,
+            "interest_rate_change_percentage": interest_rate_change_percentage
 
         }, (err, res) => {
             // console.log(err, "err")
@@ -41,7 +42,8 @@ var storeRaw = (freq, symbol, date, f, interest_change_percentrage) => {
             "is_end_of_month": moment().endOf('month').format('DD') === date.format('DD') ? true : false,
             "interest_rate": f.InterbankRate,
             "inverse_interest_rate": f.InverseInterbankRate,
-            "interest_rate_change_percentage": interest_change_percentrage
+            "interest_rate_change":interest_rate_change,
+            "interest_rate_change_percentage": interest_rate_change_percentage
 
         }, (err, res) => {
             // console.log(err, "err")
@@ -75,23 +77,31 @@ exports.get = () => {
                                 history[i].year = parseInt(date.format("YYYY"));
                                 history[i].month = parseInt(date.format("MM"));
                                 history[i].week = date.isoWeek();
-                                history[i].symbol = symbol;    
-                                var interest_change_percentrage;
+                                history[i].symbol = symbol;
+                                var interest_rate_change;
+                                var interest_rate_change_percentage;
                                 if (i == 0) {
-                                    interest_change_percentrage = 0;
+                                    interest_rate_change_percentage = 0;
+                                    interest_rate_change=0;
                                 }
                                 else {
                                     if (f.symbol === history[i - 1].symbol) {
-                                        interest_change_percentrage = 100 * (f.InterbankRate - history[i - 1].InterbankRate) / history[i - 1].InterbankRate;
+                                        interest_rate_change_percentage = 100 * (f.InterbankRate - history[i - 1].InterbankRate) / history[i - 1].InterbankRate;
+                                        interest_rate_change=f.InterbankRate - history[i - 1].InterbankRate;
                                     }
                                     else {
-                                        interest_change_percentrage = 0;
+                                        interest_rate_change_percentage = 0;
+                                        interest_rate_change=0;
                                     }
                                 }
-                                interest_change_percentrage=Math.round(interest_change_percentrage*10000)/10000;
-                                console.log(interest_change_percentrage);
-                                history[i].interest_change_percentrage = interest_change_percentrage;
-                                storeRaw(freq, symbol, date, f, interest_change_percentrage);
+                                interest_rate_change_percentage = Math.round(interest_rate_change_percentage * 10000) / 10000;
+                                interest_rate_change = Math.round(interest_rate_change * 10000) / 10000;
+                            
+                                // console.log(interest_rate_change_percentage);
+                                history[i].interest_rate_change_percentage = interest_rate_change_percentage;
+                                history[i].interest_rate_change = interest_rate_change;
+                               
+                                storeRaw(freq, symbol, date, f, interest_rate_change_percentage,interest_rate_change);;
 
 
                                 if (freq === 'daily') {
@@ -107,9 +117,11 @@ exports.get = () => {
                                             var symbol_inner = history[i - 1].symbol;
                                             var week = history[i - 1].week;
                                             var year;
-                                            var change = history[i - 1].interest_change_percentrage;
+                                            var interest_rate = history[i-1].InterbankRate;
+                                            var interest_rate_change_percentage = history[i - 1].interest_rate_change_percentage;
                                             var month_int = history[i - 1].month;
-                                            var rate;
+                                            var interest_rate_change;
+                                            var date = history[i - 1].date.unix();
 
                                             if (history[i - 1].date.startOf('isoWeek').year() != history[i - 1].date.endOf('isoWeek').year()) {
                                                 if (history[i - 1].week === 1) {
@@ -124,18 +136,20 @@ exports.get = () => {
                                             }
 
                                             if (i > 0 && history[i - 1].symbol === history[i].symbol) {
-                                                rate = Math.round((history[i].InterbankRate - history[i - 1].InterbankRate)*10000)/10000;
+                                                interest_rate_change = Math.round((history[i].InterbankRate - history[i - 1].InterbankRate) * 10000) / 10000;
                                             }
                                             else {
-                                                rate = 0;
+                                                interest_rate_change = 0;
                                             }
                                             db.get().collection('currencyWeeklyCollection').insert({
                                                 symbol: history[i - 1].symbol,
-                                                change: change,
                                                 week: week,
                                                 year: year,
                                                 month: month_int,
-                                                rate: rate
+                                                date: date,
+                                                interest_rate: interest_rate,
+                                                interest_rate_change: interest_rate_change,
+                                                interest_rate_change_percentage:interest_rate_change_percentage
                                             }, function (err, data) {
                                                 if (!err) {
                                                     if (data.ops[0].week === 1) {
@@ -144,20 +158,20 @@ exports.get = () => {
                                                                 // console.log(res, res.rate);
                                                                 // console.log(data.ops[0].rate);
                                                                 // console.log(data.ops[0].rate);
-                                                                db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { weeklyChange: Math.round((data.ops[0].rate - res.rate) * 10000) / 10000 } }, function (err) {
-                                                                    // console.log(err,'inserted');
+                                                                db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { interest_rate_change_weekly: Math.round((data.ops[0].interest_rate - res.interest_rate) * 10000) / 10000 } }, function (err) {
+                                                                    console.log(err,'inserted');
                                                                 });
                                                             }
                                                             else {
 
                                                                 db.get().collection('currencyWeeklyCollection').findOne({ symbol: data.ops[0].symbol, week: 52, year: data.ops[0].year - 1 }, function (err, res) {
                                                                     if (res) {
-                                                                        db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { weeklyChange: Math.round((data.ops[0].rate - res.rate) * 10000) / 10000 } }, function (err) {
+                                                                        db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { interest_rate_change_weekly: Math.round((data.ops[0].interest_rate - res.interest_rate) * 10000) / 10000 } }, function (err) {
                                                                             // console.log(err,'inserted');
                                                                         });
                                                                     }
                                                                     else {
-                                                                        db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { weeklyChange: 0 } }, function (err) {
+                                                                        db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { interest_rate_change_weekly: 0 } }, function (err) {
                                                                             // console.log(err,'inserted');
                                                                         });
                                                                     }
@@ -171,7 +185,7 @@ exports.get = () => {
                                                                 // console.log(res, res.rate);
                                                                 // console.log(data.ops[0].rate);
                                                                 // console.log(data.ops[0].rate);
-                                                                db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { weeklyChange: Math.round((data.ops[0].rate - res.rate) * 10000) / 10000 } }, function (err) {
+                                                                db.get().collection('currencyWeeklyCollection').update({ _id: data.ops[0]._id }, { $set: { interest_rate_change_weekly: Math.round((data.ops[0].interest_rate - res.interest_rate) * 10000) / 10000 } }, function (err) {
                                                                     // console.log(err,'inserted');
                                                                 });
                                                             }
@@ -184,7 +198,7 @@ exports.get = () => {
                                         }
                                     }
                                 }
-                                
+
 
                             });
                         };
