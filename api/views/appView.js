@@ -145,17 +145,9 @@ exports.sendCurrencyData = (req, res, body, results) => {
                                     }
 
                                     if (body.minValChange) {
-                                        if (index> 0) {
-                                            
-                                            if (results[freq][index].rate- data[i][j - 1][element].rate < body.minValChange) {
-                                                flag.val = false;
-                                            }
-                                            if (results[freq][index] === results[freq][index]) {
-
-                                            }
-
+                                        if (data[i][j][element].weeklyChange < body.minValChange) {
+                                            flag.val = false;
                                         }
-
                                     }
 
                                     if (flag.per && flag.prob && flag.val) {
