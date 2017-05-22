@@ -66,7 +66,7 @@ exports.sendCurrencyData = (req, res, body, results) => {
                         data[currentIndex][val.week][val.symbol].interest_rate_change = val.interest_rate_change;
                         data[currentIndex][val.week][val.symbol].interest_change_weekly = val.interest_change_weekly;
 
-                        if (val.interest_change_percentage >= 0) {
+                        if (val.interest_rate_change_percentage >= 0) {
                             data[currentIndex][val.week][val.symbol].positiveCount++;
                         }
                         else {
@@ -97,7 +97,7 @@ exports.sendCurrencyData = (req, res, body, results) => {
                         data[currentIndex][val.month_int][val.symbol].sum += val.interest_rate_change_percentage;
                         data[currentIndex][val.month_int][val.symbol].interest_rate_change = val.interest_rate_change;
 
-                        if (val.interest_change_percentage >= 0) {
+                        if (val.interest_rate_change_percentage >= 0) {
                             data[currentIndex][val.month_int][val.symbol].positiveCount++;
                         }
                         else {
@@ -108,6 +108,19 @@ exports.sendCurrencyData = (req, res, body, results) => {
             }
 
             // console.log(val.month_int, "month int");
+
+            // for (i = 1; i < 6; i++) {
+            //     var startYear = currentYear - i * 5;
+            //     for (j = startYear; j < currentYear; j++) {
+            //         if (val.year >= startYear) {
+            //             if (!data[startYear][val.week]) {
+            //                 data[startYear][val.week] = 0
+            //             }
+            //             data[startYear][val.week]+=val.interest_rate_change_percentage;
+                        
+            //         }
+            //     }
+            // }
         });
         for (i in data) {
             if (data.hasOwnProperty(i)) {
