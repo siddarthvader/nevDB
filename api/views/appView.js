@@ -117,7 +117,7 @@ exports.sendCurrencyData = (req, res, body, results) => {
             //                 data[startYear][val.week] = 0
             //             }
             //             data[startYear][val.week]+=val.interest_rate_change_percentage;
-                        
+
             //         }
             //     }
             // }
@@ -204,6 +204,57 @@ exports.sendCurrencyData = (req, res, body, results) => {
     writeHead(res, responseObj, 200, 'text/html');
 }
 
+exports.sendEquitiesData = (req, res, results) => {
+
+    results.datatable.data.forEach(function (dataset, i) {
+        // console.log(i);
+        var rate_change = 0;
+        var rate_change_percentage = 0;
+        var thisDate = moment(dataset[1], 'YYYY-MM-DDDD');
+        var isoYear = thisDate.year();
+        var year = thisDate.isoWeekYear();
+        if (i == 0) {
+
+        }
+        else {
+            rate_change = dataset[2] - results.datatable.data[i - 1][2];
+            rate_change_percentage = 100 * (rate_change / results.datatable.data[i - 1][2]);
+            rate_change = Math.round(rate_change * 10000) / 1000;
+            rate_change_percentage = Math.round(rate_change_percentage * 10000) / 1000;
+        }
+
+        results.datatable.data[i].push(rate_change);
+        results.datatable.data[i].push(rate_change_percentage);
+        results.datatable.data[i].push(year);
+
+        //  [0]- ticker
+        // [1]- data
+        // [2] close value
+        //  [3]- change
+        // [4] - percentage change
+        // [5] - weekly change
+
+
+    });
+
+    let responseObj = {
+        message: 'success',
+        status: 200,
+        data: results
+    };
+    writeHead(res, responseObj, 200, 'text/html');
+}
+
+
+exports.sendFuturesData = (req, res, results) => {
+
+    let responseObj = {
+        message: 'success',
+        status: 200,
+        data: results
+    };
+    writeHead(res, responseObj, 200, 'text/html');
+}
 
 let writeHead = (res, responseObj, status, contentType) => {
     //console.log('writing head');

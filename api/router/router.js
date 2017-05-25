@@ -18,6 +18,7 @@ exports.get = (req, res) => {
                 console.log('headers validated yead');
                 switch (path + '_' + req.method) {
                     case ('/email_POST'):
+
                     case '/pwd_POST':
                     case '/validateToken_POST':
                     case '/logout_POST':
@@ -35,6 +36,8 @@ exports.get = (req, res) => {
                         break;
                     case '/scrapeZacksForEPS_POST':
                     case '/currencyData_POST':
+                    case '/getEquitiesData_POST':
+                    case '/getFuturesData_POST':
                         require('../controllers/appController.js').get(req, res, path);
                         break;
                          

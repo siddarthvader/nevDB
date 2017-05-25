@@ -10,6 +10,12 @@ exports.get = (req, res, path) => {
         case '/currencyData':
             currencyData(req, res);
             break;
+        case '/getEquitiesData':
+            getEquitiesData(req, res);
+            break;
+        case '/getFuturesData':
+            getFuturesData(req, res);
+            break;
         default:
             break;
     }
@@ -34,13 +40,41 @@ var currencyData = (req, res) => {
     let body = '';
     req.on('data', (data) => {
         body += data;
-        console.log(data,"data");
+        console.log(data, "data");
     });
     req.on('end', function () {
-        console.log(body,"body");
-        appModal.getCurrencyDatafromDB(JSON.parse(body),(results) => {
-            appView.sendCurrencyData(req,res,JSON.parse(body),results);
+        console.log(body, "body");
+        appModal.getCurrencyDatafromDB(JSON.parse(body), (results) => {
+            appView.sendCurrencyData(req, res, JSON.parse(body), results);
         })
     });
+};
 
+
+var getEquitiesData = (req, res) => {
+    let body = '';
+    req.on('data', (data) => {
+        body += data;
+        console.log(data, "data");
+    });
+    req.on('end', function () {
+        console.log(body, "body");
+        appModal.getEquitiesDataFromQuandl(JSON.parse(body), (results) => {
+            appView.sendEquitiesData(req, res, results);
+        })
+    });
+};
+
+var getFuturesData = (req, res) => {
+    let body = '';
+    req.on('data', (data) => {  
+        body += data;
+        console.log(data, "data");
+    });
+    req.on('end', function () {
+        console.log(body, "body");
+        appModal.getFuturesDataFromQuandl(JSON.parse(body), (results) => {
+            appView.sendFuturesData(req, res, results);
+        })
+    });
 };

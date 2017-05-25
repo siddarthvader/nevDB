@@ -122,18 +122,19 @@ exports.get = () => {
                                             var month_int = history[i - 1].month;
                                             var interest_rate_change;
                                             var date = history[i - 1].date.unix();
+                                            year=history[i-1].date.isoWeekYear();
 
-                                            if (history[i - 1].date.startOf('isoWeek').year() != history[i - 1].date.endOf('isoWeek').year()) {
-                                                if (history[i - 1].week === 1) {
-                                                    year = history[i - 1].date.endOf('isoWeek').year();
-                                                }
-                                                else {
-                                                    year = history[i - 1].date.startOf('isoWeek').year()
-                                                }
-                                            }
-                                            else {
-                                                year = history[i - 1].year;
-                                            }
+                                            // if (history[i - 1].date.startOf('isoWeek').year() != history[i - 1].date.endOf('isoWeek').year()) {
+                                            //     if (history[i - 1].week === 1) {
+                                            //         year = history[i - 1].date.endOf('isoWeek').year();
+                                            //     }
+                                            //     else {
+                                            //         year = history[i - 1].date.startOf('isoWeek').year()
+                                            //     }
+                                            // }
+                                            // else {
+                                            //     year = history[i - 1].year;
+                                            // }
 
                                             if (i > 0 && history[i - 1].symbol === history[i].symbol) {
                                                 interest_rate_change = Math.round((history[i].InterbankRate - history[i - 1].InterbankRate) * 10000) / 10000;
