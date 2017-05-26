@@ -24,8 +24,9 @@ exports.getCurrencyDatafromDB = (body, done) => {
 };
 
 exports.getEquitiesDataFromQuandl = (body, done) => {
-    var symbol = body.symbols[0] || 'AAPL';
-    var url = "https://www.quandl.com/api/v3/datatables/ZACKS/P.json?qopts.columns=ticker,date,close,volume&ticker=" + symbol + "&date.gte=1985-01-01&date.lt=2016-12-31&api_key=xL_9oFs5gTigbat_D6RH";
+    var symbol = body.symbols.toString() || 'AAPL';
+    var url="https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?qopts.columns=ticker,date,close,volume&date.gte=19860101&date.lt=20160101&ticker="+symbol+"&api_key=xL_9oFs5gTigbat_D6RH";
+    // var url = "https://www.quandl.com/api/v3/datatables/ZACKS/P.json?qopts.columns=ticker,date,close,volume&ticker=" + symbol + "&date.gte=1985-01-01&date.lt=2016-12-31&api_key=xL_9oFs5gTigbat_D6RH";
     request.get({
         url: url,
         json: true
