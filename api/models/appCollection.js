@@ -3,6 +3,8 @@ var db = require('./../db');
 var moment = require('moment');
 var request = require('request');
 const quandl_api_key = "xL_9oFs5gTigbat_D6RH";
+var async = require('async');
+var https = require('https');
 
 exports.scrapeEPSFromZacks = (body, done) => {
     console.log(body, "body");
@@ -25,13 +27,13 @@ exports.getCurrencyDatafromDB = (body, done) => {
 
 exports.getEquitiesDataFromQuandl = (body, done) => {
     var symbol = body.symbols.toString() || 'AAPL';
-    var url="https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?qopts.columns=ticker,date,adj_close,adj_volume&date.gte=19860101&date.lt=20160101&ticker="+symbol+"&api_key=xL_9oFs5gTigbat_D6RH";
+    var url = "https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?qopts.columns=ticker,date,adj_close,adj_volume&date.gte=19860101&date.lt=20160101&ticker=" + symbol + "&api_key=xL_9oFs5gTigbat_D6RH";
     // var url = "https://www.quandl.com/api/v3/datatables/ZACKS/P.json?qopts.columns=ticker,date,close,volume&ticker=" + symbol + "&date.gte=1985-01-01&date.lt=2016-12-31&api_key=xL_9oFs5gTigbat_D6RH";
     request.get({
         url: url,
         json: true
     }, function (err, data) {
-        console.log(data.body);
+        // console.log(data.body);
         done(data.body);
     });
 
@@ -39,13 +41,64 @@ exports.getEquitiesDataFromQuandl = (body, done) => {
 };
 
 exports.getFuturesDataFromQuandl = (body, done) => {
-    console.log(body.symbols,"<<");
-    var url = "https://www.quandl.com/api/v1/datasets/CHRIS/ICE_CT1.json?api_key=xL_9oFs5gTigbat_D6RH&transform=rdiff&collapse=weekly";
-    request.get({
-        url: url,
-        json: true
-    }, function (err, data) {
-        console.log(data.body);
-        done(data.body);
-    });
+    console.log(body.code, "<<");
+    var completed_requests = 0;
+    var urls = body.code;
+    var responses = {
+        datatable:{
+            data:[]
+        }
+    };
+    urls.forEach(function (code) {
+        url = "https://www.quandl.com/api/v1/datasets/" + code + "1.json?api_key=xL_9oFs5gTigbat_D6RH&transform=rdiff&collapse=daily"
+        console.log(url);
+        request.get({
+            url: url,
+            json: true
+        }, function (err, res) {
+            let code = res.body.code;
+            let date_index;
+            let close_index;
+            let volumn_index;
+            let settle_index;
+           
+            res.body.column_names.forEach(function (column, i) {
+                if (column === 'Date') {
+                    date_index = i;
+                }
+                if (column == 'Settle') {
+                    settle_index = i;
+                }
+                if (column == 'Close') {
+                    close_index = i;
+                }
+                if (column === 'Volume') {
+                    volumn_index = i;
+                }
+            });
+
+
+            console.log(date_index,close_index,volumn_index,settle_index);
+            var temp=[];
+
+            res.body.data.forEach(function (data, i) {
+                res.body.data[i].push(code);
+                temp[i]=[];
+                temp[i].push(code,data[date_index],data[close_index]?data[close_index]:data[settle_index],data[volumn_index]);    
+            });
+
+            if (!responses.datatable.data) {
+                responses.datatable.data = temp;
+            }
+            else {
+                responses.datatable.data = responses.datatable.data.concat(temp);
+            }
+
+            if (completed_requests++ == urls.length - 1) {
+                // All downloads are completed
+                // console.log(responses);
+                done(responses);
+            }
+        });
+    })
 };
