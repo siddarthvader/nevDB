@@ -74,7 +74,7 @@ var getFuturesData = (req, res) => {
     req.on('end', function () {
         console.log(body, "body");
         appModal.getFuturesDataFromQuandl(JSON.parse(body), (results) => {
-            appView.sendFuturesData(req, res, results);
+            appView.sendFuturesData(req, res,JSON.parse(body), results);
         })
     });
 };
