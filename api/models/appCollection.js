@@ -39,6 +39,7 @@ exports.getEquitiesDataFromQuandl = (body, done) => {
 };
 
 exports.getFuturesDataFromQuandl = (body, done) => {
+    console.log(body.symbols,"<<");
     var url = "https://www.quandl.com/api/v1/datasets/CHRIS/ICE_CT1.json?api_key=xL_9oFs5gTigbat_D6RH&transform=rdiff&collapse=weekly";
     request.get({
         url: url,

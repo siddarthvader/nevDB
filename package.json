@@ -17,6 +17,7 @@
   "author": "siddharth jain",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.4.1",
     "fast-csv": "^2.4.0",
     "jsonwebtoken": "^7.4.0",
     "moment": "^2.18.1",
