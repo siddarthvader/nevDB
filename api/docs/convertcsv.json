@@ -1,0 +1,366 @@
+[
+ {
+   "Symbol": "B",
+   "Exchange": "ICE",
+   "Name": "Brent Crude Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/B"
+ },
+ {
+   "Symbol": "T",
+   "Exchange": "ICE",
+   "Name": "WTI Crude Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/T"
+ },
+ {
+   "Symbol": "G",
+   "Exchange": "ICE",
+   "Name": "Gas Oil Futures",
+   "Months": "KMNQUVXZ",
+   "Quandl Code": "ICE/G"
+ },
+ {
+   "Symbol": "ULS",
+   "Exchange": "ICE",
+   "Name": "Low Sulphur Gasoil Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/ULS"
+ },
+ {
+   "Symbol": "N",
+   "Exchange": "ICE",
+   "Name": "NYH RBOB Gasoline",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/N"
+ },
+ {
+   "Symbol": "O",
+   "Exchange": "ICE",
+   "Name": "Heating Oil Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/O"
+ },
+ {
+   "Symbol": "M",
+   "Exchange": "ICE",
+   "Name": "UK Natural Gas Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/M"
+ },
+ {
+   "Symbol": "ATW",
+   "Exchange": "ICE",
+   "Name": "Rotterdam Coal Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/ATW"
+ },
+ {
+   "Symbol": "AFR",
+   "Exchange": "ICE",
+   "Name": "Richards Bay Coal Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/AFR"
+ },
+ {
+   "Symbol": "NCF",
+   "Exchange": "ICE",
+   "Name": "Newcastle Coal Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/NCF"
+ },
+ {
+   "Symbol": "C",
+   "Exchange": "ICE",
+   "Name": "ECX EUA Futures",
+   "Months": "HJKMUZ",
+   "Quandl Code": "ICE/C"
+ },
+ {
+   "Symbol": "CEU",
+   "Exchange": "ICE",
+   "Name": "ECX EUAA Futures",
+   "Months": "HJKMUZ",
+   "Quandl Code": "ICE/CEU"
+ },
+ {
+   "Symbol": "CER",
+   "Exchange": "ICE",
+   "Name": "ECX CER Emission Futures",
+   "Months": "HJKMUZ",
+   "Quandl Code": "ICE/CER"
+ },
+ {
+   "Symbol": "ERU",
+   "Exchange": "ICE",
+   "Name": "ECX ERU Emission Futures",
+   "Months": "Z",
+   "Quandl Code": "ICE/ERU"
+ },
+ {
+   "Symbol": "TIB",
+   "Exchange": "ICE",
+   "Name": "WTI vs Brent Spread Option",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/TIB"
+ },
+ {
+   "Symbol": "BPB",
+   "Exchange": "ICE",
+   "Name": "Endex Belgian Power Base Load Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/BPB"
+ },
+ {
+   "Symbol": "DPB",
+   "Exchange": "ICE",
+   "Name": "Endex Dutch Power Base Load Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/DPB"
+ },
+ {
+   "Symbol": "DPA",
+   "Exchange": "ICE",
+   "Name": "Endex Dutch Power Peak Load (8-20) Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/DPA"
+ },
+ {
+   "Symbol": "TFM",
+   "Exchange": "ICE",
+   "Name": "Endex Dutch TTF Gas Base Load Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/TFM"
+ },
+ {
+   "Symbol": "GNM",
+   "Exchange": "ICE",
+   "Name": "Endex German NCG Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/GNM"
+ },
+ {
+   "Symbol": "GER",
+   "Exchange": "ICE",
+   "Name": "Endex German GASPOOL Futures",
+   "Months": "FGHJKMNQUVXZ",
+   "Quandl Code": "ICE/GER"
+ },
+ {
+   "Symbol": "CC",
+   "Exchange": "ICE",
+   "Name": "Cocoa Futures",
+   "Months": "HKNUZ",
+   "Quandl Code": "ICE/CC"
+ },
+ {
+   "Symbol": "KC",
+   "Exchange": "ICE",
+   "Name": "Coffee C Futures",
+   "Months": "HKNUZ",
+   "Quandl Code": "ICE/KC"
+ },
+ {
+   "Symbol": "CT",
+   "Exchange": "ICE",
+   "Name": "Cotton No. 2 Futures",
+   "Months": "HKNVZ",
+   "Quandl Code": "ICE/CT"
+ },
+ {
+   "Symbol": "OJ",
+   "Exchange": "ICE",
+   "Name": "Orange Juice Futures",
+   "Months": "FHKNUX",
+   "Quandl Code": "ICE/OJ"
+ },
+ {
+   "Symbol": "SB",
+   "Exchange": "ICE",
+   "Name": "Sugar No. 11 Futures",
+   "Months": "HKNV",
+   "Quandl Code": "ICE/SB"
+ },
+ {
+   "Symbol": "SF",
+   "Exchange": "ICE",
+   "Name": "Sugar No. 16 Futures",
+   "Months": "FHKNUX",
+   "Quandl Code": "ICE/SF"
+ },
+ {
+   "Symbol": "ICN",
+   "Exchange": "ICE",
+   "Name": "Corn Futures",
+   "Months": "HKNUZ",
+   "Quandl Code": "ICE/ICN"
+ },
+ {
+   "Symbol": "IS",
+   "Exchange": "ICE",
+   "Name": "Soybean Futures",
+   "Months": "FHKNQUX",
+   "Quandl Code": "ICE/IS"
+ },
+ {
+   "Symbol": "ISM",
+   "Exchange": "ICE",
+   "Name": "Soybean Meal futures",
+   "Months": "FHKNQUVZ",
+   "Quandl Code": "ICE/ISM"
+ },
+ {
+   "Symbol": "IBO",
+   "Exchange": "ICE",
+   "Name": "Soybean Oil Futures",
+   "Months": "FHKNQUVZ",
+   "Quandl Code": "ICE/IBO"
+ },
+ {
+   "Symbol": "IW",
+   "Exchange": "ICE",
+   "Name": "Wheat Futures",
+   "Months": "HKNUZ",
+   "Quandl Code": "ICE/IW"
+ },
+ {
+   "Symbol": "RS",
+   "Exchange": "ICE",
+   "Name": "Canola Futures",
+   "Months": "FHKNX",
+   "Quandl Code": "ICE/RS"
+ },
+ {
+   "Symbol": "BW",
+   "Exchange": "ICE",
+   "Name": "Barley Futures",
+   "Months": "HKNVZ",
+   "Quandl Code": "ICE/BW"
+ },
+ {
+   "Symbol": "DW",
+   "Exchange": "ICE",
+   "Name": "Durum Wheat Futures",
+   "Months": "HKNVZ",
+   "Quandl Code": "ICE/DW"
+ },
+ {
+   "Symbol": "WA",
+   "Exchange": "ICE",
+   "Name": "Milling Wheat Futures",
+   "Months": "HKNVZ",
+   "Quandl Code": "ICE/WA"
+ },
+ {
+   "Symbol": "RF",
+   "Exchange": "ICE",
+   "Name": "Russell 1000 Index Mini Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/RF"
+ },
+ {
+   "Symbol": "TF",
+   "Exchange": "ICE",
+   "Name": "Russell 2000 Index Mini Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/TF"
+ },
+ {
+   "Symbol": "DX",
+   "Exchange": "ICE",
+   "Name": "US Dollar Index Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/DX"
+ },
+ {
+   "Symbol": "SS",
+   "Exchange": "ICE",
+   "Name": "GBP/CHF Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/SS"
+ },
+ {
+   "Symbol": "SY",
+   "Exchange": "ICE",
+   "Name": "GBP/JPY Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/SY"
+ },
+ {
+   "Symbol": "MP",
+   "Exchange": "ICE",
+   "Name": "Sm GBP/USD Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/MP"
+ },
+ {
+   "Symbol": "RV",
+   "Exchange": "ICE",
+   "Name": "Russell 1000 Value Index Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/RV"
+ },
+ {
+   "Symbol": "RG",
+   "Exchange": "ICE",
+   "Name": "Russell 1000 Growth Index Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/RG"
+ },
+ {
+   "Symbol": "P",
+   "Exchange": "ICE",
+   "Name": "UK Peak Electricity Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/P"
+ },
+ {
+   "Symbol": "Y",
+   "Exchange": "ICE",
+   "Name": "UK Base Electricity Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/Y"
+ },
+ {
+   "Symbol": "AR",
+   "Exchange": "ICE",
+   "Name": "AUSTRALIAN DOLLAR/NEW ZEALAND DOLLAR FUTURES",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/AR"
+ },
+ {
+   "Symbol": "ZJ",
+   "Exchange": "ICE",
+   "Name": "New Zealand Dollar/Japanese Yen Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/ZJ"
+ },
+ {
+   "Symbol": "NJ",
+   "Exchange": "ICE",
+   "Name": " Norwegian Krone/Swedish Krona Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/NJ"
+ },
+ {
+   "Symbol": "KRU",
+   "Exchange": "ICE",
+   "Name": "Russian Ruble/US Dollar Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/KRU"
+ },
+ {
+   "Symbol": "ZR",
+   "Exchange": "ICE",
+   "Name": "US Dollar/South African Rand Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/ZR"
+ },
+ {
+   "Symbol": "NT",
+   "Exchange": "ICE",
+   "Name": "US Dollar/Norwegian Krone Futures",
+   "Months": "MUZ",
+   "Quandl Code": "ICE/NT"
+ }
+]

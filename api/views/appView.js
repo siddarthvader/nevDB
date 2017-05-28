@@ -247,7 +247,8 @@ exports.sendEquitiesData = (req, res, body, results) => {
                     interest_rate_change: results.datatable.data[i - 1][7],
                     interest_rate_change_percentage: results.datatable.data[i - 1][8],
                     week: results.datatable.data[i - 1][5],
-                    volume: results.datatable.data[i - 1][3]
+                    volume: results.datatable.data[i - 1][3],
+                    ticker: results.datatable.data[i-1][0]
                 };
             }
 
@@ -276,7 +277,8 @@ exports.sendEquitiesData = (req, res, body, results) => {
                     interest_rate_change: results.datatable.data[i - 1][7],
                     interest_rate_change_percentage: results.datatable.data[i - 1][8],
                     month: results.datatable.data[i - 1][6],
-                    volume: results.datatable.data[i - 1][3]
+                    volume: results.datatable.data[i - 1][3],
+                    ticker:results.datatable.data[i-1][0]
                 };
             }
 
@@ -309,34 +311,38 @@ exports.sendEquitiesData = (req, res, body, results) => {
                         for (j in modified[freq][year][i]) {
                             if (modified[freq][year][i].hasOwnProperty(j)) {
                                 // console.log(modified[freq][year][i][j]);
-                                for (k = 0; k < 6; k++) {
+                                for (k = 1; k <= 6; k++) {
                                     var currentIndex = currentYear - k * 5;
-                                    if (!refined[freq][currentIndex]) {
-                                        refined[freq][currentIndex] = {};
+
+                                    if (year > currentIndex) {
+                                        if (!refined[freq][currentIndex]) {
+                                            refined[freq][currentIndex] = {};
+                                        }
+
+                                        if (!refined[freq][currentIndex][i]) {
+                                            refined[freq][currentIndex][i] = {};
+                                        }
+                                        if (!refined[freq][currentIndex][i][j]) {
+                                            refined[freq][currentIndex][i][j] = {};
+                                            refined[freq][currentIndex][i][j].sum = 0;
+                                            refined[freq][currentIndex][i][j].count = 0;
+                                            refined[freq][currentIndex][i][j].positiveCount = 0;
+                                            refined[freq][currentIndex][i][j].negativeCount = 0;
+                                            refined[freq][currentIndex][i][j].sum_of_rates = 0;
+                                            refined[freq][currentIndex][i][j].sum_of_volume = 0;
+                                        }
+                                        refined[freq][currentIndex][i][j].sum += modified[freq][year][i][j].interest_rate_change_percentage;
+                                        refined[freq][currentIndex][i][j].count++;
+                                        refined[freq][currentIndex][i][j].sum_of_rates += modified[freq][year][i][j].interest_rate
+                                        refined[freq][currentIndex][i][j].sum_of_volume += modified[freq][year][i][j].volume;
+                                        if (modified[freq][year][i][j].interest_rate_change_percentage >= 0) {
+                                            refined[freq][currentIndex][i][j].positiveCount++;
+                                        }
+                                        else {
+                                            refined[freq][currentIndex][i][j].negativeCount++
+                                        }
                                     }
 
-                                    if (!refined[freq][currentIndex][i]) {
-                                        refined[freq][currentIndex][i] = {};
-                                    }
-                                    if (!refined[freq][currentIndex][i][j]) {
-                                        refined[freq][currentIndex][i][j] = {};
-                                        refined[freq][currentIndex][i][j].sum = 0;
-                                        refined[freq][currentIndex][i][j].count = 0;
-                                        refined[freq][currentIndex][i][j].positiveCount = 0;
-                                        refined[freq][currentIndex][i][j].negativeCount = 0;
-                                        refined[freq][currentIndex][i][j].sum_of_rates = 0;
-                                        refined[freq][currentIndex][i][j].sum_of_volume = 0;
-                                    }
-                                    refined[freq][currentIndex][i][j].sum += modified[freq][year][i][j].interest_rate_change_percentage;
-                                    refined[freq][currentIndex][i][j].count++;
-                                    refined[freq][currentIndex][i][j].sum_of_rates += modified[freq][year][i][j].interest_rate
-                                    refined[freq][currentIndex][i][j].sum_of_volume += modified[freq][year][i][j].volume;
-                                    if (modified[freq][year][i][j].interest_rate_change_percentage >= 0) {
-                                        refined[freq][currentIndex][i][j].positiveCount++;
-                                    }
-                                    else {
-                                        refined[freq][currentIndex][i][j].negativeCount++
-                                    }
 
                                     // console.log(modified[freq][year][i][j],"----");
 
@@ -361,8 +367,9 @@ exports.sendEquitiesData = (req, res, body, results) => {
                         for (j in refined[freq][year][i]) {
                             if (refined[freq][year][i].hasOwnProperty(j)) {
                                 // console.log(refined[freq][year][i][j]);
-                                for (k = 0; k < 6; k++) {
+                                for (k = 1; k <= 6; k++) {
                                     var currentIndex = currentYear - k * 5;
+                                    if(year>currentIndex){
 
                                     if (refined[freq][currentIndex][i][j]) {
                                         if (refined[freq][currentIndex][i][j].sum > 0) {
@@ -431,7 +438,7 @@ exports.sendEquitiesData = (req, res, body, results) => {
                                             }
                                         }
 
-                                        console.log(refined[freq][currentIndex][i][j].sum_of_volume / refined[freq][currentIndex][i][j].count,"00-----")
+                                        console.log(refined[freq][currentIndex][i][j].sum_of_volume / refined[freq][currentIndex][i][j].count, "00-----")
 
                                         if (body.cap) {
                                             if (refined[freq][currentIndex][i][j].sum_of_cap / refined[freq][currentIndex][i][j].count < body.cap) {
@@ -439,7 +446,7 @@ exports.sendEquitiesData = (req, res, body, results) => {
                                             }
                                         }
 
-                                    
+
 
                                         if (flag.per && flag.prob && flag.val && flag.vol && flag.cap) {
 
@@ -449,6 +456,8 @@ exports.sendEquitiesData = (req, res, body, results) => {
                                         else {
                                             delete finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i][j];
                                         }
+                                    }
+
 
                                     }
 
