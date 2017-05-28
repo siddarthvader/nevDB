@@ -198,9 +198,10 @@ exports.sendEquitiesData = (req, res, body, results) => {
         message: 'success',
         status: 200
     };
+    let dates = {};
     if (results.datatable.data) {
         results.datatable.data.forEach(function (dataset, i) {
-            // console.log(i);
+
             var rate_change = 0;
             var rate_change_percentage = 0;
             var thisDate = moment(dataset[1], 'YYYY-MM-DD');
@@ -211,12 +212,18 @@ exports.sendEquitiesData = (req, res, body, results) => {
             results.datatable.data[i].push(year);
             results.datatable.data[i].push(week);
             results.datatable.data[i].push(month);
+            if (!dates[dataset[0]]) {
+                dates[dataset[0]] = thisDate.format('YYYY-MM-DD');
+            }
+
             if (i == 0) {
                 results.datatable.data[i].push(rate_change);
                 results.datatable.data[i].push(rate_change_percentage);
-
             }
             else {
+
+
+
                 rate_change = dataset[2] - results.datatable.data[i - 1][2];
                 rate_change_percentage = 100 * (rate_change / results.datatable.data[i - 1][2]);
                 rate_change = Math.round(rate_change * 10000) / 10000;
@@ -484,6 +491,7 @@ exports.sendEquitiesData = (req, res, body, results) => {
     else {
         responseObj = results.datatable.error;
     }
+    responseObj.dates=dates;
     writeHead(res, responseObj, 200, 'text/html');
 }
 
@@ -501,7 +509,8 @@ exports.sendFuturesData = (req, res, body, results) => {
     var currentYear = moment().year() - 1;
     let responseObj = {
         message: 'success',
-        status: 200
+        status: 200,
+        dates: results.datatable.dates
     };
     if (results.datatable.data) {
         results.datatable.data.forEach(function (dataset, i) {

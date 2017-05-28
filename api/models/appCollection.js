@@ -27,7 +27,7 @@ exports.getCurrencyDatafromDB = (body, done) => {
 
 exports.getEquitiesDataFromQuandl = (body, done) => {
     var symbol = body.symbols.toString() || 'AAPL';
-    var url = "https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?qopts.columns=ticker,date,adj_close,adj_volume&date.gte=19860101&date.lt=20160101&ticker=" + symbol + "&api_key=xL_9oFs5gTigbat_D6RH";
+    var url = "https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?qopts.columns=ticker,date,adj_close,adj_volume&date.gte=19860101&date.lt=20161231&ticker=" + symbol + "&api_key=xL_9oFs5gTigbat_D6RH";
     // var url = "https://www.quandl.com/api/v3/datatables/ZACKS/P.json?qopts.columns=ticker,date,close,volume&ticker=" + symbol + "&date.gte=1985-01-01&date.lt=2016-12-31&api_key=xL_9oFs5gTigbat_D6RH";
     request.get({
         url: url,
@@ -45,8 +45,9 @@ exports.getFuturesDataFromQuandl = (body, done) => {
     var completed_requests = 0;
     var urls = body.code;
     var responses = {
-        datatable:{
-            data:[]
+        datatable: {
+            data: [],
+            dates: {}
         }
     };
     urls.forEach(function (code) {
@@ -61,7 +62,8 @@ exports.getFuturesDataFromQuandl = (body, done) => {
             let close_index;
             let volumn_index;
             let settle_index;
-           
+
+            console.log(res.body.column_names,code);
             res.body.column_names.forEach(function (column, i) {
                 if (column === 'Date') {
                     date_index = i;
@@ -77,14 +79,12 @@ exports.getFuturesDataFromQuandl = (body, done) => {
                 }
             });
 
-
-            console.log(date_index,close_index,volumn_index,settle_index);
-            var temp=[];
+            var temp = [];
 
             res.body.data.forEach(function (data, i) {
                 res.body.data[i].push(code);
-                temp[i]=[];
-                temp[i].push(code,data[date_index],data[close_index]?data[close_index]:data[settle_index],data[volumn_index]);    
+                temp[i] = [];
+                temp[i].push(code, data[date_index], data[close_index] ? data[close_index] : data[settle_index], data[volumn_index]);
             });
 
             if (!responses.datatable.data) {
@@ -93,6 +93,8 @@ exports.getFuturesDataFromQuandl = (body, done) => {
             else {
                 responses.datatable.data = responses.datatable.data.concat(temp);
             }
+            responses.datatable.dates[code]=res.body.from_date;
+           
 
             if (completed_requests++ == urls.length - 1) {
                 // All downloads are completed
