@@ -156,6 +156,25 @@ exports.sendNotesToClient = (req, res, result) => {
     writeHead(res, responseObj, 200, 'text/plain');
 };
 
+exports.editNoteResponse = (req, res, result) => {
+    let responseObj = {
+        data:{
+            message:"success"
+        }
+    };
+    writeHead(res, responseObj, 200, 'text/plain');
+};
+
+exports.deleteNoteResponse = (req, res, result) => {
+    let responseObj = {
+        data:{
+            message:"success"
+        }
+    };
+    writeHead(res, responseObj, 200, 'text/plain');
+};
+
+
 exports.deletTokenResToClient = (req, res) => {
     let responseObj = {
         data: {

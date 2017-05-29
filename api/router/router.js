@@ -15,7 +15,7 @@ exports.get = (req, res) => {
         console.log(req.headers.token, 'headers', path);
         validateHeaders(req, path, function (results) {
             if (results) {
-                console.log('headers validated yead');
+                // console.log('headers validated yead');
                 switch (path + '_' + req.method) {
                     case ('/email_POST'):
 
@@ -32,6 +32,8 @@ exports.get = (req, res) => {
                     case "/getNote_POST":
                     case "/deleteTokens_POST":
                     case "/changePwd_POST":
+                    case "/deleteNote_POST":
+                    case "/editNote_POST":
                         require('../controllers/userController.js').get(req, res, path);
                         break;
                     case '/scrapeZacksForEPS_POST':
