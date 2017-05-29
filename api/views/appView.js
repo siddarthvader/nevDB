@@ -799,7 +799,20 @@ exports.sendFuturesData = (req, res, body, results) => {
         responseObj = results.datatable.error;
     }
     writeHead(res, responseObj, 200, 'text/html');
+};
+
+exports.sendWeightageToClient = (req, res,body, html) => {
+    let responseObj = {
+        message: 'success',
+        status: 200,
+        data: {
+            html:html
+        }
+    };
+    writeHead(res, responseObj, 200, 'text/html');
 }
+
+
 
 let writeHead = (res, responseObj, status, contentType) => {
     //console.log('writing head');

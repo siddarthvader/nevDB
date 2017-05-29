@@ -2,7 +2,7 @@
 var http_IP = '127.0.0.1';
 
 http_IP=process.env.IP||http_IP;
-port = process.env.PORT || 3000;
+port = process.env.PORT || 3030;
 var http = require("http");
 var login = require('./api/controllers/loginController.js');
 var url = process.env.MONGODB_URI||'mongodb://localhost:27017/nevDb?authMechanism=DEFAULT&authSource=db';
