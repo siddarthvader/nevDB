@@ -6,7 +6,8 @@ var init=()=>{
     // fetch.weeklyTablePrepare();
     // fetch.monthlyTablePrepare();
     // ofx.get();
-    equities.get();
+    // equities.get();
+    ofx.setMonthlyData();
 }   
 
 init();
