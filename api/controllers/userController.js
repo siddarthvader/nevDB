@@ -2,7 +2,7 @@ var userModel = require('./../models/userCollecton.js');
 var userView = require('./../views/userView.js');
 
 exports.get = (req, res, path) => {
-    //console.log(path, "path");
+    console.log(path, "path");
     switch (path) {
         case '/inviteUser':
             inviteUser(req, res);
@@ -27,6 +27,12 @@ exports.get = (req, res, path) => {
             break;
         case '/changePwd':
             changePwd(req, res);
+            break;
+        case '/editNote':
+            editNote(req, res);
+            break;
+        case '/deleteNote':
+            deleteNote(req, res);
             break;
         default:
             break;
@@ -109,7 +115,6 @@ var getNote = (req, res) => {
     });
 
     req.on('end', function () {
-        console.log(body, "boduy");
         userModel.getNotesByEmail(JSON.parse(body), (results) => {
             //console.log(results, 'sendUserAddDataToClient');
             userView.sendNotesToClient(req, res, results)
@@ -126,7 +131,7 @@ var deleteTokens = (req, res) => {
     });
 
     req.on('end', function () {
-        console.log(body, "boduy");
+ 
         userModel.deleteTokens(JSON.parse(body), (results) => {
             //console.log(results, 'sendUserAddDataToClient');
             userView.deletTokenResToClient(req, res);
@@ -142,10 +147,40 @@ var changePwd = (req, res) => {
     });
 
     req.on('end', function () {
-        console.log(body, "boduy");
         userModel.changePwd(JSON.parse(body), (results) => {
             //console.log(results, 'sendUserAddDataToClient');
-            userView.changePwdResToClient(req, res,results)
+            userView.changePwdResToClient(req, res, results)
+        });
+    })
+};
+
+var editNote = (req, res) => {
+    let body = '';
+    req.on('data', (data) => {
+        body += data;
+        console.log(data)
+    });
+
+    req.on('end', function () {
+        userModel.editNote(JSON.parse(body), (results) => {
+            //console.log(results, 'sendUserAddDataToClient');
+            userView.editNoteResponse(req, res, results)
+        });
+    })
+};
+
+var deleteNote = (req, res) => {
+    console.log('deleting note');;
+    let body = '';
+    req.on('data', (data) => {
+        body += data;
+        console.log(data)
+    });
+
+    req.on('end', function () {
+        userModel.deleteNote(JSON.parse(body), (results) => {
+            //console.log(results, 'sendUserAddDataToClient');
+            userView.deleteNoteResponse(req, res)
         });
     })
 };

@@ -172,6 +172,7 @@ exports.addNewUserToDb = (body, done) => {
                         "browser": null,
                         "jwt": null
 
+
                     }
                 ],
                 "notes": [
@@ -222,8 +223,46 @@ exports.addNote = (body, done) => {
             $push: {
                 notes: {
                     text: body.noteText,
-                    timestamp: moment().unix()
+                    timestamp: body.timestamp
                 }
+            }
+        }, (err, results) => {
+            done();
+        }
+    )
+};
+
+
+exports.deleteNote = (body, done) => {
+    console.log(body, 'deleting note');
+    db.get().collection('loginCollection').update(
+        {
+            email: body.email
+        }, {
+            $pull: {
+                notes: {
+                    timestamp:body.timestamp
+                }
+            }
+        }, (err, results) => {
+            if (!err) {
+                done();
+            }
+
+        }
+    )
+};
+
+exports.editNote = (body, done) => {
+    console.log(body, 'editing note');
+    db.get().collection('loginCollection').update(
+        {
+            email: body.email,
+            "notes.timestamp":body.oldTimestamp
+        }, {
+            $set: {
+                "notes.$.timestamp":body.timestamp,
+                "notes.$.text":body.text
             }
         }, (err, results) => {
             done();
@@ -250,7 +289,7 @@ exports.changePwd = (body, done) => {
         }, {
             password: 1
         }, function (err, results) {
-            console.log(results,"err");
+            console.log(results, "err");
             if (results.password === body.oldPwd) {
                 db.get().collection('loginCollection').update(
                     {
@@ -261,10 +300,10 @@ exports.changePwd = (body, done) => {
                             password: body.newPwd
                         }
                     }, function (err, results) {
-                        if(!err){
+                        if (!err) {
                             done(true);
                         }
-                        else{
+                        else {
                             done('error');
                         }
                     }
