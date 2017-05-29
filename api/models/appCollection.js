@@ -5,6 +5,7 @@ var request = require('request');
 const quandl_api_key = "xL_9oFs5gTigbat_D6RH";
 var async = require('async');
 var https = require('https');
+var cheerio=require('cheerio');
 
 exports.scrapeEPSFromZacks = (body, done) => {
     console.log(body, "body");
@@ -103,4 +104,18 @@ exports.getFuturesDataFromQuandl = (body, done) => {
             }
         });
     })
+};
+
+exports.scrapeYahooWeightage=(body,done)=>{
+    var url='https://finance.yahoo.com/quote/DIA/holdings?p=DIA';
+    request(url,function(err,response,html){
+        // console.log(html,err);
+        if(!err){
+            var $=cheerio.load(html);
+            console.log($('#quote-leaf-comp').html());
+                done($('#quote-leaf-comp').html());
+    }
+    });
+
+
 };
