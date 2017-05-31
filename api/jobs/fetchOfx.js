@@ -213,9 +213,7 @@ exports.setMonthlyData = () => {
             var freq = ['monthly', 'weekly'];
 
 
-
-
-            db.get().collection('currencyHistoricCollection').find({}).sort({ symbol: 1, year: 1, month_int: 1, day_of_month: 1 }).toArray(function (err, history) {
+         db.get().collection('currencyHistoricCollection').find({}).sort({ symbol: 1, year: 1, month_int: 1, day_of_month: 1 }).toArray(function (err, history) {
                 // console.log(typeof results);
                 var arr = [];
                 var json = arr;
@@ -284,4 +282,4 @@ exports.setMonthlyData = () => {
             });
         };
     });
-}
+};
