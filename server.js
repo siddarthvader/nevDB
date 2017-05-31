@@ -6,15 +6,14 @@ port = process.env.PORT || 3000;
 var http = require("http");
 var login = require('./api/controllers/loginController.js');
 var url = process.env.MONGODB_URI||'mongodb://localhost:27017/nevDb?authMechanism=DEFAULT&authSource=db';
-var auth = {
+var auth = {	
 	user: 'nevRoot',
 	pwd: 'nevRoot'
 };	
+
+
 var db = require('./api/db');
 
-
-
-console.log(url);
 var server = http.createServer((req, res) => {
 
 	res.setHeader('Access-Control-Allow-Origin', '*');
