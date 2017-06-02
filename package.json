@@ -20,6 +20,7 @@
     "async": "^2.4.1",
     "cheerio": "^1.0.0-rc.1",
     "fast-csv": "^2.4.0",
+    "intrinio-client": "0.0.5",
     "jsonwebtoken": "^7.4.0",
     "moment": "^2.18.1",
     "mongo": "^0.1.0",
