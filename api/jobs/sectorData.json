@@ -2383,7 +2383,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Medical Appliances & Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Medical Laboratories & Research",
 		"TickerData": [{
@@ -2512,7 +2513,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Medical Laboratories & Research",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Basic Materials",
 		"TickerData": [{
@@ -4357,7 +4359,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Independent Oil & Gas",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Aluminum",
 		"TickerData": [{
@@ -4378,7 +4381,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Aluminum",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Financial",
 		"TickerData": [{
@@ -8287,7 +8291,8 @@
 			"Sector": "Financial",
 			"Industry": "Real Estate Development",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Life Insurance",
 		"TickerData": [{
@@ -8392,7 +8397,8 @@
 			"Sector": "Financial",
 			"Industry": "Life Insurance",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Services",
 		"TickerData": [{
@@ -11815,7 +11821,8 @@
 			"Sector": "Services",
 			"Industry": "Specialty Retail, Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Rental & Leasing Services",
 		"TickerData": [{
@@ -11902,7 +11909,8 @@
 			"Sector": "Services",
 			"Industry": "Rental & Leasing Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Industrial Goods",
 		"TickerData": [{
@@ -13501,7 +13509,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Metal Fabrication",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "General Building Materials",
 		"TickerData": [{
@@ -13618,7 +13627,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "General Building Materials",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Auto Parts Stores",
 		"TickerData": [{
@@ -13651,7 +13661,8 @@
 			"Sector": "Services",
 			"Industry": "Auto Parts Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Consumer Goods",
 		"TickerData": [{
@@ -15214,7 +15225,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Textile - Apparel Clothing",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Electronic Equipment",
 		"TickerData": [{
@@ -15253,7 +15265,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Electronic Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Air Services, Other",
 		"TickerData": [{
@@ -15268,7 +15281,8 @@
 			"Sector": "Services",
 			"Industry": "Air Services, Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Diagnostic Substances",
 		"TickerData": [{
@@ -15343,7 +15357,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Diagnostic Substances",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Drugs Wholesale",
 		"TickerData": [{
@@ -15364,7 +15379,8 @@
 			"Sector": "Services",
 			"Industry": "Drugs Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Regional - Mid-Atlantic Banks",
 		"TickerData": [{
@@ -15709,7 +15725,8 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Mid-Atlantic Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Education & Training Services",
 		"TickerData": [{
@@ -15826,7 +15843,8 @@
 			"Sector": "Services",
 			"Industry": "Education & Training Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Business Services",
 		"TickerData": [{
@@ -16243,7 +16261,8 @@
 			"Sector": "Services",
 			"Industry": "Business Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Asset Management",
 		"TickerData": [{
@@ -16438,7 +16457,8 @@
 			"Sector": "Financial",
 			"Industry": "Asset Management",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Trucking",
 		"TickerData": [{
@@ -16537,7 +16557,8 @@
 			"Sector": "Services",
 			"Industry": "Trucking",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Auto Dealerships",
 		"TickerData": [{
@@ -16600,7 +16621,8 @@
 			"Sector": "Services",
 			"Industry": "Auto Dealerships",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Biotechnology",
 		"TickerData": [{
@@ -17473,7 +17495,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Biotechnology",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Medical Appliances & Equipment",
 		"TickerData": [{
@@ -17830,7 +17853,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Medical Appliances & Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Technology",
 		"TickerData": [{
@@ -21229,7 +21253,8 @@
 			"Sector": "Technology",
 			"Industry": "Communication Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Internet Information Providers",
 		"TickerData": [{
@@ -21400,7 +21425,8 @@
 			"Sector": "Technology",
 			"Industry": "Internet Information Providers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Recreational Vehicles",
 		"TickerData": [{
@@ -21445,7 +21471,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Recreational Vehicles",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "REIT - Diversified",
 		"TickerData": [{
@@ -21580,7 +21607,8 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Diversified",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "REIT - Residential",
 		"TickerData": [{
@@ -21655,7 +21683,8 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Residential",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Application Software",
 		"TickerData": [{
@@ -22126,7 +22155,8 @@
 			"Sector": "Technology",
 			"Industry": "Application Software",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Property & Casualty Insurance",
 		"TickerData": [{
@@ -22447,7 +22477,8 @@
 			"Sector": "Financial",
 			"Industry": "Property & Casualty Insurance",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Chemicals - Major Diversified",
 		"TickerData": [{
@@ -22558,7 +22589,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Chemicals - Major Diversified",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Regional - Southeast Banks",
 		"TickerData": [{
@@ -22759,7 +22791,8 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Southeast Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Aerospace/Defense Products & Services",
 		"TickerData": [{
@@ -22954,7 +22987,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Aerospace/Defense Products & Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Office Supplies",
 		"TickerData": [{
@@ -22975,7 +23009,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Office Supplies",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Specialized Health Services",
 		"TickerData": [{
@@ -23056,7 +23091,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Specialized Health Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Industrial Metals & Minerals",
 		"TickerData": [{
@@ -23239,7 +23275,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Industrial Metals & Minerals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Technical & System Software",
 		"TickerData": [{
@@ -23296,7 +23333,8 @@
 			"Sector": "Technology",
 			"Industry": "Technical & System Software",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Technical Services",
 		"TickerData": [{
@@ -23383,7 +23421,8 @@
 			"Sector": "Services",
 			"Industry": "Technical Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Semiconductor Equipment & Materials",
 		"TickerData": [{
@@ -23572,7 +23611,8 @@
 			"Sector": "Technology",
 			"Industry": "Semiconductor Equipment & Materials",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Oil & Gas Equipment & Services",
 		"TickerData": [{
@@ -23791,7 +23831,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Oil & Gas Equipment & Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Information Technology Services",
 		"TickerData": [{
@@ -23938,7 +23979,8 @@
 			"Sector": "Technology",
 			"Industry": "Information Technology Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Regional - Southwest Banks",
 		"TickerData": [{
@@ -24067,7 +24109,8 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Southwest Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Diversified Machinery",
 		"TickerData": [{
@@ -24394,7 +24437,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Diversified Machinery",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Housewares & Accessories",
 		"TickerData": [{
@@ -24427,7 +24471,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Housewares & Accessories",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Drug Delivery",
 		"TickerData": [{
@@ -24478,7 +24523,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Drug Delivery",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Auto Parts",
 		"TickerData": [{
@@ -24667,7 +24713,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Auto Parts",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Healthcare Information Services",
 		"TickerData": [{
@@ -24730,7 +24777,8 @@
 			"Sector": "Technology",
 			"Industry": "Healthcare Information Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Property Management",
 		"TickerData": [{
@@ -24829,7 +24877,8 @@
 			"Sector": "Financial",
 			"Industry": "Property Management",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Pollution & Treatment Controls",
 		"TickerData": [{
@@ -24904,7 +24953,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Pollution & Treatment Controls",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Semiconductor - Integrated Circuits",
 		"TickerData": [{
@@ -25153,7 +25203,8 @@
 			"Sector": "Technology",
 			"Industry": "Semiconductor - Integrated Circuits",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Long-Term Care Facilities",
 		"TickerData": [{
@@ -25192,7 +25243,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Long-Term Care Facilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Farm Products",
 		"TickerData": [{
@@ -25243,7 +25295,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Farm Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Business Software & Services",
 		"TickerData": [{
@@ -25486,7 +25539,8 @@
 			"Sector": "Technology",
 			"Industry": "Business Software & Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Security & Protection Services",
 		"TickerData": [{
@@ -25567,7 +25621,8 @@
 			"Sector": "Services",
 			"Industry": "Security & Protection Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Home Health Care",
 		"TickerData": [{
@@ -25606,7 +25661,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Home Health Care",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Communication Equipment",
 		"TickerData": [{
@@ -25867,7 +25923,8 @@
 			"Sector": "Technology",
 			"Industry": "Communication Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Oil & Gas Refining & Marketing",
 		"TickerData": [{
@@ -25978,7 +26035,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Oil & Gas Refining & Marketing",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Utilities",
 		"TickerData": [{
@@ -26419,7 +26477,8 @@
 			"Sector": "Utilities",
 			"Industry": "Electric Utilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Diversified Utilities",
 		"TickerData": [{
@@ -26542,7 +26601,8 @@
 			"Sector": "Utilities",
 			"Industry": "Diversified Utilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Heavy Construction",
 		"TickerData": [{
@@ -26629,7 +26689,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Heavy Construction",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Diversified Electronics",
 		"TickerData": [{
@@ -26854,7 +26915,8 @@
 			"Sector": "Technology",
 			"Industry": "Diversified Electronics",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Apparel Stores",
 		"TickerData": [{
@@ -27055,7 +27117,8 @@
 			"Sector": "Services",
 			"Industry": "Apparel Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Electric Utilities",
 		"TickerData": [{
@@ -27202,7 +27265,8 @@
 			"Sector": "Utilities",
 			"Industry": "Electric Utilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Rubber & Plastics",
 		"TickerData": [{
@@ -27271,7 +27335,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Rubber & Plastics",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Scientific & Technical Instruments",
 		"TickerData": [{
@@ -27550,7 +27615,8 @@
 			"Sector": "Technology",
 			"Industry": "Scientific & Technical Instruments",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Health Care Plans",
 		"TickerData": [{
@@ -27625,7 +27691,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Health Care Plans",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Lumber, Wood Production",
 		"TickerData": [{
@@ -27682,7 +27749,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Lumber, Wood Production",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Industrial Electrical Equipment",
 		"TickerData": [{
@@ -27817,7 +27885,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Industrial Electrical Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Savings & Loans",
 		"TickerData": [{
@@ -28246,7 +28315,8 @@
 			"Sector": "Financial",
 			"Industry": "Savings & Loans",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Electronics Wholesale",
 		"TickerData": [{
@@ -28309,7 +28379,8 @@
 			"Sector": "Services",
 			"Industry": "Electronics Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Accident & Health Insurance",
 		"TickerData": [{
@@ -28378,7 +28449,8 @@
 			"Sector": "Financial",
 			"Industry": "Accident & Health Insurance",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Farm & Construction Machinery",
 		"TickerData": [{
@@ -28447,7 +28519,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Farm & Construction Machinery",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Credit Services",
 		"TickerData": [{
@@ -28630,7 +28703,8 @@
 			"Sector": "Financial",
 			"Industry": "Credit Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Drug Manufacturers - Other",
 		"TickerData": [{
@@ -28753,7 +28827,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Drug Manufacturers - Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Surety & Title Insurance",
 		"TickerData": [{
@@ -28780,7 +28855,8 @@
 			"Sector": "Financial",
 			"Industry": "Surety & Title Insurance",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Publishing - Newspapers",
 		"TickerData": [{
@@ -28813,7 +28889,8 @@
 			"Sector": "Services",
 			"Industry": "Publishing - Newspapers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Nonmetallic Mineral Mining",
 		"TickerData": [{
@@ -28858,7 +28935,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Nonmetallic Mineral Mining",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Mortgage Investment",
 		"TickerData": [{
@@ -28933,7 +29011,8 @@
 			"Sector": "Financial",
 			"Industry": "Mortgage Investment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Major Airlines",
 		"TickerData": [{
@@ -28960,7 +29039,8 @@
 			"Sector": "Services",
 			"Industry": "Major Airlines",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Air Delivery & Freight Services",
 		"TickerData": [{
@@ -29029,7 +29109,8 @@
 			"Sector": "Services",
 			"Industry": "Air Delivery & Freight Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Industrial Equipment Wholesale",
 		"TickerData": [{
@@ -29116,7 +29197,8 @@
 			"Sector": "Services",
 			"Industry": "Industrial Equipment Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Insurance Brokers",
 		"TickerData": [{
@@ -29155,7 +29237,8 @@
 			"Sector": "Financial",
 			"Industry": "Insurance Brokers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Drugs - Generic",
 		"TickerData": [{
@@ -29266,7 +29349,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Drugs - Generic",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Steel & Iron",
 		"TickerData": [{
@@ -29341,7 +29425,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Steel & Iron",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Specialty Chemicals",
 		"TickerData": [{
@@ -29578,7 +29663,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Specialty Chemicals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Discount, Variety Stores",
 		"TickerData": [{
@@ -29647,7 +29733,8 @@
 			"Sector": "Services",
 			"Industry": "Discount, Variety Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Regional Airlines",
 		"TickerData": [{
@@ -29692,7 +29779,8 @@
 			"Sector": "Services",
 			"Industry": "Regional Airlines",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Drug Manufacturers - Major",
 		"TickerData": [{
@@ -29797,7 +29885,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Drug Manufacturers - Major",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Real Estate Development",
 		"TickerData": [{
@@ -29872,7 +29961,8 @@
 			"Sector": "Financial",
 			"Industry": "Real Estate Development",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Money Center Banks",
 		"TickerData": [{
@@ -30031,7 +30121,8 @@
 			"Sector": "Financial",
 			"Industry": "Money Center Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Computer Peripherals",
 		"TickerData": [{
@@ -30088,7 +30179,8 @@
 			"Sector": "Technology",
 			"Industry": "Computer Peripherals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Telecom Services - Domestic",
 		"TickerData": [{
@@ -30175,7 +30267,8 @@
 			"Sector": "Technology",
 			"Industry": "Telecom Services - Domestic",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Semiconductor - Specialized",
 		"TickerData": [{
@@ -30310,7 +30403,8 @@
 			"Sector": "Technology",
 			"Industry": "Semiconductor - Specialized",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "REIT - Retail",
 		"TickerData": [{
@@ -30433,7 +30527,8 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Retail",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Entertainment - Diversified",
 		"TickerData": [{
@@ -30502,7 +30597,8 @@
 			"Sector": "Services",
 			"Industry": "Entertainment - Diversified",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Semiconductor - Broad Line",
 		"TickerData": [{
@@ -30637,7 +30733,8 @@
 			"Sector": "Technology",
 			"Industry": "Semiconductor - Broad Line",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Oil & Gas Pipelines",
 		"TickerData": [{
@@ -30742,7 +30839,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Oil & Gas Pipelines",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Regional - Pacific Banks",
 		"TickerData": [{
@@ -30973,7 +31071,8 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Pacific Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Hospitals",
 		"TickerData": [{
@@ -31030,7 +31129,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Hospitals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Investment Brokerage - National",
 		"TickerData": [{
@@ -31123,7 +31223,8 @@
 			"Sector": "Financial",
 			"Industry": "Investment Brokerage - National",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Home Furnishings & Fixtures",
 		"TickerData": [{
@@ -31210,7 +31311,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Home Furnishings & Fixtures",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Catalog & Mail Order Houses",
 		"TickerData": [{
@@ -31261,7 +31363,8 @@
 			"Sector": "Services",
 			"Industry": "Catalog & Mail Order Houses",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Internet Software & Services",
 		"TickerData": [{
@@ -31354,7 +31457,8 @@
 			"Sector": "Technology",
 			"Industry": "Internet Software & Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Medical Instruments & Supplies",
 		"TickerData": [{
@@ -31633,7 +31737,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Medical Instruments & Supplies",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Gold",
 		"TickerData": [{
@@ -31678,7 +31783,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Gold",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Independent Oil & Gas",
 		"TickerData": [{
@@ -32125,7 +32231,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Independent Oil & Gas",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Diversified Investments",
 		"TickerData": [{
@@ -32158,7 +32265,8 @@
 			"Sector": "Financial",
 			"Industry": "Diversified Investments",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Textile - Apparel Clothing",
 		"TickerData": [{
@@ -32257,7 +32365,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Textile - Apparel Clothing",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Gas Utilities",
 		"TickerData": [{
@@ -32374,7 +32483,8 @@
 			"Sector": "Utilities",
 			"Industry": "Gas Utilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Electronics Stores",
 		"TickerData": [{
@@ -32407,7 +32517,8 @@
 			"Sector": "Services",
 			"Industry": "Electronics Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Tobacco Products, Other",
 		"TickerData": [{
@@ -32422,7 +32533,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Tobacco Products, Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Metal Fabrication",
 		"TickerData": [{
@@ -32539,7 +32651,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Metal Fabrication",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Oil & Gas Drilling & Exploration",
 		"TickerData": [{
@@ -32674,7 +32787,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Oil & Gas Drilling & Exploration",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Railroads",
 		"TickerData": [{
@@ -32731,7 +32845,8 @@
 			"Sector": "Services",
 			"Industry": "Railroads",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Restaurants",
 		"TickerData": [{
@@ -32974,7 +33089,8 @@
 			"Sector": "Services",
 			"Industry": "Restaurants",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Regional - Northeast Banks",
 		"TickerData": [{
@@ -33319,7 +33435,8 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Northeast Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Water Utilities",
 		"TickerData": [{
@@ -33382,7 +33499,8 @@
 			"Sector": "Utilities",
 			"Industry": "Water Utilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "REIT - Office",
 		"TickerData": [{
@@ -33439,7 +33557,8 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Office",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Networking & Communication Devices",
 		"TickerData": [{
@@ -33508,7 +33627,8 @@
 			"Sector": "Technology",
 			"Industry": "Networking & Communication Devices",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Regional - Midwest Banks",
 		"TickerData": [{
@@ -33769,7 +33889,8 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Midwest Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Security Software & Services",
 		"TickerData": [{
@@ -33820,7 +33941,8 @@
 			"Sector": "Technology",
 			"Industry": "Security Software & Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Packaging & Containers",
 		"TickerData": [{
@@ -33919,7 +34041,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Packaging & Containers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Multimedia & Graphics Software",
 		"TickerData": [{
@@ -33976,7 +34099,8 @@
 			"Sector": "Technology",
 			"Industry": "Multimedia & Graphics Software",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Drug Related Products",
 		"TickerData": [{
@@ -34009,7 +34133,8 @@
 			"Sector": "Healthcare",
 			"Industry": "Drug Related Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Residential Construction",
 		"TickerData": [{
@@ -34102,7 +34227,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Residential Construction",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Personal Products",
 		"TickerData": [{
@@ -34183,7 +34309,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Personal Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Business Equipment",
 		"TickerData": [{
@@ -34234,7 +34361,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Business Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Waste Management",
 		"TickerData": [{
@@ -34327,7 +34455,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Waste Management",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Industrial Equipment & Components",
 		"TickerData": [{
@@ -34408,7 +34537,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Industrial Equipment & Components",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Management Services",
 		"TickerData": [{
@@ -34507,7 +34637,8 @@
 			"Sector": "Services",
 			"Industry": "Management Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Specialty Retail, Other",
 		"TickerData": [{
@@ -34690,7 +34821,8 @@
 			"Sector": "Services",
 			"Industry": "Specialty Retail, Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Research Services",
 		"TickerData": [{
@@ -34711,7 +34843,8 @@
 			"Sector": "Services",
 			"Industry": "Research Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Home Furnishing Stores",
 		"TickerData": [{
@@ -34744,7 +34877,8 @@
 			"Sector": "Services",
 			"Industry": "Home Furnishing Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Broadcasting - Radio",
 		"TickerData": [{
@@ -34789,7 +34923,8 @@
 			"Sector": "Services",
 			"Industry": "Broadcasting - Radio",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Staffing & Outsourcing Services",
 		"TickerData": [{
@@ -34894,7 +35029,8 @@
 			"Sector": "Services",
 			"Industry": "Staffing & Outsourcing Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Recreational Goods, Other",
 		"TickerData": [{
@@ -34915,7 +35051,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Recreational Goods, Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Sporting Goods",
 		"TickerData": [{
@@ -34942,7 +35079,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Sporting Goods",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Specialty Eateries",
 		"TickerData": [{
@@ -34963,7 +35101,8 @@
 			"Sector": "Services",
 			"Industry": "Specialty Eateries",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Personal Services",
 		"TickerData": [{
@@ -35038,7 +35177,8 @@
 			"Sector": "Services",
 			"Industry": "Personal Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Beverages - Wineries & Distillers",
 		"TickerData": [{
@@ -35065,7 +35205,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Beverages - Wineries & Distillers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Sporting Goods Stores",
 		"TickerData": [{
@@ -35098,7 +35239,8 @@
 			"Sector": "Services",
 			"Industry": "Sporting Goods Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Processed & Packaged Goods",
 		"TickerData": [{
@@ -35233,7 +35375,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Processed & Packaged Goods",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Printed Circuit Boards",
 		"TickerData": [{
@@ -35296,7 +35439,8 @@
 			"Sector": "Technology",
 			"Industry": "Printed Circuit Boards",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Home Improvement Stores",
 		"TickerData": [{
@@ -35317,7 +35461,8 @@
 			"Sector": "Services",
 			"Industry": "Home Improvement Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Department Stores",
 		"TickerData": [{
@@ -35356,7 +35501,8 @@
 			"Sector": "Services",
 			"Industry": "Department Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Shipping",
 		"TickerData": [{
@@ -35377,7 +35523,8 @@
 			"Sector": "Services",
 			"Industry": "Shipping",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Foreign Regional Banks",
 		"TickerData": [{
@@ -35404,7 +35551,8 @@
 			"Sector": "Financial",
 			"Industry": "Foreign Regional Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Information & Delivery Services",
 		"TickerData": [{
@@ -35437,7 +35585,8 @@
 			"Sector": "Technology",
 			"Industry": "Information & Delivery Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Data Storage Devices",
 		"TickerData": [{
@@ -35524,7 +35673,8 @@
 			"Sector": "Technology",
 			"Industry": "Data Storage Devices",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Beverages - Brewers",
 		"TickerData": [{
@@ -35545,7 +35695,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Beverages - Brewers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Meat Products",
 		"TickerData": [{
@@ -35572,7 +35723,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Meat Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Photographic Equipment & Supplies",
 		"TickerData": [{
@@ -35581,7 +35733,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Photographic Equipment & Supplies",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Textile - Apparel Footwear & Accessories",
 		"TickerData": [{
@@ -35692,7 +35845,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Textile - Apparel Footwear & Accessories",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Building Materials Wholesale",
 		"TickerData": [{
@@ -35707,7 +35861,8 @@
 			"Sector": "Services",
 			"Industry": "Building Materials Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Resorts & Casinos",
 		"TickerData": [{
@@ -35818,7 +35973,8 @@
 			"Sector": "Services",
 			"Industry": "Resorts & Casinos",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Gaming Activities",
 		"TickerData": [{
@@ -35857,7 +36013,8 @@
 			"Sector": "Services",
 			"Industry": "Gaming Activities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Food - Major Diversified",
 		"TickerData": [{
@@ -35920,7 +36077,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Food - Major Diversified",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Grocery Stores",
 		"TickerData": [{
@@ -35989,7 +36147,8 @@
 			"Sector": "Services",
 			"Industry": "Grocery Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Diversified Communication Services",
 		"TickerData": [{
@@ -36094,7 +36253,8 @@
 			"Sector": "Technology",
 			"Industry": "Diversified Communication Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "General Contractors",
 		"TickerData": [{
@@ -36133,7 +36293,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "General Contractors",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Beverages - Soft Drinks",
 		"TickerData": [{
@@ -36202,7 +36363,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Beverages - Soft Drinks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Marketing Services",
 		"TickerData": [{
@@ -36253,7 +36415,8 @@
 			"Sector": "Services",
 			"Industry": "Marketing Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Computer Based Systems",
 		"TickerData": [{
@@ -36292,7 +36455,8 @@
 			"Sector": "Technology",
 			"Industry": "Computer Based Systems",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Silver",
 		"TickerData": [{
@@ -36313,7 +36477,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Silver",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Broadcasting - TV",
 		"TickerData": [{
@@ -36364,7 +36529,8 @@
 			"Sector": "Services",
 			"Industry": "Broadcasting - TV",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Agricultural Chemicals",
 		"TickerData": [{
@@ -36439,7 +36605,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Agricultural Chemicals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Textile Industrial",
 		"TickerData": [{
@@ -36460,7 +36627,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Textile Industrial",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Cleaning Products",
 		"TickerData": [{
@@ -36493,7 +36661,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Cleaning Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Medical Equipment Wholesale",
 		"TickerData": [{
@@ -36526,7 +36695,8 @@
 			"Sector": "Services",
 			"Industry": "Medical Equipment Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Food Wholesale",
 		"TickerData": [{
@@ -36565,7 +36735,8 @@
 			"Sector": "Services",
 			"Industry": "Food Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Lodging",
 		"TickerData": [{
@@ -36610,7 +36781,8 @@
 			"Sector": "Services",
 			"Industry": "Lodging",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Drug Stores",
 		"TickerData": [{
@@ -36649,7 +36821,8 @@
 			"Sector": "Services",
 			"Industry": "Drug Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Paper & Paper Products",
 		"TickerData": [{
@@ -36706,7 +36879,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Paper & Paper Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Sporting Activities",
 		"TickerData": [{
@@ -36739,7 +36913,8 @@
 			"Sector": "Services",
 			"Industry": "Sporting Activities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Movie Production, Theaters",
 		"TickerData": [{
@@ -36784,7 +36959,8 @@
 			"Sector": "Services",
 			"Industry": "Movie Production, Theaters",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Conglomerates",
 		"TickerData": [{
@@ -36883,7 +37059,8 @@
 			"Sector": "Conglomerates",
 			"Industry": "Conglomerates",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Diversified Computer Systems",
 		"TickerData": [{
@@ -36910,7 +37087,8 @@
 			"Sector": "Technology",
 			"Industry": "Diversified Computer Systems",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Publishing - Books",
 		"TickerData": [{
@@ -36937,7 +37115,8 @@
 			"Sector": "Services",
 			"Industry": "Publishing - Books",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Auto Parts Wholesale",
 		"TickerData": [{
@@ -36958,7 +37137,8 @@
 			"Sector": "Services",
 			"Industry": "Auto Parts Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Jewelry Stores",
 		"TickerData": [{
@@ -36997,7 +37177,8 @@
 			"Sector": "Services",
 			"Industry": "Jewelry Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "CATV Systems",
 		"TickerData": [{
@@ -37042,7 +37223,8 @@
 			"Sector": "Services",
 			"Industry": "CATV Systems",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Manufactured Housing",
 		"TickerData": [{
@@ -37063,7 +37245,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Manufactured Housing",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Machine Tools & Accessories",
 		"TickerData": [{
@@ -37108,7 +37291,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Machine Tools & Accessories",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Major Integrated Oil & Gas",
 		"TickerData": [{
@@ -37135,7 +37319,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Major Integrated Oil & Gas",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "REIT - Industrial",
 		"TickerData": [{
@@ -37180,7 +37365,8 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Industrial",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Dairy Products",
 		"TickerData": [{
@@ -37195,7 +37381,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Dairy Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "REIT - Hotel/Motel",
 		"TickerData": [{
@@ -37228,7 +37415,8 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Hotel/Motel",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Aerospace/Defense - Major Diversified",
 		"TickerData": [{
@@ -37255,7 +37443,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Aerospace/Defense - Major Diversified",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Foreign Money Center Banks",
 		"TickerData": [{
@@ -37264,7 +37453,8 @@
 			"Sector": "Financial",
 			"Industry": "Foreign Money Center Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Cement",
 		"TickerData": [{
@@ -37279,7 +37469,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Cement",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Auto Manufacturers - Major",
 		"TickerData": [{
@@ -37306,7 +37497,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Auto Manufacturers - Major",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Copper",
 		"TickerData": [{
@@ -37327,7 +37519,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Copper",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "General Entertainment",
 		"TickerData": [{
@@ -37354,7 +37547,8 @@
 			"Sector": "Services",
 			"Industry": "General Entertainment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "REIT - Healthcare Facilities",
 		"TickerData": [{
@@ -37399,7 +37593,8 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Healthcare Facilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Basic Materials Wholesale",
 		"TickerData": [{
@@ -37408,7 +37603,8 @@
 			"Sector": "Services",
 			"Industry": "Basic Materials Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Long Distance Carriers",
 		"TickerData": [{
@@ -37417,7 +37613,8 @@
 			"Sector": "Technology",
 			"Industry": "Long Distance Carriers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Toys & Games",
 		"TickerData": [{
@@ -37444,7 +37641,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Toys & Games",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Confectioners",
 		"TickerData": [{
@@ -37471,7 +37669,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Confectioners",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Trucks & Other Vehicles",
 		"TickerData": [{
@@ -37510,7 +37709,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Trucks & Other Vehicles",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Wireless Communications",
 		"TickerData": [{
@@ -37543,7 +37743,8 @@
 			"Sector": "Technology",
 			"Industry": "Wireless Communications",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Computers Wholesale",
 		"TickerData": [{
@@ -37582,7 +37783,8 @@
 			"Sector": "Services",
 			"Industry": "Computers Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Consumer Services",
 		"TickerData": [{
@@ -37597,7 +37799,8 @@
 			"Sector": "Services",
 			"Industry": "Consumer Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Advertising Agencies",
 		"TickerData": [{
@@ -37612,7 +37815,8 @@
 			"Sector": "Services",
 			"Industry": "Advertising Agencies",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Appliances",
 		"TickerData": [{
@@ -37633,7 +37837,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Appliances",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Semiconductor- Memory Chips",
 		"TickerData": [{
@@ -37660,7 +37865,8 @@
 			"Sector": "Technology",
 			"Industry": "Semiconductor- Memory Chips",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Investment Brokerage - Regional",
 		"TickerData": [{
@@ -37693,7 +37899,8 @@
 			"Sector": "Financial",
 			"Industry": "Investment Brokerage - Regional",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Small Tools & Accessories",
 		"TickerData": [{
@@ -37732,7 +37939,8 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Small Tools & Accessories",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Cigarettes",
 		"TickerData": [{
@@ -37753,7 +37961,8 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Cigarettes",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Synthetics",
 		"TickerData": [{
@@ -37768,7 +37977,8 @@
 			"Sector": "Basic Materials",
 			"Industry": "Synthetics",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Publishing - Periodicals",
 		"TickerData": [{
@@ -37783,7 +37993,8 @@
 			"Sector": "Services",
 			"Industry": "Publishing - Periodicals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Processing Systems & Products",
 		"TickerData": [{
@@ -37792,7 +38003,8 @@
 			"Sector": "Technology",
 			"Industry": "Processing Systems & Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Internet Service Providers",
 		"TickerData": [{
@@ -37807,7 +38019,8 @@
 			"Sector": "Technology",
 			"Industry": "Internet Service Providers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
 		"Sector": "Music & Video Stores",
 		"TickerData": [{
@@ -37816,6 +38029,7 @@
 			"Sector": "Services",
 			"Industry": "Music & Video Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}]
 }

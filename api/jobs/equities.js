@@ -60,7 +60,8 @@ exports.prepareSectorArray = () => {
         console.log(sectorData[key]);
         var dum = {
             Sector: key,
-            TickerData: sectorData[key]
+            TickerData: sectorData[key],
+            Ticked:false
         }
         sectors.push(dum);
     }
@@ -76,8 +77,9 @@ exports.prepareIndustryArray = () => {
         console.log(key);
         console.log(industryData[key]);
         var dum = {
-            Sector: key,
-            TickerData: industryData[key]
+            Industry: key,
+            TickerData: industryData[key],
+            Ticked:false
         }
         sectors.push(dum);
     }

@@ -1,6 +1,6 @@
 {
 	"data": [{
-		"Sector": "Medical Laboratories & Research",
+		"Industry": "Medical Laboratories & Research",
 		"TickerData": [{
 			"Name": "A",
 			"Maker": "Agilent Technologies Inc.",
@@ -127,9 +127,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Medical Laboratories & Research",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Aluminum",
+		"Industry": "Aluminum",
 		"TickerData": [{
 			"Name": "AA",
 			"Maker": "Alcoa Inc.",
@@ -148,9 +149,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Aluminum",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Life Insurance",
+		"Industry": "Life Insurance",
 		"TickerData": [{
 			"Name": "AAME",
 			"Maker": "Atlantic American Corp.",
@@ -253,9 +255,10 @@
 			"Sector": "Financial",
 			"Industry": "Life Insurance",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Rental & Leasing Services",
+		"Industry": "Rental & Leasing Services",
 		"TickerData": [{
 			"Name": "AAN",
 			"Maker": "Aaron's, Inc.",
@@ -340,9 +343,10 @@
 			"Sector": "Services",
 			"Industry": "Rental & Leasing Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "General Building Materials",
+		"Industry": "General Building Materials",
 		"TickerData": [{
 			"Name": "AAON",
 			"Maker": "AAON Inc.",
@@ -457,9 +461,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "General Building Materials",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Auto Parts Stores",
+		"Industry": "Auto Parts Stores",
 		"TickerData": [{
 			"Name": "AAP",
 			"Maker": "Advance Auto Parts Inc.",
@@ -490,9 +495,10 @@
 			"Sector": "Services",
 			"Industry": "Auto Parts Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Electronic Equipment",
+		"Industry": "Electronic Equipment",
 		"TickerData": [{
 			"Name": "AAPL",
 			"Maker": "Apple Inc.",
@@ -529,9 +535,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Electronic Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Air Services, Other",
+		"Industry": "Air Services, Other",
 		"TickerData": [{
 			"Name": "AAWW",
 			"Maker": "Atlas Air Worldwide Holdings Inc.",
@@ -544,9 +551,10 @@
 			"Sector": "Services",
 			"Industry": "Air Services, Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Diagnostic Substances",
+		"Industry": "Diagnostic Substances",
 		"TickerData": [{
 			"Name": "ABAX",
 			"Maker": "Abaxis, Inc.",
@@ -619,9 +627,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Diagnostic Substances",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Drugs Wholesale",
+		"Industry": "Drugs Wholesale",
 		"TickerData": [{
 			"Name": "ABC",
 			"Maker": "AmerisourceBergen Corporation",
@@ -640,9 +649,10 @@
 			"Sector": "Services",
 			"Industry": "Drugs Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Regional - Mid-Atlantic Banks",
+		"Industry": "Regional - Mid-Atlantic Banks",
 		"TickerData": [{
 			"Name": "ABCB",
 			"Maker": "Ameris Bancorp",
@@ -985,9 +995,10 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Mid-Atlantic Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Education & Training Services",
+		"Industry": "Education & Training Services",
 		"TickerData": [{
 			"Name": "ABCD",
 			"Maker": "Cambium Learning Group, Inc.",
@@ -1102,9 +1113,10 @@
 			"Sector": "Services",
 			"Industry": "Education & Training Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Business Services",
+		"Industry": "Business Services",
 		"TickerData": [{
 			"Name": "ABCO",
 			"Maker": "The Advisory Board Company",
@@ -1519,9 +1531,10 @@
 			"Sector": "Services",
 			"Industry": "Business Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Asset Management",
+		"Industry": "Asset Management",
 		"TickerData": [{
 			"Name": "AB",
 			"Maker": "AllianceBernstein Holding L.P.",
@@ -1714,9 +1727,10 @@
 			"Sector": "Financial",
 			"Industry": "Asset Management",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Trucking",
+		"Industry": "Trucking",
 		"TickerData": [{
 			"Name": "ABFS",
 			"Maker": "Arkansas Best Corporation",
@@ -1813,9 +1827,10 @@
 			"Sector": "Services",
 			"Industry": "Trucking",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Auto Dealerships",
+		"Industry": "Auto Dealerships",
 		"TickerData": [{
 			"Name": "ABG",
 			"Maker": "Asbury Automotive Group, Inc.",
@@ -1876,9 +1891,10 @@
 			"Sector": "Services",
 			"Industry": "Auto Dealerships",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Biotechnology",
+		"Industry": "Biotechnology",
 		"TickerData": [{
 			"Name": "ABIO",
 			"Maker": "ARCA biopharma, Inc.",
@@ -2749,9 +2765,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Biotechnology",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Medical Appliances & Equipment",
+		"Industry": "Medical Appliances & Equipment",
 		"TickerData": [{
 			"Name": "ABMD",
 			"Maker": "ABIOMED, Inc.",
@@ -3106,9 +3123,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Medical Appliances & Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Internet Information Providers",
+		"Industry": "Internet Information Providers",
 		"TickerData": [{
 			"Name": "ABTL",
 			"Maker": "Autobytel Inc.",
@@ -3277,9 +3295,10 @@
 			"Sector": "Technology",
 			"Industry": "Internet Information Providers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Recreational Vehicles",
+		"Industry": "Recreational Vehicles",
 		"TickerData": [{
 			"Name": "ACAT",
 			"Maker": "Arctic Cat Inc.",
@@ -3322,9 +3341,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Recreational Vehicles",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "REIT - Diversified",
+		"Industry": "REIT - Diversified",
 		"TickerData": [{
 			"Name": "ABR",
 			"Maker": "Arbor Realty Trust Inc.",
@@ -3457,9 +3477,10 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Diversified",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "REIT - Residential",
+		"Industry": "REIT - Residential",
 		"TickerData": [{
 			"Name": "ACC",
 			"Maker": "American Campus Communities, Inc.",
@@ -3532,9 +3553,10 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Residential",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Application Software",
+		"Industry": "Application Software",
 		"TickerData": [{
 			"Name": "ACCL",
 			"Maker": "Accelrys Inc.",
@@ -4003,9 +4025,10 @@
 			"Sector": "Technology",
 			"Industry": "Application Software",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Property & Casualty Insurance",
+		"Industry": "Property & Casualty Insurance",
 		"TickerData": [{
 			"Name": "ACE",
 			"Maker": "ACE Limited",
@@ -4324,9 +4347,10 @@
 			"Sector": "Financial",
 			"Industry": "Property & Casualty Insurance",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Chemicals - Major Diversified",
+		"Industry": "Chemicals - Major Diversified",
 		"TickerData": [{
 			"Name": "ACET",
 			"Maker": "Aceto Corp.",
@@ -4435,9 +4459,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Chemicals - Major Diversified",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Regional - Southeast Banks",
+		"Industry": "Regional - Southeast Banks",
 		"TickerData": [{
 			"Name": "ACFC",
 			"Maker": "Atlantic Coast Financial Corporation",
@@ -4636,9 +4661,10 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Southeast Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Aerospace/Defense Products & Services",
+		"Industry": "Aerospace/Defense Products & Services",
 		"TickerData": [{
 			"Name": "ACFN",
 			"Maker": "Acorn Energy, Inc.",
@@ -4831,9 +4857,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Aerospace/Defense Products & Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Office Supplies",
+		"Industry": "Office Supplies",
 		"TickerData": [{
 			"Name": "ACCO",
 			"Maker": "ACCO Brands Corporation",
@@ -4852,9 +4879,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Office Supplies",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Specialized Health Services",
+		"Industry": "Specialized Health Services",
 		"TickerData": [{
 			"Name": "ACHC",
 			"Maker": "Acadia Healthcare Company, Inc.",
@@ -4933,9 +4961,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Specialized Health Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Industrial Metals & Minerals",
+		"Industry": "Industrial Metals & Minerals",
 		"TickerData": [{
 			"Name": "ACI",
 			"Maker": "Arch Coal Inc.",
@@ -5116,9 +5145,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Industrial Metals & Minerals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Technical & System Software",
+		"Industry": "Technical & System Software",
 		"TickerData": [{
 			"Name": "ACIW",
 			"Maker": "ACI Worldwide, Inc.",
@@ -5173,9 +5203,10 @@
 			"Sector": "Technology",
 			"Industry": "Technical & System Software",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Technical Services",
+		"Industry": "Technical Services",
 		"TickerData": [{
 			"Name": "ACM",
 			"Maker": "AECOM Technology Corporation",
@@ -5260,9 +5291,10 @@
 			"Sector": "Services",
 			"Industry": "Technical Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Semiconductor Equipment & Materials",
+		"Industry": "Semiconductor Equipment & Materials",
 		"TickerData": [{
 			"Name": "ACLS",
 			"Maker": "Axcelis Technologies Inc.",
@@ -5449,9 +5481,10 @@
 			"Sector": "Technology",
 			"Industry": "Semiconductor Equipment & Materials",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Oil & Gas Equipment & Services",
+		"Industry": "Oil & Gas Equipment & Services",
 		"TickerData": [{
 			"Name": "ACMP",
 			"Maker": "Access Midstream Partners, L.P.",
@@ -5668,9 +5701,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Oil & Gas Equipment & Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Information Technology Services",
+		"Industry": "Information Technology Services",
 		"TickerData": [{
 			"Name": "ACN",
 			"Maker": "Accenture plc",
@@ -5815,9 +5849,10 @@
 			"Sector": "Technology",
 			"Industry": "Information Technology Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Regional - Southwest Banks",
+		"Industry": "Regional - Southwest Banks",
 		"TickerData": [{
 			"Name": "ACNB",
 			"Maker": "ACNB Corp.",
@@ -5944,9 +5979,10 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Southwest Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Diversified Machinery",
+		"Industry": "Diversified Machinery",
 		"TickerData": [{
 			"Name": "ACPW",
 			"Maker": "Active Power Inc.",
@@ -6271,9 +6307,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Diversified Machinery",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Housewares & Accessories",
+		"Industry": "Housewares & Accessories",
 		"TickerData": [{
 			"Name": "ACU",
 			"Maker": "Acme United Corp.",
@@ -6304,9 +6341,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Housewares & Accessories",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Drug Delivery",
+		"Industry": "Drug Delivery",
 		"TickerData": [{
 			"Name": "ACUR",
 			"Maker": "Acura Pharmaceuticals, Inc.",
@@ -6355,9 +6393,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Drug Delivery",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Auto Parts",
+		"Industry": "Auto Parts",
 		"TickerData": [{
 			"Name": "ACW",
 			"Maker": "Accuride Corp.",
@@ -6544,9 +6583,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Auto Parts",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Healthcare Information Services",
+		"Industry": "Healthcare Information Services",
 		"TickerData": [{
 			"Name": "ADAT",
 			"Maker": "Authentidate Holding Corp.",
@@ -6607,9 +6647,10 @@
 			"Sector": "Technology",
 			"Industry": "Healthcare Information Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Property Management",
+		"Industry": "Property Management",
 		"TickerData": [{
 			"Name": "ADC",
 			"Maker": "Agree Realty Corp.",
@@ -6706,9 +6747,10 @@
 			"Sector": "Financial",
 			"Industry": "Property Management",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Pollution & Treatment Controls",
+		"Industry": "Pollution & Treatment Controls",
 		"TickerData": [{
 			"Name": "ADES",
 			"Maker": "Advanced Emissions Solutions, Inc.",
@@ -6781,9 +6823,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Pollution & Treatment Controls",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Semiconductor - Integrated Circuits",
+		"Industry": "Semiconductor - Integrated Circuits",
 		"TickerData": [{
 			"Name": "ADI",
 			"Maker": "Analog Devices, Inc.",
@@ -7030,9 +7073,10 @@
 			"Sector": "Technology",
 			"Industry": "Semiconductor - Integrated Circuits",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Long-Term Care Facilities",
+		"Industry": "Long-Term Care Facilities",
 		"TickerData": [{
 			"Name": "ADK",
 			"Maker": "AdCare Health Systems Inc.",
@@ -7069,9 +7113,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Long-Term Care Facilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Farm Products",
+		"Industry": "Farm Products",
 		"TickerData": [{
 			"Name": "ADM",
 			"Maker": "Archer Daniels Midland Company",
@@ -7120,9 +7165,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Farm Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Business Software & Services",
+		"Industry": "Business Software & Services",
 		"TickerData": [{
 			"Name": "ADP",
 			"Maker": "Automatic Data Processing, Inc.",
@@ -7363,9 +7409,10 @@
 			"Sector": "Technology",
 			"Industry": "Business Software & Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Security & Protection Services",
+		"Industry": "Security & Protection Services",
 		"TickerData": [{
 			"Name": "ADT",
 			"Maker": "The ADT Corporation",
@@ -7444,9 +7491,10 @@
 			"Sector": "Services",
 			"Industry": "Security & Protection Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Home Health Care",
+		"Industry": "Home Health Care",
 		"TickerData": [{
 			"Name": "ADUS",
 			"Maker": "Addus HomeCare Corporation",
@@ -7483,9 +7531,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Home Health Care",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Communication Equipment",
+		"Industry": "Communication Equipment",
 		"TickerData": [{
 			"Name": "ADTN",
 			"Maker": "ADTRAN Inc.",
@@ -7744,9 +7793,10 @@
 			"Sector": "Technology",
 			"Industry": "Communication Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Oil & Gas Refining & Marketing",
+		"Industry": "Oil & Gas Refining & Marketing",
 		"TickerData": [{
 			"Name": "AE",
 			"Maker": "Adams Resources & Energy Inc.",
@@ -7855,9 +7905,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Oil & Gas Refining & Marketing",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Diversified Utilities",
+		"Industry": "Diversified Utilities",
 		"TickerData": [{
 			"Name": "AEE",
 			"Maker": "Ameren Corporation",
@@ -7978,9 +8029,10 @@
 			"Sector": "Utilities",
 			"Industry": "Diversified Utilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Heavy Construction",
+		"Industry": "Heavy Construction",
 		"TickerData": [{
 			"Name": "AEGN",
 			"Maker": "Aegion Corporation",
@@ -8065,9 +8117,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Heavy Construction",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Diversified Electronics",
+		"Industry": "Diversified Electronics",
 		"TickerData": [{
 			"Name": "AEIS",
 			"Maker": "Advanced Energy Industries, Inc.",
@@ -8290,9 +8343,10 @@
 			"Sector": "Technology",
 			"Industry": "Diversified Electronics",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Apparel Stores",
+		"Industry": "Apparel Stores",
 		"TickerData": [{
 			"Name": "AEO",
 			"Maker": "American Eagle Outfitters, Inc.",
@@ -8491,9 +8545,10 @@
 			"Sector": "Services",
 			"Industry": "Apparel Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Electric Utilities",
+		"Industry": "Electric Utilities",
 		"TickerData": [{
 			"Name": "AEP",
 			"Maker": "American Electric Power Co., Inc.",
@@ -8638,9 +8693,10 @@
 			"Sector": "Utilities",
 			"Industry": "Electric Utilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Rubber & Plastics",
+		"Industry": "Rubber & Plastics",
 		"TickerData": [{
 			"Name": "AEPI",
 			"Maker": "AEP Industries Inc.",
@@ -8707,9 +8763,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Rubber & Plastics",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Scientific & Technical Instruments",
+		"Industry": "Scientific & Technical Instruments",
 		"TickerData": [{
 			"Name": "AERG",
 			"Maker": "Applied Energetics, Inc.",
@@ -8986,9 +9043,10 @@
 			"Sector": "Technology",
 			"Industry": "Scientific & Technical Instruments",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Health Care Plans",
+		"Industry": "Health Care Plans",
 		"TickerData": [{
 			"Name": "AET",
 			"Maker": "Aetna Inc.",
@@ -9061,9 +9119,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Health Care Plans",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Lumber, Wood Production",
+		"Industry": "Lumber, Wood Production",
 		"TickerData": [{
 			"Name": "AERT",
 			"Maker": "Advanced Environmental Recycling Technologies, Inc.",
@@ -9118,9 +9177,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Lumber, Wood Production",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Industrial Electrical Equipment",
+		"Industry": "Industrial Electrical Equipment",
 		"TickerData": [{
 			"Name": "AETI",
 			"Maker": "American Electric Technologies, Inc",
@@ -9253,9 +9313,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Industrial Electrical Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Savings & Loans",
+		"Industry": "Savings & Loans",
 		"TickerData": [{
 			"Name": "AF",
 			"Maker": "Astoria Financial Corporation",
@@ -9682,9 +9743,10 @@
 			"Sector": "Financial",
 			"Industry": "Savings & Loans",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Electronics Wholesale",
+		"Industry": "Electronics Wholesale",
 		"TickerData": [{
 			"Name": "AEY",
 			"Maker": "ADDvantage Technologies Group Inc.",
@@ -9745,9 +9807,10 @@
 			"Sector": "Services",
 			"Industry": "Electronics Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Accident & Health Insurance",
+		"Industry": "Accident & Health Insurance",
 		"TickerData": [{
 			"Name": "AFL",
 			"Maker": "AFLAC Inc.",
@@ -9814,9 +9877,10 @@
 			"Sector": "Financial",
 			"Industry": "Accident & Health Insurance",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Farm & Construction Machinery",
+		"Industry": "Farm & Construction Machinery",
 		"TickerData": [{
 			"Name": "AGCO",
 			"Maker": "AGCO Corporation",
@@ -9883,9 +9947,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Farm & Construction Machinery",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Credit Services",
+		"Industry": "Credit Services",
 		"TickerData": [{
 			"Name": "AGM",
 			"Maker": "Federal Agricultural Mortgage Corp.",
@@ -10066,9 +10131,10 @@
 			"Sector": "Financial",
 			"Industry": "Credit Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Drug Manufacturers - Other",
+		"Industry": "Drug Manufacturers - Other",
 		"TickerData": [{
 			"Name": "AGN",
 			"Maker": "Allergan Inc.",
@@ -10189,9 +10255,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Drug Manufacturers - Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Surety & Title Insurance",
+		"Industry": "Surety & Title Insurance",
 		"TickerData": [{
 			"Name": "AGO",
 			"Maker": "Assured Guaranty Ltd.",
@@ -10216,9 +10283,10 @@
 			"Sector": "Financial",
 			"Industry": "Surety & Title Insurance",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Publishing - Newspapers",
+		"Industry": "Publishing - Newspapers",
 		"TickerData": [{
 			"Name": "AHC",
 			"Maker": "A. H. Belo Corporation",
@@ -10249,9 +10317,10 @@
 			"Sector": "Services",
 			"Industry": "Publishing - Newspapers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Nonmetallic Mineral Mining",
+		"Industry": "Nonmetallic Mineral Mining",
 		"TickerData": [{
 			"Name": "AHGP",
 			"Maker": "Alliance Holdings GP, L.P.",
@@ -10294,9 +10363,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Nonmetallic Mineral Mining",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Mortgage Investment",
+		"Industry": "Mortgage Investment",
 		"TickerData": [{
 			"Name": "AI",
 			"Maker": "Arlington Asset Investment Corp.",
@@ -10369,9 +10439,10 @@
 			"Sector": "Financial",
 			"Industry": "Mortgage Investment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Major Airlines",
+		"Industry": "Major Airlines",
 		"TickerData": [{
 			"Name": "AIR",
 			"Maker": "AAR Corp.",
@@ -10396,9 +10467,10 @@
 			"Sector": "Services",
 			"Industry": "Major Airlines",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Air Delivery & Freight Services",
+		"Industry": "Air Delivery & Freight Services",
 		"TickerData": [{
 			"Name": "AIRT",
 			"Maker": "Air T Inc.",
@@ -10465,9 +10537,10 @@
 			"Sector": "Services",
 			"Industry": "Air Delivery & Freight Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Industrial Equipment Wholesale",
+		"Industry": "Industrial Equipment Wholesale",
 		"TickerData": [{
 			"Name": "AIT",
 			"Maker": "Applied Industrial Technologies, Inc.",
@@ -10552,9 +10625,10 @@
 			"Sector": "Services",
 			"Industry": "Industrial Equipment Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Insurance Brokers",
+		"Industry": "Insurance Brokers",
 		"TickerData": [{
 			"Name": "AJG",
 			"Maker": "Arthur J Gallagher & Co.",
@@ -10591,9 +10665,10 @@
 			"Sector": "Financial",
 			"Industry": "Insurance Brokers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Drugs - Generic",
+		"Industry": "Drugs - Generic",
 		"TickerData": [{
 			"Name": "AKRX",
 			"Maker": "Akorn, Inc.",
@@ -10702,9 +10777,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Drugs - Generic",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Steel & Iron",
+		"Industry": "Steel & Iron",
 		"TickerData": [{
 			"Name": "AKS",
 			"Maker": "AK Steel Holding Corporation",
@@ -10777,9 +10853,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Steel & Iron",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Specialty Chemicals",
+		"Industry": "Specialty Chemicals",
 		"TickerData": [{
 			"Name": "ALB",
 			"Maker": "Albemarle Corporation",
@@ -11014,9 +11091,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Specialty Chemicals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Discount, Variety Stores",
+		"Industry": "Discount, Variety Stores",
 		"TickerData": [{
 			"Name": "ALCS",
 			"Maker": "ALCO Stores, Inc.",
@@ -11083,9 +11161,10 @@
 			"Sector": "Services",
 			"Industry": "Discount, Variety Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Regional Airlines",
+		"Industry": "Regional Airlines",
 		"TickerData": [{
 			"Name": "ALGT",
 			"Maker": "Allegiant Travel Company",
@@ -11128,9 +11207,10 @@
 			"Sector": "Services",
 			"Industry": "Regional Airlines",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Drug Manufacturers - Major",
+		"Industry": "Drug Manufacturers - Major",
 		"TickerData": [{
 			"Name": "ALIM",
 			"Maker": "Alimera Sciences, Inc.",
@@ -11233,9 +11313,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Drug Manufacturers - Major",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Real Estate Development",
+		"Industry": "Real Estate Development",
 		"TickerData": [{
 			"Name": "ALEX",
 			"Maker": "Alexander & Baldwin, Inc.",
@@ -11308,9 +11389,10 @@
 			"Sector": "Financial",
 			"Industry": "Real Estate Development",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Money Center Banks",
+		"Industry": "Money Center Banks",
 		"TickerData": [{
 			"Name": "ALLB",
 			"Maker": "Alliance Bancorp Inc of Pennsylvania",
@@ -11467,9 +11549,10 @@
 			"Sector": "Financial",
 			"Industry": "Money Center Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Computer Peripherals",
+		"Industry": "Computer Peripherals",
 		"TickerData": [{
 			"Name": "ALOT",
 			"Maker": "Astro-Med, Inc.",
@@ -11524,9 +11607,10 @@
 			"Sector": "Technology",
 			"Industry": "Computer Peripherals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Telecom Services - Domestic",
+		"Industry": "Telecom Services - Domestic",
 		"TickerData": [{
 			"Name": "ALSK",
 			"Maker": "Alaska Communications Systems Group Inc.",
@@ -11611,9 +11695,10 @@
 			"Sector": "Technology",
 			"Industry": "Telecom Services - Domestic",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Semiconductor - Specialized",
+		"Industry": "Semiconductor - Specialized",
 		"TickerData": [{
 			"Name": "ALTR",
 			"Maker": "Altera Corp.",
@@ -11746,9 +11831,10 @@
 			"Sector": "Technology",
 			"Industry": "Semiconductor - Specialized",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "REIT - Retail",
+		"Industry": "REIT - Retail",
 		"TickerData": [{
 			"Name": "ALX",
 			"Maker": "Alexander's Inc.",
@@ -11869,9 +11955,10 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Retail",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Entertainment - Diversified",
+		"Industry": "Entertainment - Diversified",
 		"TickerData": [{
 			"Name": "AMCX",
 			"Maker": "AMC Networks Inc.",
@@ -11938,9 +12025,10 @@
 			"Sector": "Services",
 			"Industry": "Entertainment - Diversified",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Semiconductor - Broad Line",
+		"Industry": "Semiconductor - Broad Line",
 		"TickerData": [{
 			"Name": "AMD",
 			"Maker": "Advanced Micro Devices, Inc.",
@@ -12073,9 +12161,10 @@
 			"Sector": "Technology",
 			"Industry": "Semiconductor - Broad Line",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Oil & Gas Pipelines",
+		"Industry": "Oil & Gas Pipelines",
 		"TickerData": [{
 			"Name": "AMID",
 			"Maker": "American Midstream Partners, LP",
@@ -12178,9 +12267,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Oil & Gas Pipelines",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Regional - Pacific Banks",
+		"Industry": "Regional - Pacific Banks",
 		"TickerData": [{
 			"Name": "AMRB",
 			"Maker": "American River Bankshares",
@@ -12409,9 +12499,10 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Pacific Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Hospitals",
+		"Industry": "Hospitals",
 		"TickerData": [{
 			"Name": "AMSG",
 			"Maker": "AmSurg Corp.",
@@ -12466,9 +12557,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Hospitals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Investment Brokerage - National",
+		"Industry": "Investment Brokerage - National",
 		"TickerData": [{
 			"Name": "AMTD",
 			"Maker": "TD Ameritrade Holding Corporation",
@@ -12559,9 +12651,10 @@
 			"Sector": "Financial",
 			"Industry": "Investment Brokerage - National",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Home Furnishings & Fixtures",
+		"Industry": "Home Furnishings & Fixtures",
 		"TickerData": [{
 			"Name": "AMWD",
 			"Maker": "American Woodmark Corp.",
@@ -12646,9 +12739,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Home Furnishings & Fixtures",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Catalog & Mail Order Houses",
+		"Industry": "Catalog & Mail Order Houses",
 		"TickerData": [{
 			"Name": "AMZN",
 			"Maker": "Amazon.com Inc.",
@@ -12697,9 +12791,10 @@
 			"Sector": "Services",
 			"Industry": "Catalog & Mail Order Houses",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Internet Software & Services",
+		"Industry": "Internet Software & Services",
 		"TickerData": [{
 			"Name": "ANGI",
 			"Maker": "Angie's List, Inc.",
@@ -12790,9 +12885,10 @@
 			"Sector": "Technology",
 			"Industry": "Internet Software & Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Medical Instruments & Supplies",
+		"Industry": "Medical Instruments & Supplies",
 		"TickerData": [{
 			"Name": "ANGO",
 			"Maker": "AngioDynamics Inc.",
@@ -13069,9 +13165,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Medical Instruments & Supplies",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Gold",
+		"Industry": "Gold",
 		"TickerData": [{
 			"Name": "ANV",
 			"Maker": "Allied Nevada Gold Corp.",
@@ -13114,9 +13211,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Gold",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Independent Oil & Gas",
+		"Industry": "Independent Oil & Gas",
 		"TickerData": [{
 			"Name": "APA",
 			"Maker": "Apache Corp.",
@@ -13561,9 +13659,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Independent Oil & Gas",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Diversified Investments",
+		"Industry": "Diversified Investments",
 		"TickerData": [{
 			"Name": "APO",
 			"Maker": "Apollo Global Management, LLC",
@@ -13594,9 +13693,10 @@
 			"Sector": "Financial",
 			"Industry": "Diversified Investments",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Textile - Apparel Clothing",
+		"Industry": "Textile - Apparel Clothing",
 		"TickerData": [{
 			"Name": "APP",
 			"Maker": "American Apparel, Inc.",
@@ -13693,9 +13793,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Textile - Apparel Clothing",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Gas Utilities",
+		"Industry": "Gas Utilities",
 		"TickerData": [{
 			"Name": "APU",
 			"Maker": "AmeriGas Partners LP",
@@ -13810,9 +13911,10 @@
 			"Sector": "Utilities",
 			"Industry": "Gas Utilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Electronics Stores",
+		"Industry": "Electronics Stores",
 		"TickerData": [{
 			"Name": "ARCI",
 			"Maker": "Appliance Recycling Centers of America Inc.",
@@ -13843,9 +13945,10 @@
 			"Sector": "Services",
 			"Industry": "Electronics Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Tobacco Products, Other",
+		"Industry": "Tobacco Products, Other",
 		"TickerData": [{
 			"Name": "AOI",
 			"Maker": "Alliance One International, Inc.",
@@ -13858,9 +13961,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Tobacco Products, Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Metal Fabrication",
+		"Industry": "Metal Fabrication",
 		"TickerData": [{
 			"Name": "ARCW",
 			"Maker": "ARC Group Worldwide, Inc.",
@@ -13975,9 +14079,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Metal Fabrication",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Oil & Gas Drilling & Exploration",
+		"Industry": "Oil & Gas Drilling & Exploration",
 		"TickerData": [{
 			"Name": "AREX",
 			"Maker": "Approach Resources, Inc.",
@@ -14110,9 +14215,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Oil & Gas Drilling & Exploration",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Railroads",
+		"Industry": "Railroads",
 		"TickerData": [{
 			"Name": "ARII",
 			"Maker": "American Railcar Industries, Inc.",
@@ -14167,9 +14273,10 @@
 			"Sector": "Services",
 			"Industry": "Railroads",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Restaurants",
+		"Industry": "Restaurants",
 		"TickerData": [{
 			"Name": "ARKR",
 			"Maker": "Ark Restaurants Corp.",
@@ -14410,9 +14517,10 @@
 			"Sector": "Services",
 			"Industry": "Restaurants",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Regional - Northeast Banks",
+		"Industry": "Regional - Northeast Banks",
 		"TickerData": [{
 			"Name": "AROW",
 			"Maker": "Arrow Financial Corporation",
@@ -14755,9 +14863,10 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Northeast Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Water Utilities",
+		"Industry": "Water Utilities",
 		"TickerData": [{
 			"Name": "ARTNA",
 			"Maker": "Artesian Resources Corp.",
@@ -14818,9 +14927,10 @@
 			"Sector": "Utilities",
 			"Industry": "Water Utilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "REIT - Office",
+		"Industry": "REIT - Office",
 		"TickerData": [{
 			"Name": "ARE",
 			"Maker": "Alexandria Real Estate Equities, Inc.",
@@ -14875,9 +14985,10 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Office",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Networking & Communication Devices",
+		"Industry": "Networking & Communication Devices",
 		"TickerData": [{
 			"Name": "ARUN",
 			"Maker": "Aruba Networks, Inc.",
@@ -14944,9 +15055,10 @@
 			"Sector": "Technology",
 			"Industry": "Networking & Communication Devices",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Regional - Midwest Banks",
+		"Industry": "Regional - Midwest Banks",
 		"TickerData": [{
 			"Name": "ASBC",
 			"Maker": "Associated Banc-Corp",
@@ -15205,9 +15317,10 @@
 			"Sector": "Financial",
 			"Industry": "Regional - Midwest Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Security Software & Services",
+		"Industry": "Security Software & Services",
 		"TickerData": [{
 			"Name": "ASIA",
 			"Maker": "AsiaInfo-Linkage, Inc.",
@@ -15256,9 +15369,10 @@
 			"Sector": "Technology",
 			"Industry": "Security Software & Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Packaging & Containers",
+		"Industry": "Packaging & Containers",
 		"TickerData": [{
 			"Name": "ATR",
 			"Maker": "AptarGroup, Inc.",
@@ -15355,9 +15469,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Packaging & Containers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Multimedia & Graphics Software",
+		"Industry": "Multimedia & Graphics Software",
 		"TickerData": [{
 			"Name": "ATVI",
 			"Maker": "Activision Blizzard, Inc.",
@@ -15412,9 +15527,10 @@
 			"Sector": "Technology",
 			"Industry": "Multimedia & Graphics Software",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Drug Related Products",
+		"Industry": "Drug Related Products",
 		"TickerData": [{
 			"Name": "AUXL",
 			"Maker": "Auxilium Pharmaceuticals Inc.",
@@ -15445,9 +15561,10 @@
 			"Sector": "Healthcare",
 			"Industry": "Drug Related Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Residential Construction",
+		"Industry": "Residential Construction",
 		"TickerData": [{
 			"Name": "AVHI",
 			"Maker": "AV Homes, Inc.",
@@ -15538,9 +15655,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Residential Construction",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Personal Products",
+		"Industry": "Personal Products",
 		"TickerData": [{
 			"Name": "AVP",
 			"Maker": "Avon Products Inc.",
@@ -15619,9 +15737,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Personal Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Business Equipment",
+		"Industry": "Business Equipment",
 		"TickerData": [{
 			"Name": "AVY",
 			"Maker": "Avery Dennison Corporation",
@@ -15670,9 +15789,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Business Equipment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Waste Management",
+		"Industry": "Waste Management",
 		"TickerData": [{
 			"Name": "AWX",
 			"Maker": "Avalon Holdings Corp.",
@@ -15763,9 +15883,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Waste Management",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Industrial Equipment & Components",
+		"Industry": "Industrial Equipment & Components",
 		"TickerData": [{
 			"Name": "B",
 			"Maker": "Barnes Group Inc.",
@@ -15844,9 +15965,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Industrial Equipment & Components",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Management Services",
+		"Industry": "Management Services",
 		"TickerData": [{
 			"Name": "BAH",
 			"Maker": "Booz Allen Hamilton Holding Corporation",
@@ -15943,9 +16065,10 @@
 			"Sector": "Services",
 			"Industry": "Management Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Specialty Retail, Other",
+		"Industry": "Specialty Retail, Other",
 		"TickerData": [{
 			"Name": "BAMM",
 			"Maker": "Books-A-Million Inc.",
@@ -16126,9 +16249,10 @@
 			"Sector": "Services",
 			"Industry": "Specialty Retail, Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Research Services",
+		"Industry": "Research Services",
 		"TickerData": [{
 			"Name": "BASI",
 			"Maker": "Bioanalytical Systems Inc.",
@@ -16147,9 +16271,10 @@
 			"Sector": "Services",
 			"Industry": "Research Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Home Furnishing Stores",
+		"Industry": "Home Furnishing Stores",
 		"TickerData": [{
 			"Name": "BBBY",
 			"Maker": "Bed Bath & Beyond Inc.",
@@ -16180,9 +16305,10 @@
 			"Sector": "Services",
 			"Industry": "Home Furnishing Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Broadcasting - Radio",
+		"Industry": "Broadcasting - Radio",
 		"TickerData": [{
 			"Name": "BBGI",
 			"Maker": "Beasley Broadcast Group Inc.",
@@ -16225,9 +16351,10 @@
 			"Sector": "Services",
 			"Industry": "Broadcasting - Radio",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Staffing & Outsourcing Services",
+		"Industry": "Staffing & Outsourcing Services",
 		"TickerData": [{
 			"Name": "BBSI",
 			"Maker": "Barrett Business Services Inc.",
@@ -16330,9 +16457,10 @@
 			"Sector": "Services",
 			"Industry": "Staffing & Outsourcing Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Recreational Goods, Other",
+		"Industry": "Recreational Goods, Other",
 		"TickerData": [{
 			"Name": "BC",
 			"Maker": "Brunswick Corporation",
@@ -16351,9 +16479,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Recreational Goods, Other",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Sporting Goods",
+		"Industry": "Sporting Goods",
 		"TickerData": [{
 			"Name": "BDE",
 			"Maker": "Black Diamond, Inc.",
@@ -16378,9 +16507,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Sporting Goods",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Specialty Eateries",
+		"Industry": "Specialty Eateries",
 		"TickerData": [{
 			"Name": "BDL",
 			"Maker": "Flanigan's Enterprises Inc.",
@@ -16399,9 +16529,10 @@
 			"Sector": "Services",
 			"Industry": "Specialty Eateries",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Personal Services",
+		"Industry": "Personal Services",
 		"TickerData": [{
 			"Name": "BFAM",
 			"Maker": "Bright Horizons Family Solutions, Inc.",
@@ -16474,9 +16605,10 @@
 			"Sector": "Services",
 			"Industry": "Personal Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Beverages - Wineries & Distillers",
+		"Industry": "Beverages - Wineries & Distillers",
 		"TickerData": [{
 			"Name": "BFB",
 			"Maker": "Brown-Forman Corporation",
@@ -16501,9 +16633,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Beverages - Wineries & Distillers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Sporting Goods Stores",
+		"Industry": "Sporting Goods Stores",
 		"TickerData": [{
 			"Name": "BGFV",
 			"Maker": "Big 5 Sporting Goods Corp.",
@@ -16534,9 +16667,10 @@
 			"Sector": "Services",
 			"Industry": "Sporting Goods Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Processed & Packaged Goods",
+		"Industry": "Processed & Packaged Goods",
 		"TickerData": [{
 			"Name": "BGS",
 			"Maker": "",
@@ -16669,9 +16803,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Processed & Packaged Goods",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Printed Circuit Boards",
+		"Industry": "Printed Circuit Boards",
 		"TickerData": [{
 			"Name": "BHE",
 			"Maker": "Benchmark Electronics Inc.",
@@ -16732,9 +16867,10 @@
 			"Sector": "Technology",
 			"Industry": "Printed Circuit Boards",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Home Improvement Stores",
+		"Industry": "Home Improvement Stores",
 		"TickerData": [{
 			"Name": "BLDR",
 			"Maker": "Builders FirstSource, Inc.",
@@ -16753,9 +16889,10 @@
 			"Sector": "Services",
 			"Industry": "Home Improvement Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Department Stores",
+		"Industry": "Department Stores",
 		"TickerData": [{
 			"Name": "BONT",
 			"Maker": "Bon-Ton Stores Inc.",
@@ -16792,9 +16929,10 @@
 			"Sector": "Services",
 			"Industry": "Department Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Shipping",
+		"Industry": "Shipping",
 		"TickerData": [{
 			"Name": "BOX",
 			"Maker": "Box Ships Inc.",
@@ -16813,9 +16951,10 @@
 			"Sector": "Services",
 			"Industry": "Shipping",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Foreign Regional Banks",
+		"Industry": "Foreign Regional Banks",
 		"TickerData": [{
 			"Name": "BPOP",
 			"Maker": "Popular, Inc.",
@@ -16840,9 +16979,10 @@
 			"Sector": "Financial",
 			"Industry": "Foreign Regional Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Information & Delivery Services",
+		"Industry": "Information & Delivery Services",
 		"TickerData": [{
 			"Name": "BR",
 			"Maker": "Broadridge Financial Solutions, Inc.",
@@ -16873,9 +17013,10 @@
 			"Sector": "Technology",
 			"Industry": "Information & Delivery Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Data Storage Devices",
+		"Industry": "Data Storage Devices",
 		"TickerData": [{
 			"Name": "BRCD",
 			"Maker": "Brocade Communications Systems, Inc.",
@@ -16960,9 +17101,10 @@
 			"Sector": "Technology",
 			"Industry": "Data Storage Devices",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Beverages - Brewers",
+		"Industry": "Beverages - Brewers",
 		"TickerData": [{
 			"Name": "BREW",
 			"Maker": "Craft Brew Alliance, Inc.",
@@ -16981,9 +17123,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Beverages - Brewers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Meat Products",
+		"Industry": "Meat Products",
 		"TickerData": [{
 			"Name": "BRID",
 			"Maker": "Bridgford Foods Corp.",
@@ -17008,18 +17151,20 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Meat Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Photographic Equipment & Supplies",
+		"Industry": "Photographic Equipment & Supplies",
 		"TickerData": [{
 			"Name": "BTN",
 			"Maker": "Ballantyne Strong, Inc",
 			"Sector": "Consumer Goods",
 			"Industry": "Photographic Equipment & Supplies",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Textile - Apparel Footwear & Accessories",
+		"Industry": "Textile - Apparel Footwear & Accessories",
 		"TickerData": [{
 			"Name": "BWS",
 			"Maker": "Brown Shoe Co. Inc.",
@@ -17128,9 +17273,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Textile - Apparel Footwear & Accessories",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Building Materials Wholesale",
+		"Industry": "Building Materials Wholesale",
 		"TickerData": [{
 			"Name": "BXC",
 			"Maker": "Bluelinx Holdings Inc.",
@@ -17143,9 +17289,10 @@
 			"Sector": "Services",
 			"Industry": "Building Materials Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Resorts & Casinos",
+		"Industry": "Resorts & Casinos",
 		"TickerData": [{
 			"Name": "BYD",
 			"Maker": "Boyd Gaming Corporation",
@@ -17254,9 +17401,10 @@
 			"Sector": "Services",
 			"Industry": "Resorts & Casinos",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Gaming Activities",
+		"Industry": "Gaming Activities",
 		"TickerData": [{
 			"Name": "BYI",
 			"Maker": "Bally Technologies, Inc.",
@@ -17293,9 +17441,10 @@
 			"Sector": "Services",
 			"Industry": "Gaming Activities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Food - Major Diversified",
+		"Industry": "Food - Major Diversified",
 		"TickerData": [{
 			"Name": "CALM",
 			"Maker": "Cal-Maine Foods, Inc.",
@@ -17356,9 +17505,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Food - Major Diversified",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Grocery Stores",
+		"Industry": "Grocery Stores",
 		"TickerData": [{
 			"Name": "CASY",
 			"Maker": "Casey's General Stores, Inc.",
@@ -17425,9 +17575,10 @@
 			"Sector": "Services",
 			"Industry": "Grocery Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Diversified Communication Services",
+		"Industry": "Diversified Communication Services",
 		"TickerData": [{
 			"Name": "CBEY",
 			"Maker": "Cbeyond, Inc.",
@@ -17530,9 +17681,10 @@
 			"Sector": "Technology",
 			"Industry": "Diversified Communication Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "General Contractors",
+		"Industry": "General Contractors",
 		"TickerData": [{
 			"Name": "CBI",
 			"Maker": "Chicago Bridge & Iron Company N.V.",
@@ -17569,9 +17721,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "General Contractors",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Beverages - Soft Drinks",
+		"Industry": "Beverages - Soft Drinks",
 		"TickerData": [{
 			"Name": "CCE",
 			"Maker": "Coca-Cola Enterprises Inc.",
@@ -17638,9 +17791,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Beverages - Soft Drinks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Marketing Services",
+		"Industry": "Marketing Services",
 		"TickerData": [{
 			"Name": "CCO",
 			"Maker": "Clear Channel Outdoor Holdings Inc.",
@@ -17689,9 +17843,10 @@
 			"Sector": "Services",
 			"Industry": "Marketing Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Computer Based Systems",
+		"Industry": "Computer Based Systems",
 		"TickerData": [{
 			"Name": "CCUR",
 			"Maker": "Concurrent Computer Corporation",
@@ -17728,9 +17883,10 @@
 			"Sector": "Technology",
 			"Industry": "Computer Based Systems",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Silver",
+		"Industry": "Silver",
 		"TickerData": [{
 			"Name": "CDE",
 			"Maker": "Coeur Mining, Inc.",
@@ -17749,9 +17905,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Silver",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Broadcasting - TV",
+		"Industry": "Broadcasting - TV",
 		"TickerData": [{
 			"Name": "CETV",
 			"Maker": "Central European Media Enterprises Ltd.",
@@ -17800,9 +17957,10 @@
 			"Sector": "Services",
 			"Industry": "Broadcasting - TV",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Agricultural Chemicals",
+		"Industry": "Agricultural Chemicals",
 		"TickerData": [{
 			"Name": "CF",
 			"Maker": "CF Industries Holdings, Inc.",
@@ -17875,9 +18033,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Agricultural Chemicals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Textile Industrial",
+		"Industry": "Textile Industrial",
 		"TickerData": [{
 			"Name": "CFI",
 			"Maker": "Culp, Inc.",
@@ -17896,9 +18055,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Textile Industrial",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Cleaning Products",
+		"Industry": "Cleaning Products",
 		"TickerData": [{
 			"Name": "CHD",
 			"Maker": "Church & Dwight Co. Inc.",
@@ -17929,9 +18089,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Cleaning Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Medical Equipment Wholesale",
+		"Industry": "Medical Equipment Wholesale",
 		"TickerData": [{
 			"Name": "CHDX",
 			"Maker": "Chindex International Inc.",
@@ -17962,9 +18123,10 @@
 			"Sector": "Services",
 			"Industry": "Medical Equipment Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Food Wholesale",
+		"Industry": "Food Wholesale",
 		"TickerData": [{
 			"Name": "CHEF",
 			"Maker": "The Chefs' Warehouse, Inc.",
@@ -18001,9 +18163,10 @@
 			"Sector": "Services",
 			"Industry": "Food Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Lodging",
+		"Industry": "Lodging",
 		"TickerData": [{
 			"Name": "CHH",
 			"Maker": "Choice Hotels International Inc.",
@@ -18046,9 +18209,10 @@
 			"Sector": "Services",
 			"Industry": "Lodging",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Drug Stores",
+		"Industry": "Drug Stores",
 		"TickerData": [{
 			"Name": "CJJD",
 			"Maker": "China Jo-Jo Drugstores, Inc.",
@@ -18085,9 +18249,10 @@
 			"Sector": "Services",
 			"Industry": "Drug Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Paper & Paper Products",
+		"Industry": "Paper & Paper Products",
 		"TickerData": [{
 			"Name": "CLW",
 			"Maker": "Clearwater Paper Corporation",
@@ -18142,9 +18307,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Paper & Paper Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Sporting Activities",
+		"Industry": "Sporting Activities",
 		"TickerData": [{
 			"Name": "CLUB",
 			"Maker": "Town Sports International Holdings Inc.",
@@ -18175,9 +18341,10 @@
 			"Sector": "Services",
 			"Industry": "Sporting Activities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Movie Production, Theaters",
+		"Industry": "Movie Production, Theaters",
 		"TickerData": [{
 			"Name": "CNK",
 			"Maker": "Cinemark Holdings Inc.",
@@ -18220,9 +18387,10 @@
 			"Sector": "Services",
 			"Industry": "Movie Production, Theaters",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Conglomerates",
+		"Industry": "Conglomerates",
 		"TickerData": [{
 			"Name": "CODI",
 			"Maker": "Compass Diversified Holdings",
@@ -18271,9 +18439,10 @@
 			"Sector": "Conglomerates",
 			"Industry": "Conglomerates",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Diversified Computer Systems",
+		"Industry": "Diversified Computer Systems",
 		"TickerData": [{
 			"Name": "CRAY",
 			"Maker": "Cray Inc.",
@@ -18298,9 +18467,10 @@
 			"Sector": "Technology",
 			"Industry": "Diversified Computer Systems",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Publishing - Books",
+		"Industry": "Publishing - Books",
 		"TickerData": [{
 			"Name": "CRRC",
 			"Maker": "Courier Corporation",
@@ -18325,9 +18495,10 @@
 			"Sector": "Services",
 			"Industry": "Publishing - Books",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Auto Parts Wholesale",
+		"Industry": "Auto Parts Wholesale",
 		"TickerData": [{
 			"Name": "CRV",
 			"Maker": "Coast Distribution System Inc.",
@@ -18346,9 +18517,10 @@
 			"Sector": "Services",
 			"Industry": "Auto Parts Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Jewelry Stores",
+		"Industry": "Jewelry Stores",
 		"TickerData": [{
 			"Name": "CTHR",
 			"Maker": "Charles & Colvard Ltd.",
@@ -18385,9 +18557,10 @@
 			"Sector": "Services",
 			"Industry": "Jewelry Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "CATV Systems",
+		"Industry": "CATV Systems",
 		"TickerData": [{
 			"Name": "CVC",
 			"Maker": "Cablevision Systems Corporation",
@@ -18430,9 +18603,10 @@
 			"Sector": "Services",
 			"Industry": "CATV Systems",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Manufactured Housing",
+		"Industry": "Manufactured Housing",
 		"TickerData": [{
 			"Name": "CVCO",
 			"Maker": "Cavco Industries, Inc.",
@@ -18451,9 +18625,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Manufactured Housing",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Machine Tools & Accessories",
+		"Industry": "Machine Tools & Accessories",
 		"TickerData": [{
 			"Name": "CVR",
 			"Maker": "Chicago Rivet & Machine Co.",
@@ -18496,9 +18671,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Machine Tools & Accessories",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Major Integrated Oil & Gas",
+		"Industry": "Major Integrated Oil & Gas",
 		"TickerData": [{
 			"Name": "CVX",
 			"Maker": "Chevron Corporation",
@@ -18523,9 +18699,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Major Integrated Oil & Gas",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "REIT - Industrial",
+		"Industry": "REIT - Industrial",
 		"TickerData": [{
 			"Name": "DCT",
 			"Maker": "DCT Industrial Trust Inc.",
@@ -18568,9 +18745,10 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Industrial",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Dairy Products",
+		"Industry": "Dairy Products",
 		"TickerData": [{
 			"Name": "DF",
 			"Maker": "Dean Foods Company",
@@ -18583,9 +18761,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Dairy Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "REIT - Hotel/Motel",
+		"Industry": "REIT - Hotel/Motel",
 		"TickerData": [{
 			"Name": "DRH",
 			"Maker": "Diamondrock Hospitality Co.",
@@ -18616,9 +18795,10 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Hotel/Motel",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Aerospace/Defense - Major Diversified",
+		"Industry": "Aerospace/Defense - Major Diversified",
 		"TickerData": [{
 			"Name": "EAC",
 			"Maker": "Erickson Incorporated",
@@ -18643,18 +18823,20 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Aerospace/Defense - Major Diversified",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Foreign Money Center Banks",
+		"Industry": "Foreign Money Center Banks",
 		"TickerData": [{
 			"Name": "EWBC",
 			"Maker": "East West Bancorp, Inc.",
 			"Sector": "Financial",
 			"Industry": "Foreign Money Center Banks",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Cement",
+		"Industry": "Cement",
 		"TickerData": [{
 			"Name": "EXP",
 			"Maker": "Eagle Materials Inc.",
@@ -18667,9 +18849,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Cement",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Auto Manufacturers - Major",
+		"Industry": "Auto Manufacturers - Major",
 		"TickerData": [{
 			"Name": "F",
 			"Maker": "Ford Motor Co.",
@@ -18694,9 +18877,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Auto Manufacturers - Major",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Copper",
+		"Industry": "Copper",
 		"TickerData": [{
 			"Name": "FCX",
 			"Maker": "Freeport-McMoRan Copper & Gold Inc.",
@@ -18715,9 +18899,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Copper",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "General Entertainment",
+		"Industry": "General Entertainment",
 		"TickerData": [{
 			"Name": "FUN",
 			"Maker": "Cedar Fair, L.P.",
@@ -18742,9 +18927,10 @@
 			"Sector": "Services",
 			"Industry": "General Entertainment",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "REIT - Healthcare Facilities",
+		"Industry": "REIT - Healthcare Facilities",
 		"TickerData": [{
 			"Name": "GEO",
 			"Maker": "The GEO Group, Inc.",
@@ -18787,27 +18973,30 @@
 			"Sector": "Financial",
 			"Industry": "REIT - Healthcare Facilities",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Basic Materials Wholesale",
+		"Industry": "Basic Materials Wholesale",
 		"TickerData": [{
 			"Name": "GLP",
 			"Maker": "Global Partners LP",
 			"Sector": "Services",
 			"Industry": "Basic Materials Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Long Distance Carriers",
+		"Industry": "Long Distance Carriers",
 		"TickerData": [{
 			"Name": "GNCMA",
 			"Maker": "General Communication Inc.",
 			"Sector": "Technology",
 			"Industry": "Long Distance Carriers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Toys & Games",
+		"Industry": "Toys & Games",
 		"TickerData": [{
 			"Name": "GPIC",
 			"Maker": "Gaming Partners International Corporation",
@@ -18832,9 +19021,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Toys & Games",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Confectioners",
+		"Industry": "Confectioners",
 		"TickerData": [{
 			"Name": "HSY",
 			"Maker": "The Hershey Company",
@@ -18859,9 +19049,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Confectioners",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Trucks & Other Vehicles",
+		"Industry": "Trucks & Other Vehicles",
 		"TickerData": [{
 			"Name": "HY",
 			"Maker": "Hyster-Yale Materials Handling, Inc.",
@@ -18898,9 +19089,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Trucks & Other Vehicles",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Wireless Communications",
+		"Industry": "Wireless Communications",
 		"TickerData": [{
 			"Name": "IDCC",
 			"Maker": "InterDigital, Inc.",
@@ -18931,9 +19123,10 @@
 			"Sector": "Technology",
 			"Industry": "Wireless Communications",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Computers Wholesale",
+		"Industry": "Computers Wholesale",
 		"TickerData": [{
 			"Name": "IM",
 			"Maker": "Ingram Micro Inc.",
@@ -18970,9 +19163,10 @@
 			"Sector": "Services",
 			"Industry": "Computers Wholesale",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Consumer Services",
+		"Industry": "Consumer Services",
 		"TickerData": [{
 			"Name": "INTX",
 			"Maker": "Intersections Inc.",
@@ -18985,9 +19179,10 @@
 			"Sector": "Services",
 			"Industry": "Consumer Services",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Advertising Agencies",
+		"Industry": "Advertising Agencies",
 		"TickerData": [{
 			"Name": "IPG",
 			"Maker": "The Interpublic Group of Companies, Inc.",
@@ -19000,9 +19195,10 @@
 			"Sector": "Services",
 			"Industry": "Advertising Agencies",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Appliances",
+		"Industry": "Appliances",
 		"TickerData": [{
 			"Name": "IRBT",
 			"Maker": "iRobot Corporation",
@@ -19021,9 +19217,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Appliances",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Semiconductor- Memory Chips",
+		"Industry": "Semiconductor- Memory Chips",
 		"TickerData": [{
 			"Name": "ISSI",
 			"Maker": "Integrated Silicon Solution Inc.",
@@ -19048,9 +19245,10 @@
 			"Sector": "Technology",
 			"Industry": "Semiconductor- Memory Chips",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Investment Brokerage - Regional",
+		"Industry": "Investment Brokerage - Regional",
 		"TickerData": [{
 			"Name": "ITG",
 			"Maker": "Investment Technology Group Inc.",
@@ -19081,9 +19279,10 @@
 			"Sector": "Financial",
 			"Industry": "Investment Brokerage - Regional",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Small Tools & Accessories",
+		"Industry": "Small Tools & Accessories",
 		"TickerData": [{
 			"Name": "LECO",
 			"Maker": "Lincoln Electric Holdings Inc.",
@@ -19120,9 +19319,10 @@
 			"Sector": "Industrial Goods",
 			"Industry": "Small Tools & Accessories",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Cigarettes",
+		"Industry": "Cigarettes",
 		"TickerData": [{
 			"Name": "LO",
 			"Maker": "Lorillard, Inc.",
@@ -19141,9 +19341,10 @@
 			"Sector": "Consumer Goods",
 			"Industry": "Cigarettes",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Synthetics",
+		"Industry": "Synthetics",
 		"TickerData": [{
 			"Name": "LTBR",
 			"Maker": "Lightbridge Corp.",
@@ -19156,9 +19357,10 @@
 			"Sector": "Basic Materials",
 			"Industry": "Synthetics",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Publishing - Periodicals",
+		"Industry": "Publishing - Periodicals",
 		"TickerData": [{
 			"Name": "MDP",
 			"Maker": "Meredith Corporation",
@@ -19171,18 +19373,20 @@
 			"Sector": "Services",
 			"Industry": "Publishing - Periodicals",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Processing Systems & Products",
+		"Industry": "Processing Systems & Products",
 		"TickerData": [{
 			"Name": "PLT",
 			"Maker": "Plantronics, Inc.",
 			"Sector": "Technology",
 			"Industry": "Processing Systems & Products",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Internet Service Providers",
+		"Industry": "Internet Service Providers",
 		"TickerData": [{
 			"Name": "TRLA",
 			"Maker": "Trulia, Inc.",
@@ -19195,15 +19399,17 @@
 			"Sector": "Technology",
 			"Industry": "Internet Service Providers",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}, {
-		"Sector": "Music & Video Stores",
+		"Industry": "Music & Video Stores",
 		"TickerData": [{
 			"Name": "TWMC",
 			"Maker": "Trans World Entertainment Corporation",
 			"Sector": "Services",
 			"Industry": "Music & Video Stores",
 			"Ticked": false
-		}]
+		}],
+		"Ticked": false
 	}]
 }
