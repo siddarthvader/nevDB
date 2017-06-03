@@ -199,6 +199,8 @@ exports.sendEquitiesData = (req, res, body, results) => {
         status: 200
     };
     let dates = {};
+
+    console.log(results.datatable.data,"<<<<");
     if (results.datatable.data) {
         results.datatable.data.forEach(function (dataset, i) {
 
