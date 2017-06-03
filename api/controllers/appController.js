@@ -58,10 +58,10 @@ var getEquitiesData = (req, res) => {
     let body = '';
     req.on('data', (data) => {
         body += data;
-        console.log(data, "data");
+        // console.log(data, "data");
     });
     req.on('end', function () {
-        console.log(body, "body");
+        // console.log(body, "body");
         appModal.getEquitiesDataFromQuandl(JSON.parse(body), (results) => {
             appView.sendEquitiesData(req, res, JSON.parse(body), results);
         })

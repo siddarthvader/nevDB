@@ -10,7 +10,7 @@ var init=()=>{
     // equities.get();
     // ofx.setMonthlyData();
     // equities.setSectors();
-    // equities.prepareSectorArray();
+    equities.prepareSectorArray();
     equities.prepareIndustryArray();
 }   
 

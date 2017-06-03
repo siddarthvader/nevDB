@@ -43,9 +43,9 @@ exports.setSectors = () => {
         }
     });
 
-    // fs.writeFile('sectorList.json', JSON.stringify(sectors), 'utf8', function (err) {
-    //     console.log(err);
-    // });
+    fs.writeFile('sectorList.json', JSON.stringify(sectors), 'utf8', function (err) {
+        console.log(err);
+    });
 
     fs.writeFile('industryList.json', JSON.stringify(industry), 'utf8', function (err) {
         console.log(err);
