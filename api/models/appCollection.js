@@ -37,19 +37,16 @@ exports.getEquitiesDataFromQuandl = (body, done) => {
     };
     body.symbols.forEach(function (symbol) {
         var url = "https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?qopts.columns=ticker,date,adj_close,adj_volume&date.gte=19860101&date.lt=20161231&ticker=" + symbol + "&api_key=xL_9oFs5gTigbat_D6RH";
-        console.log(url);
+        // console.log(url);
         request.get({
             url: url,
             json: true
         }, function (err, res) {
             // console.log(symbol);
-            // console.log(res.body, "<<<<<<");
             if (!err) {
-                if (!res.body.datatable) {
-                    responses.datatable.data=res.body.datatable.data;
-                }
-                else{
-                    responses.datatable.data=responses.datatable.data.concat(res.body.datatable.data)
+                if (res.body.datatable) {
+                    // console.log(symbol, res.body.datatable.data.length ,"<<<<<<");
+                    responses.datatable.data = responses.datatable.data.concat(res.body.datatable.data)
                 }
             }
 
