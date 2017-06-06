@@ -92,6 +92,7 @@ exports.verifyJWT = (body, headers, done) => {
 exports.verifyJWTAlone = (headers, done) => {
     jwt.verify(headers, 'nelson', (err, decoded) => {
         console.log("decodedTOken", decoded);
+        console.log("err",err);
         if (err) {
             done(false);
         }

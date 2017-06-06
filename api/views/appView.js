@@ -16,22 +16,17 @@ exports.sendCurrencyData = (req, res, body, results) => {
     var response = {};
     // console.log(body);
 
-    var frequeny = ['weekly', 'monthly'];
+    var frequeny = ['weekly', 'monthly', 'daily'];
     var currentYear = moment().year() - 1;
     // console.log(currentYear);
 
-    console.log('here', body);
+    // console.log('here', body);
 
     frequeny.forEach((freq) => {
         // console.log(freq, "freq");
         var data = {};
         var refined = {};
         results[freq].forEach(function (val, index) {
-            // console.log(freq, "freq");
-            // for 5 years
-            // going upto 5*6=30 years
-
-
 
             for (i = 1; i <= 6; i++) {
                 var currentIndex = currentYear - i * 5;
@@ -68,7 +63,7 @@ exports.sendCurrencyData = (req, res, body, results) => {
                         }
 
                     }
-                    else {
+                    else if (freq === 'monthly') {
 
                         if (!data[currentIndex][val.month_int] && freq === 'monthly') {
                             data[currentIndex][val.month_int] = {};
@@ -91,6 +86,31 @@ exports.sendCurrencyData = (req, res, body, results) => {
                         }
                         else {
                             data[currentIndex][val.month_int][val.symbol].negativeCount++;
+                        }
+                    }
+                    else {
+                        var day=moment(val.date,'X').dayOfYear();
+                        if (!data[currentIndex][day] && freq === 'daily') {
+                            data[currentIndex][day] = {};
+                        }
+                        if (!data[currentIndex][day][val.symbol] && freq === 'daily') {
+                            data[currentIndex][day][val.symbol] = {}
+                            data[currentIndex][day][val.symbol].sum = 0;
+                            data[currentIndex][day][val.symbol].count = 0;
+                            data[currentIndex][day][val.symbol].positiveCount = 0;
+                            data[currentIndex][day][val.symbol].negativeCount = 0;
+                            data[currentIndex][day][val.symbol].sum_of_rates = 0;
+                        }
+
+
+                        data[currentIndex][day][val.symbol].count++;
+                        data[currentIndex][day][val.symbol].sum += val.interest_rate_change_percentage;
+                        data[currentIndex][day][val.symbol].sum_of_rates += val.interest_rate;
+                        if (val.interest_rate_change_percentage >= 0) {
+                            data[currentIndex][day][val.symbol].positiveCount++;
+                        }
+                        else {
+                            data[currentIndex][day][val.symbol].negativeCount++;
                         }
                     }
                 }
@@ -168,8 +188,6 @@ exports.sendCurrencyData = (req, res, body, results) => {
                 };
             }
         }
-
-
 
         // console.log(freq);
         response[freq] = refined;
@@ -493,7 +511,7 @@ exports.sendEquitiesData = (req, res, body, results) => {
     else {
         responseObj = results.datatable.error;
     }
-    responseObj.dates=dates;
+    responseObj.dates = dates;
     writeHead(res, responseObj, 200, 'text/html');
 }
 
@@ -803,12 +821,12 @@ exports.sendFuturesData = (req, res, body, results) => {
     writeHead(res, responseObj, 200, 'text/html');
 };
 
-exports.sendWeightageToClient = (req, res,body, html) => {
+exports.sendWeightageToClient = (req, res, body, html) => {
     let responseObj = {
         message: 'success',
         status: 200,
         data: {
-            html:html
+            html: html
         }
     };
     writeHead(res, responseObj, 200, 'text/html');
