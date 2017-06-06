@@ -53,7 +53,6 @@ exports.get = (req, res) => {
             }
             else {
                 require('../controllers/notFoundController.js').get(req, res);
-
             }
 
         })
