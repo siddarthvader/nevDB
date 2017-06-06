@@ -205,12 +205,13 @@ exports.sendEquitiesData = (req, res, body, results) => {
 
     var modified = {
         'weekly': {},
-        'monthly': {}
+        'monthly': {},
+        'daily':{}
     };
     var refined = {};
     var response = {};
     var data = {};
-    var frequeny = ['weekly', 'monthly'];
+    var frequeny = ['weekly', 'monthly','daily'];
     var currentYear = moment().year() - 1;
     let responseObj = {
         message: 'success',
@@ -312,6 +313,37 @@ exports.sendEquitiesData = (req, res, body, results) => {
                     };
                 }
 
+                if (moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').dayOfYear() != thisDate.dayOfYear() && results.datatable.data[i - 1][0] === dataset[0]) {
+                    var index=moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').dayOfYear();
+                    
+                    console.log(index,"<");
+                    if (!modified.daily[results.datatable.data[i - 1][4]]) {
+                        modified.daily[results.datatable.data[i - 1][4]] = {};
+                    }
+                    if (!modified.daily[results.datatable.data[i - 1][4]]) {
+                        modified.daily[results.datatable.data[i - 1][4]] = {};
+                    }
+
+                    if (!modified.daily[results.datatable.data[i - 1][4]][index]) {
+                        modified.daily[results.datatable.data[i - 1][4]][index] = {};
+                    }
+
+                    if (!modified.daily[results.datatable.data[i - 1][4]][index][results.datatable.data[i - 1][0]]) {
+                        modified.daily[results.datatable.data[i - 1][4]][index][results.datatable.data[i - 1][0]] = {}
+                    }
+
+                    modified.daily[results.datatable.data[i - 1][4]][index][results.datatable.data[i - 1][0]] = {
+                        date: moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').unix(),
+                        ticker: results.datatable.data[i - 1][0],
+                        interest_rate: results.datatable.data[i - 1][2],
+                        interest_rate_change: results.datatable.data[i - 1][7],
+                        interest_rate_change_percentage: results.datatable.data[i - 1][8],
+                        month: results.datatable.data[i - 1][6],
+                        volume: results.datatable.data[i - 1][3],
+                        ticker: results.datatable.data[i - 1][0]
+                    };
+                }
+
             }
             //  [0]- ticker
             //  [1]- date
@@ -329,8 +361,9 @@ exports.sendEquitiesData = (req, res, body, results) => {
 
 
         var finalDataSet = {};
+        console.log(modified['daily']);
 
-        ['weekly', 'monthly'].forEach((freq) => {
+        ['weekly', 'monthly','daily'].forEach((freq) => {
             for (year in modified[freq]) {
 
                 if (!refined[freq]) {
@@ -520,12 +553,13 @@ exports.sendFuturesData = (req, res, body, results) => {
 
     var modified = {
         'weekly': {},
-        'monthly': {}
+        'monthly': {},
+        'daily':{}
     };
     var refined = {};
     var response = {};
     var data = {};
-    var frequeny = ['weekly', 'monthly'];
+    var frequeny = ['weekly', 'monthly','daily'];
     var currentYear = moment().year() - 1;
     let responseObj = {
         message: 'success',
@@ -619,6 +653,34 @@ exports.sendFuturesData = (req, res, body, results) => {
                     };
                 }
 
+                if (moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').dayOfYear() != thisDate.dayOfYear() && results.datatable.data[i - 1][0] === dataset[0]) {
+                    let index=moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').dayOfYear();
+                    console.log(index,"index");
+                   
+                    if (!modified.daily[results.datatable.data[i - 1][4]]) {
+                        modified.daily[results.datatable.data[i - 1][4]] = {};
+                    }
+
+                    if (!modified.daily[results.datatable.data[i - 1][4]][index]) {
+                        modified.daily[results.datatable.data[i - 1][4]][index] = {};
+                    }
+
+                    if (!modified.daily[results.datatable.data[i - 1][4]][index][results.datatable.data[i - 1][0]]) {
+                        modified.daily[results.datatable.data[i - 1][4]][index][results.datatable.data[i - 1][0]] = {}
+                    }
+
+                    modified.daily[results.datatable.data[i - 1][4]][index][results.datatable.data[i - 1][0]] = {
+                        date: moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').unix(),
+                        ticker: results.datatable.data[i - 1][0],
+                        interest_rate: results.datatable.data[i - 1][2],
+                        interest_rate_change: results.datatable.data[i - 1][7],
+                        interest_rate_change_percentage: results.datatable.data[i - 1][8],
+                        month: results.datatable.data[i - 1][6],
+                        volume: results.datatable.data[i - 1][3],
+                        ticker: results.datatable.data[i - 1][0]
+                    };
+                }
+
             }
             //  [0]- ticker
             //  [1]- date
@@ -637,7 +699,9 @@ exports.sendFuturesData = (req, res, body, results) => {
 
         var finalDataSet = {};
 
-        ['weekly', 'monthly'].forEach((freq) => {
+        console.log(modified['daily']);
+
+        ['weekly', 'monthly','daily'].forEach((freq) => {
             for (year in modified[freq]) {
 
                 if (!refined[freq]) {
