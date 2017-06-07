@@ -26,7 +26,8 @@
     "mongo": "^0.1.0",
     "mongodb": "^2.2.26",
     "request": "^2.81.0",
-    "ua-parser": "^0.3.5"
+    "ua-parser": "^0.3.5",
+    "yahoo-finance": "^0.3.2"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
