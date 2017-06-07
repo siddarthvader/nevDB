@@ -89,7 +89,7 @@ exports.sendCurrencyData = (req, res, body, results) => {
                         }
                     }
                     else {
-                        var day=moment(val.date,'X').dayOfYear();
+                        var day = moment(val.date, 'X').dayOfYear();
                         if (!data[currentIndex][day] && freq === 'daily') {
                             data[currentIndex][day] = {};
                         }
@@ -206,12 +206,12 @@ exports.sendEquitiesData = (req, res, body, results) => {
     var modified = {
         'weekly': {},
         'monthly': {},
-        'daily':{}
+        'daily': {}
     };
     var refined = {};
     var response = {};
     var data = {};
-    var frequeny = ['weekly', 'monthly','daily'];
+    var frequeny = ['weekly', 'monthly', 'daily'];
     var currentYear = moment().year() - 1;
     let responseObj = {
         message: 'success',
@@ -219,128 +219,135 @@ exports.sendEquitiesData = (req, res, body, results) => {
     };
     let dates = {};
 
-    // console.log(results.datatable.data,"<<<<");
-    if (results.datatable.data) {
-        results.datatable.data.forEach(function (dataset, i) {
+
+    // console.log(results, "<<<<");
+    if (results) {
+        results.forEach(function (dataset, i) {
 
             var rate_change = 0;
             var rate_change_percentage = 0;
-            var thisDate = moment(dataset[1], 'YYYY-MM-DD');
+            var thisDate = moment(dataset['date']);
             var isoYear = thisDate.year();
             var year = thisDate.isoWeekYear();
             var week = thisDate.isoWeek();
             var month = thisDate.month() + 1;
-            results.datatable.data[i].push(year);
-            results.datatable.data[i].push(week);
-            results.datatable.data[i].push(month);
-            if (!dates[dataset[0]]) {
-                dates[dataset[0]] = thisDate.format('YYYY-MM-DD');
-            }
+            results[i]['year'] = year;
+            results[i]['week'] = week;
+            results[i]['month'] = month;
+            results[i]['day']=thisDate.dayOfYear();
+
 
             if (i == 0) {
-                results.datatable.data[i].push(rate_change);
-                results.datatable.data[i].push(rate_change_percentage);
+                results[i]['rate_change'] = rate_change;
+                results[i]['rate_change_percentage'] = rate_change_percentage;
             }
             else {
 
+                //setting dates
+
+                if (!dates[dataset['symbol']]) {
+                    dates[dataset['symbol']] = moment(dataset['date']).unix();
+                }
+                else {
+                    if (moment(dataset['date']).unix() < dates[dataset['symbol']]) {
+                        dates[dataset['symbol']] = moment(dataset['date']).unix();
+                    }
+                }
 
 
-                rate_change = dataset[2] - results.datatable.data[i - 1][2];
-                rate_change_percentage = 100 * (rate_change / results.datatable.data[i - 1][2]);
+                rate_change = dataset['adjClose'] - results[i - 1]['adjClose'];
+                rate_change_percentage = 100 * (rate_change / results[i - 1]['adjClose']);
                 rate_change = Math.round(rate_change * 10000) / 10000;
                 rate_change_percentage = Math.round(rate_change_percentage * 10000) / 10000
 
-                results.datatable.data[i].push(rate_change);
-                results.datatable.data[i].push(rate_change_percentage);
+                results[i]['rate_change'] = rate_change;
+                results[i]['rate_change_percentage'] = rate_change_percentage;
 
+                //for weekly data
 
-                if (moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').isoWeek() != thisDate.isoWeek() && results.datatable.data[i - 1][0] === dataset[0]) {
+                if (moment(results[i - 1]['date']).isoWeek() != thisDate.isoWeek() && results[i - 1]['symbol'] === dataset['symbol']) {
 
-                    if (!modified.weekly[results.datatable.data[i - 1][4]]) {
-                        modified.weekly[results.datatable.data[i - 1][4]] = {};
-                    }
-                    if (!modified.weekly[results.datatable.data[i - 1][4]]) {
-                        modified.weekly[results.datatable.data[i - 1][4]] = {};
+                    if (!modified.weekly[results[i - 1]['year']]) {
+                        modified.weekly[results[i - 1]['year']] = {};
                     }
 
-                    if (!modified.weekly[results.datatable.data[i - 1][4]][results.datatable.data[i - 1][5]]) {
-                        modified.weekly[results.datatable.data[i - 1][4]][results.datatable.data[i - 1][5]] = {};
+                    if (!modified.weekly[results[i - 1]['year']][results[i - 1]['week']]) {
+                        modified.weekly[results[i - 1]['year']][results[i - 1]['week']] = {};
                     }
 
-                    if (!modified.weekly[results.datatable.data[i - 1][4]][results.datatable.data[i - 1][5]][results.datatable.data[i - 1][0]]) {
-                        modified.weekly[results.datatable.data[i - 1][4]][results.datatable.data[i - 1][5]][results.datatable.data[i - 1][0]] = {}
+                    if (!modified.weekly[results[i - 1]['year']][results[i - 1]['week']][results[i - 1]['symbol']]) {
+                        modified.weekly[results[i - 1]['year']][results[i - 1]['week']][results[i - 1]['symbol']] = {}
                     }
 
-                    modified.weekly[results.datatable.data[i - 1][4]][results.datatable.data[i - 1][5]][results.datatable.data[i - 1][0]] = {
-                        date: moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').unix(),
-                        ticker: results.datatable.data[i - 1][0],
-                        interest_rate: results.datatable.data[i - 1][2],
-                        interest_rate_change: results.datatable.data[i - 1][7],
-                        interest_rate_change_percentage: results.datatable.data[i - 1][8],
-                        week: results.datatable.data[i - 1][5],
-                        volume: results.datatable.data[i - 1][3],
-                        ticker: results.datatable.data[i - 1][0]
+                    modified.weekly[results[i - 1]['year']][results[i - 1]['week']][results[i - 1]['symbol']] = {
+                        date: moment(results[i - 1]['date']).unix(),
+                        ticker: results[i - 1]['symbol'],
+                        interest_rate: results[i - 1]['adjClose'],
+                        interest_rate_change: results[i - 1]['rate_change'],
+                        interest_rate_change_percentage: results[i - 1]['rate_change_percentage'],
+                        week: results[i - 1]['week'],
+                        volume: results[i - 1]['volume'],
+                        ticker: results[i - 1]['symbol']
                     };
                 }
 
 
-                // console.log(results.datatable.data[i - 1][3],"<<<<<<<<<<<<,,");
-                if (moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').month() != thisDate.month() && results.datatable.data[i - 1][0] === dataset[0]) {
-                    if (!modified.monthly[results.datatable.data[i - 1][4]]) {
-                        modified.monthly[results.datatable.data[i - 1][4]] = {};
-                    }
-                    if (!modified.monthly[results.datatable.data[i - 1][4]]) {
-                        modified.monthly[results.datatable.data[i - 1][4]] = {};
+
+                // monthly data
+                // console.log(results[i - 1][3],"<<<<<<<<<<<<,,");
+                if (moment(results[i - 1][1], 'YYYY-MM-DD').month() != thisDate.month() && results[i - 1]['symbol'] === dataset['symbol']) {
+                    if (!modified.monthly[results[i - 1]['year']]) {
+                        modified.monthly[results[i - 1]['year']] = {};
                     }
 
-                    if (!modified.monthly[results.datatable.data[i - 1][4]][results.datatable.data[i - 1][6]]) {
-                        modified.monthly[results.datatable.data[i - 1][4]][results.datatable.data[i - 1][6]] = {};
+
+                    if (!modified.monthly[results[i - 1]['year']][results[i - 1]['month']]) {
+                        modified.monthly[results[i - 1]['year']][results[i - 1]['month']] = {};
                     }
 
-                    if (!modified.monthly[results.datatable.data[i - 1][4]][results.datatable.data[i - 1][6]][results.datatable.data[i - 1][0]]) {
-                        modified.monthly[results.datatable.data[i - 1][4]][results.datatable.data[i - 1][6]][results.datatable.data[i - 1][0]] = {}
+                    if (!modified.monthly[results[i - 1]['year']][results[i - 1]['month']][results[i - 1]['symbol']]) {
+                        modified.monthly[results[i - 1]['year']][results[i - 1]['month']][results[i - 1]['symbol']] = {}
                     }
 
-                    modified.monthly[results.datatable.data[i - 1][4]][results.datatable.data[i - 1][6]][results.datatable.data[i - 1][0]] = {
-                        date: moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').unix(),
-                        ticker: results.datatable.data[i - 1][0],
-                        interest_rate: results.datatable.data[i - 1][2],
-                        interest_rate_change: results.datatable.data[i - 1][7],
-                        interest_rate_change_percentage: results.datatable.data[i - 1][8],
-                        month: results.datatable.data[i - 1][6],
-                        volume: results.datatable.data[i - 1][3],
-                        ticker: results.datatable.data[i - 1][0]
+                    modified.monthly[results[i - 1]['year']][results[i - 1]['month']][results[i - 1]['symbol']] = {
+                        date: moment(results[i - 1]['date']).unix(),
+                        ticker: results[i - 1]['symbol'],
+                        interest_rate: results[i - 1]['adjClose'],
+                        interest_rate_change: results[i - 1]['rate_change'],
+                        interest_rate_change_percentage: results[i - 1]['rate_change_percentage'],
+                        month: results[i - 1]['month'],
+                        volume: results[i - 1]['volume'],
+                        ticker: results[i - 1]['symbol']
                     };
                 }
 
-                if (moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').dayOfYear() != thisDate.dayOfYear() && results.datatable.data[i - 1][0] === dataset[0]) {
-                    var index=moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').dayOfYear();
-                    
-                    console.log(index,"<");
-                    if (!modified.daily[results.datatable.data[i - 1][4]]) {
-                        modified.daily[results.datatable.data[i - 1][4]] = {};
-                    }
-                    if (!modified.daily[results.datatable.data[i - 1][4]]) {
-                        modified.daily[results.datatable.data[i - 1][4]] = {};
+                // daily date    
+                if (moment(results[i - 1]['date']).dayOfYear() != thisDate.dayOfYear() && results[i - 1]['symbol'] === dataset['symbol']) {
+                    var index = moment(results[i - 1]['date']).dayOfYear();
+
+                    // console.log(index, "<");
+                    if (!modified.daily[results[i - 1]['year']]) {
+                        modified.daily[results[i - 1]['year']] = {};
                     }
 
-                    if (!modified.daily[results.datatable.data[i - 1][4]][index]) {
-                        modified.daily[results.datatable.data[i - 1][4]][index] = {};
+                    if (!modified.daily[results[i - 1]['year']][index]) {
+                        modified.daily[results[i - 1]['year']][index] = {};
                     }
 
-                    if (!modified.daily[results.datatable.data[i - 1][4]][index][results.datatable.data[i - 1][0]]) {
-                        modified.daily[results.datatable.data[i - 1][4]][index][results.datatable.data[i - 1][0]] = {}
+                    if (!modified.daily[results[i - 1]['year']][index][results[i - 1]['symbol']]) {
+                        modified.daily[results[i - 1]['year']][index][results[i - 1]['symbol']] = {}
                     }
 
-                    modified.daily[results.datatable.data[i - 1][4]][index][results.datatable.data[i - 1][0]] = {
-                        date: moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').unix(),
-                        ticker: results.datatable.data[i - 1][0],
-                        interest_rate: results.datatable.data[i - 1][2],
-                        interest_rate_change: results.datatable.data[i - 1][7],
-                        interest_rate_change_percentage: results.datatable.data[i - 1][8],
-                        month: results.datatable.data[i - 1][6],
-                        volume: results.datatable.data[i - 1][3],
-                        ticker: results.datatable.data[i - 1][0]
+                    modified.daily[results[i - 1]['year']][index][results[i - 1]['symbol']] = {
+                        date: moment(results[i - 1]['date']).unix(),
+                        ticker: results[i - 1]['symbol'],
+                        interest_rate: results[i - 1]['adjClose'],
+                        interest_rate_change: results[i - 1]['rate_change'],
+                        interest_rate_change_percentage: results[i - 1]['rate_change_percentage'],
+                        month: results[i - 1]['month'],
+                        volume: results[i - 1]['volume'],
+                        ticker: results[i - 1]['symbol'],
+                        day:results[i-1]['day']
                     };
                 }
 
@@ -361,9 +368,9 @@ exports.sendEquitiesData = (req, res, body, results) => {
 
 
         var finalDataSet = {};
-        console.log(modified['daily']);
+        // console.log(modified['daily']);
 
-        ['weekly', 'monthly','daily'].forEach((freq) => {
+        ['weekly', 'monthly', 'daily'].forEach((freq) => {
             for (year in modified[freq]) {
 
                 if (!refined[freq]) {
@@ -423,6 +430,7 @@ exports.sendEquitiesData = (req, res, body, results) => {
 
             for (year in refined[freq]) {
 
+                console.log(year, 'uuyear');
                 if (!finalDataSet[freq]) {
                     finalDataSet[freq] = {};
                 }
@@ -435,96 +443,94 @@ exports.sendEquitiesData = (req, res, body, results) => {
                                     // console.log(refined[freq][year][i][j]);
                                     for (k = 1; k <= 6; k++) {
                                         var currentIndex = currentYear - k * 5;
-                                        if (year > currentIndex) {
+                                        // console.log(currentIndex,'<>');
 
-                                            if (refined[freq][currentIndex][i][j]) {
-                                                if (refined[freq][currentIndex][i][j].sum > 0) {
-                                                    refined[freq][currentIndex][i][j].type = 'long';
-                                                    refined[freq][currentIndex][i][j].reliabality = Math.round(10000 * refined[freq][currentIndex][i][j].positiveCount / refined[freq][currentIndex][i][j].count) / 100;
+                                        if (refined[freq][currentIndex][i][j]) {
+                                            // console.log(year,"<<<");
+                                            if (refined[freq][currentIndex][i][j].sum > 0) {
+                                                refined[freq][currentIndex][i][j].type = 'long';
+                                                refined[freq][currentIndex][i][j].reliabality = Math.round(10000 * refined[freq][currentIndex][i][j].positiveCount / refined[freq][currentIndex][i][j].count) / 100;
 
+                                            }
+                                            else {
+                                                refined[freq][currentIndex][i][j].type = 'short';
+                                                refined[freq][currentIndex][i][j].reliabality = Math.round(10000 * refined[freq][currentIndex][i][j].negativeCount / refined[freq][currentIndex][i][j].count) / 100;
+                                            }
+                                            refined[freq][currentIndex][i][j].type.sum = Math.round(refined[freq][currentIndex][i][j].type * 10000) / 10000;
+                                            if (!finalDataSet[freq]) {
+                                                finalDataSet[freq] = {};
+                                            }
+                                            if (!finalDataSet[freq][currentIndex]) {
+                                                finalDataSet[freq][currentIndex] = {};
+                                            }
+
+                                            if (!finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type]) {
+                                                finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type] = {};
+                                            }
+
+                                            if (!finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i]) {
+                                                finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i] = {};
+                                            }
+                                            if (!finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i][j]) {
+                                                finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i][j] = {};
+                                            }
+
+
+
+
+                                            var flag = {
+                                                prob: true,
+                                                per: true,
+                                                val: true,
+                                                vol: true,
+                                                cap: true
+                                            }
+
+                                            if (body.minProb) {
+                                                if (refined[freq][currentIndex][i][j].reliabality < body.minProb) {
+                                                    flag.prob = false;
                                                 }
-                                                else {
-                                                    refined[freq][currentIndex][i][j].type = 'short';
-                                                    refined[freq][currentIndex][i][j].reliabality = Math.round(10000 * refined[freq][currentIndex][i][j].negativeCount / refined[freq][currentIndex][i][j].count) / 100;
-                                                }
-                                                refined[freq][currentIndex][i][j].type.sum = Math.round(refined[freq][currentIndex][i][j].type * 10000) / 10000;
-                                                if (!finalDataSet[freq]) {
-                                                    finalDataSet[freq] = {};
-                                                }
-                                                if (!finalDataSet[freq][currentIndex]) {
-                                                    finalDataSet[freq][currentIndex] = {};
-                                                }
+                                            }
 
-                                                if (!finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type]) {
-                                                    finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type] = {};
-                                                }
-
-                                                if (!finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i]) {
-                                                    finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i] = {};
-                                                }
-                                                if (!finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i][j]) {
-                                                    finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i][j] = {};
-                                                }
-
-
-
-
-                                                var flag = {
-                                                    prob: true,
-                                                    per: true,
-                                                    val: true,
-                                                    vol: true,
-                                                    cap: true
-                                                }
-
-                                                if (body.minProb) {
-                                                    if (refined[freq][currentIndex][i][j].reliabality < body.minProb) {
-                                                        flag.prob = false;
-                                                    }
-                                                }
-
-                                                if (body.minPer) {
-                                                    if (refined[freq][currentIndex][i][j].sum / refined[freq][currentIndex][i][j].count < body.minPer) {
-                                                        flag.per = false;
-                                                    }
-                                                }
-
-
-                                                if (body.minValChange) {
-                                                    if (refined[freq][currentIndex][i][j].sum_of_rates / refined[freq][currentIndex][i][j].count < body.minValChange) {
-                                                        flag.val = false;
-                                                    }
-                                                }
-
-
-                                                if (body.volume) {
-                                                    if (refined[freq][currentIndex][i][j].sum_of_volume / refined[freq][currentIndex][i][j].count < body.volume) {
-                                                        flag.vol = false;
-                                                        console.log('here');
-                                                    }
-                                                }
-
-                                                // console.log(refined[freq][currentIndex][i][j].sum_of_volume / refined[freq][currentIndex][i][j].count, "00-----")
-
-                                                if (body.cap) {
-                                                    if (refined[freq][currentIndex][i][j].sum_of_cap / refined[freq][currentIndex][i][j].count < body.cap) {
-                                                        flag.cap = false;
-                                                    }
-                                                }
-
-
-
-                                                if (flag.per && flag.prob && flag.val && flag.vol && flag.cap) {
-
-                                                    finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i][j] = refined[freq][currentIndex][i][j];
-
-                                                }
-                                                else {
-                                                    delete finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i][j];
+                                            if (body.minPer) {
+                                                if (refined[freq][currentIndex][i][j].sum / refined[freq][currentIndex][i][j].count < body.minPer) {
+                                                    flag.per = false;
                                                 }
                                             }
 
 
+                                            if (body.minValChange) {
+                                                if (refined[freq][currentIndex][i][j].sum_of_rates / refined[freq][currentIndex][i][j].count < body.minValChange) {
+                                                    flag.val = false;
+                                                }
+                                            }
+
+
+                                            if (body.volume) {
+                                                if (refined[freq][currentIndex][i][j].sum_of_volume / refined[freq][currentIndex][i][j].count < body.volume) {
+                                                    flag.vol = false;
+                                                    console.log('here');
+                                                }
+                                            }
+
+                                            // console.log(refined[freq][currentIndex][i][j].sum_of_volume / refined[freq][currentIndex][i][j].count, "00-----")
+
+                                            if (body.cap) {
+                                                if (refined[freq][currentIndex][i][j].sum_of_cap / refined[freq][currentIndex][i][j].count < body.cap) {
+                                                    flag.cap = false;
+                                                }
+                                            }
+
+
+
+                                            if (flag.per && flag.prob && flag.val && flag.vol && flag.cap) {
+
+                                                finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i][j] = refined[freq][currentIndex][i][j];
+
+                                            }
+                                            else {
+                                                delete finalDataSet[freq][currentIndex][refined[freq][currentIndex][i][j].type][i][j];
+                                            }
                                         }
 
 
@@ -544,6 +550,9 @@ exports.sendEquitiesData = (req, res, body, results) => {
     else {
         responseObj = results.datatable.error;
     }
+
+    // console.log(finalDataSet);
+
     responseObj.dates = dates;
     writeHead(res, responseObj, 200, 'text/html');
 }
@@ -554,12 +563,12 @@ exports.sendFuturesData = (req, res, body, results) => {
     var modified = {
         'weekly': {},
         'monthly': {},
-        'daily':{}
+        'daily': {}
     };
     var refined = {};
     var response = {};
     var data = {};
-    var frequeny = ['weekly', 'monthly','daily'];
+    var frequeny = ['weekly', 'monthly', 'daily'];
     var currentYear = moment().year() - 1;
     let responseObj = {
         message: 'success',
@@ -654,9 +663,9 @@ exports.sendFuturesData = (req, res, body, results) => {
                 }
 
                 if (moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').dayOfYear() != thisDate.dayOfYear() && results.datatable.data[i - 1][0] === dataset[0]) {
-                    let index=moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').dayOfYear();
-                    console.log(index,"index");
-                   
+                    let index = moment(results.datatable.data[i - 1][1], 'YYYY-MM-DD').dayOfYear();
+                    console.log(index, "index");
+
                     if (!modified.daily[results.datatable.data[i - 1][4]]) {
                         modified.daily[results.datatable.data[i - 1][4]] = {};
                     }
@@ -687,7 +696,7 @@ exports.sendFuturesData = (req, res, body, results) => {
             //  [2] close value
             //  [3] volume
             //  [4]- year
-            //  [5] - week
+            //  [5] - weesk
             //  [6] month
             //  [7] - rate change
             //  [8] - percentage rate change
@@ -699,9 +708,9 @@ exports.sendFuturesData = (req, res, body, results) => {
 
         var finalDataSet = {};
 
-        console.log(modified['daily']);
+        // console.log(modified['daily']);
 
-        ['weekly', 'monthly','daily'].forEach((freq) => {
+        ['weekly', 'monthly', 'daily'].forEach((freq) => {
             for (year in modified[freq]) {
 
                 if (!refined[freq]) {
@@ -759,6 +768,7 @@ exports.sendFuturesData = (req, res, body, results) => {
                 }
             }
 
+            console.log(year, '--')
             for (year in refined[freq]) {
 
                 if (!finalDataSet[freq]) {
@@ -773,6 +783,7 @@ exports.sendFuturesData = (req, res, body, results) => {
                                     // console.log(refined[freq][year][i][j]);
                                     for (k = 1; k <= 6; k++) {
                                         var currentIndex = currentYear - k * 5;
+                                        console.log(currentIndex, ">");
                                         if (year > currentIndex) {
 
                                             if (refined[freq][currentIndex][i][j]) {

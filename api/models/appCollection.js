@@ -6,6 +6,7 @@ const quandl_api_key = "xL_9oFs5gTigbat_D6RH";
 var async = require('async');
 var https = require('https');
 var cheerio = require('cheerio');
+var yahooFinance = require('yahoo-finance');
 
 exports.scrapeEPSFromZacks = (body, done) => {
     console.log(body, "body");
@@ -29,37 +30,34 @@ exports.getCurrencyDatafromDB = (body, done) => {
     });
 };
 
-exports.getEquitiesDataFromQuandl = (body, done) => {
+exports.getEquitiesDataFromYahoo = (body, done) => {
     // var symbol = body.symbols.toString() || 'AAPL';
-
+    console.log(body.symbols);
     var completed_requests = 0;
-    var responses = {
-        datatable: {
-            data: []
-        }
-    };
-    body.symbols.forEach(function (symbol) {
-        var url = "https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?qopts.columns=ticker,date,adj_close,adj_volume&date.gte=19860101&date.lt=20161231&ticker=" + symbol + "&api_key=xL_9oFs5gTigbat_D6RH";
-        // console.log(url);
-        request.get({
-            url: url,
-            json: true
-        }, function (err, res) {
-            // console.log(symbol);
-            if (!err) {
-                if (res.body.datatable) {
+    var responses = [];
+    yahooFinance.historical({
+        symbols: body.symbols,
+        from: '1986-01-01',
+        to: '2016-12-31',
+        period: 'd'  // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
+    }, function (err, quotes) {
+        if (!err) {
+            // console.log(quotes);
+            body.symbols.forEach(function (symbol) {
+                // con
+                if (quotes[symbol]) {
                     // console.log(symbol, res.body.datatable.data.length ,"<<<<<<");
-                    responses.datatable.data = responses.datatable.data.concat(res.body.datatable.data)
+                    responses = responses.concat(quotes[symbol]);
                 }
-            }
+                // console.log(quotes);
 
-            if (completed_requests++ == body.symbols.length - 1) {
-                // All downloads are completed
-                // console.log(responses);
-                done(responses);
-            }
-        });
-    })
+            });
+
+            done(responses);
+
+        }
+
+    });
 
 };
 
