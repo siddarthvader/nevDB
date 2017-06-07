@@ -136,6 +136,14 @@ exports.scrapeYahooWeightage = (body, done) => {
             done($('#quote-leaf-comp').html());
         }
     });
+};
 
-
+exports.getQuotesFromYahoo = (body, done) => {
+    yahooFinance.quote({
+        symbol: body.symbol,
+        modules: ['summaryDetail','financialData','defaultKeyStatistics','earnings','upgradeDowngradeHistory','calendarEvents','summaryProfile','price'] // see the docs for the full list
+    }, function (err, quotes) {
+        // ...
+        done(quotes);
+    });
 };
