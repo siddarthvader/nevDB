@@ -19,6 +19,9 @@ exports.get = (req, res, path) => {
         case '/fetchYahooWeightage':
             fetchYahooWeightage(req, res);
             break;
+        case '/getQuotes':
+            getQuotes(req, res);
+            break;
         default:
             break;
     }
@@ -94,4 +97,18 @@ var fetchYahooWeightage = (req, res) => {
             appView.sendWeightageToClient(req, res, JSON.parse(body), results);
         })
     });
-}
+};
+
+var getQuotes = (req, res) => {
+    let body = '';
+    req.on('data', (data) => {
+        body += data;
+        console.log(data, "data");
+    });
+    req.on('end', function () {
+        console.log(body, "body");
+        appModal.getQuotesFromYahoo(JSON.parse(body), (results) => {
+            appView.sendQuotesToClient(req, res, JSON.parse(body), results);
+        })
+    });
+};

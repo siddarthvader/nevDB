@@ -41,6 +41,7 @@ exports.get = (req, res) => {
                     case '/getEquitiesData_POST':
                     case '/getFuturesData_POST':
                     case '/fetchYahooWeightage_POST':
+                    case '/getQuotes_POST':
                         require('../controllers/appController.js').get(req, res, path);
                         break;
                          

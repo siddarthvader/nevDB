@@ -905,8 +905,17 @@ exports.sendWeightageToClient = (req, res, body, html) => {
         }
     };
     writeHead(res, responseObj, 200, 'text/html');
-}
+};
 
+
+exports.sendQuotesToClient = (req, res, body, html) => {
+    let responseObj = {
+        message: 'success',
+        status: 200,
+        data: html
+    };
+    writeHead(res, responseObj, 200, 'text/html');
+};
 
 
 let writeHead = (res, responseObj, status, contentType) => {
