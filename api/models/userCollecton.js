@@ -43,7 +43,7 @@ exports.generateJWT = (pwdRes, done) => {
             email: pwdRes.email,
             role: pwdRes.role
         }
-        , 'nelson', { expiresIn: '10d' });
+        , 'nevApp@32*oier', { expiresIn: '15d' });
 
     pwdRes.token = token;
     done(pwdRes);
@@ -53,7 +53,7 @@ exports.verifyJWT = (body, headers, done) => {
     //console.log("inside model verifyJWT", headers.token);
 
 
-    jwt.verify(headers.token, 'nelson', { email: body.email }, (err, decoded) => {
+    jwt.verify(headers.token, 'nevApp@32*oier', { email: body.email }, (err, decoded) => {
         //console.log("decodedTOken", err);
 
         if (err) {
@@ -90,7 +90,7 @@ exports.verifyJWT = (body, headers, done) => {
 };
 
 exports.verifyJWTAlone = (headers, done) => {
-    jwt.verify(headers, 'nelson', (err, decoded) => {
+    jwt.verify(headers, 'nevApp@32*oier', (err, decoded) => {
         console.log("decodedTOken", decoded);
         console.log("err",err);
         if (err) {
