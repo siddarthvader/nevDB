@@ -14,6 +14,7 @@ exports.get = (req, res) => {
         var path = req.requrl.pathname;
         console.log(req.headers.token, 'headers', path);
         validateHeaders(req, path, function (results) {
+            console.log("here is verified status of jwt",results);
             if (results) {
                 // console.log('headers validated yead');
                 switch (path + '_' + req.method) {
