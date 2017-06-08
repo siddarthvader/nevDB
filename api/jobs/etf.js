@@ -1,7 +1,14 @@
 var yahooFinance = require('yahoo-finance');
 
 exports.get = () => {
-    
+     yahooFinance.historical({
+         symbol:'CT',
+         from:"1986-01-01",
+         to:"2016-01-01",
+         period:'d'
+     },function(err,quotes){
+        console.log(quotes);
+     });   
     
     // This replaces the deprecated snapshot() API
     yahooFinance.quote({
