@@ -127,7 +127,7 @@ exports.getFuturesDataFromQuandl = (body, done) => {
 };
 
 exports.scrapeYahooWeightage = (body, done) => {
-    var url = 'https://finance.yahoo.com/quote/SPY/holdings?p=SPY';
+    var url = 'https://finance.yahoo.com/quote/SPY/holdings?p=+'+body.ticker;
     request(url, function (err, response, html) {
         // console.log(html,err);
         if (!err) {
